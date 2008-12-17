@@ -1,0 +1,293 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{264485B2-CAFC-4394-8F7D-65749722ED5F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MetaphysicsIndustries.Epiphany.Amethyst</RootNamespace>
+    <AssemblyName>Amethyst</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddElement.cs" />
+    <Compile Include="AllInElement.cs" />
+    <Compile Include="AllOutElement.cs" />
+    <Compile Include="AlphaTrimmedDualBellMatrixFilterElement.cs" />
+    <Compile Include="AlphaTrimWindowProcessorElement.cs" />
+    <Compile Include="AluElement.cs" />
+    <Compile Include="AmethystControl.ContextMenuItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AmethystControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AmethystControl.Designer.cs">
+      <DependentUpon>AmethystControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AmethystControl.Entities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AmethystControl.Execute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AmethystControl.Input.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AmethystControl.Render.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AmethystElement.cs" />
+    <Compile Include="AmethystElementTerminalParentChildrenCollection.cs" />
+    <Compile Include="AmethystExecuteException.cs" />
+    <Compile Include="AmethystPath.cs" />
+    <Compile Include="AmethystTerminalConnectionEngine.cs" />
+    <Compile Include="AndMatrixFilterElement.cs" />
+    <Compile Include="AveragerElement.cs" />
+    <Compile Include="CalculateIntervalMeasureElement.cs" />
+    <Compile Include="ConstructorInvokeElement.cs" />
+    <Compile Include="ConstructorInvokeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConstructorInvokeForm.Designer.cs">
+      <DependentUpon>ConstructorInvokeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConverterElement.cs" />
+    <Compile Include="ConverterElementBase.cs" />
+    <Compile Include="ConverterTypeSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConverterTypeSelectionForm.Designer.cs">
+      <DependentUpon>ConverterTypeSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CosineElement.cs" />
+    <Compile Include="CrystallineOpenerElement.cs" />
+    <Compile Include="CSharpCompilerElement.cs" />
+    <Compile Include="DegreesToRadiansElement.cs" />
+    <Compile Include="DoubleValueDisplayElement.cs" />
+    <Compile Include="DoubleLiteralElement.cs" />
+    <Compile Include="DualBellMatrixFilterElement.cs" />
+    <Compile Include="ExpandEdgeMatrixFilterGeneratorElement.cs" />
+    <Compile Include="GaussianNoiseMatrixFilterGeneratorElement.cs" />
+    <Compile Include="GetOpenFilenameElement.cs" />
+    <Compile Include="GetSaveFilenameElement.cs" />
+    <Compile Include="HistogramElement.cs" />
+    <Compile Include="HslToRgbConverterElement.cs" />
+    <Compile Include="ImageDisplayElement.cs" />
+    <Compile Include="ImageDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageDisplayForm.Designer.cs">
+      <DependentUpon>ImageDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImpulseNoiseFilterElement.cs" />
+    <Compile Include="ImpulseNoiseMatrixFilterGeneratorElement.cs" />
+    <Compile Include="InputTerminal.cs" />
+    <Compile Include="InputTerminalElement.cs" />
+    <Compile Include="IntegerLiteralElement.cs" />
+    <Compile Include="IntegerValueDisplayElement.cs" />
+    <Compile Include="IntervalFit2FilterElement.cs" />
+    <Compile Include="IntervalFitMatrixFilterElement.cs" />
+    <Compile Include="InverterMatrixFilterElement.cs" />
+    <Compile Include="LoadColorImage.cs" />
+    <Compile Include="LoadTextFileElement.cs" />
+    <Compile Include="MatrixSlicerElement.cs" />
+    <Compile Include="MethodInvokeElement.cs" />
+    <Compile Include="MethodInvokeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MethodInvokeForm.Designer.cs">
+      <DependentUpon>MethodInvokeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MseMeasureElement.cs" />
+    <Compile Include="MultElement.cs" />
+    <Compile Include="NegOneOneToZeroOneFitMatrixFilterElement.cs" />
+    <Compile Include="IdentityFilterElement.cs" />
+    <Compile Include="NodeElementConverterNode.cs" />
+    <Compile Include="NodeSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NodeSelectionForm.Designer.cs">
+      <DependentUpon>NodeSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NodeSourceElement.cs" />
+    <Compile Include="NodeSourceNode.cs" />
+    <Compile Include="NullNode.cs" />
+    <Compile Include="OutputTerminalElement.cs" />
+    <Compile Include="RadiansToDegreesElement.cs" />
+    <Compile Include="RgbToHslConverterElement.cs" />
+    <Compile Include="SaveAssemblyElement.cs" />
+    <Compile Include="SaveImageElement.cs" />
+    <Compile Include="SaveTextFileElement.cs" />
+    <Compile Include="SineElement.cs" />
+    <Compile Include="SobelMatrixFilterElement.cs" />
+    <Compile Include="SqrtElement.cs" />
+    <Compile Include="StringDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringDisplayForm.Designer.cs">
+      <DependentUpon>StringDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerminalElement.cs" />
+    <Compile Include="TerminalState.cs" />
+    <Compile Include="TextElement.cs" />
+    <Compile Include="TextElementPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextElementPropertiesForm.Designer.cs">
+      <DependentUpon>TextElementPropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThisElement.cs" />
+    <Compile Include="ThresholdMatrixFilterElement.cs" />
+    <Compile Include="ToStringElement.cs" />
+    <Compile Include="TypeofElement.cs" />
+    <Compile Include="ValueDisplayElement.cs" />
+    <Compile Include="LiteralElement.cs" />
+    <Compile Include="LoadImageElement.cs" />
+    <Compile Include="MatrixConvolutionElement.cs" />
+    <Compile Include="MatrixEnumerableConverter.cs" />
+    <Compile Include="MatrixFilterApplyElement.cs" />
+    <Compile Include="MatrixFilterElement.cs" />
+    <Compile Include="MatrixFilterGeneratorElement.cs" />
+    <Compile Include="MeanMatrixFilterElement.cs" />
+    <Compile Include="MeanMatrixFilterGeneratorElement.cs" />
+    <Compile Include="MedianMatrixFilterGeneratorElement.cs" />
+    <Compile Include="MmseAmethystElement.cs" />
+    <Compile Include="MmseNode.cs" />
+    <Compile Include="MssimMeasureElement.cs" />
+    <Compile Include="OutputTerminal.cs" />
+    <Compile Include="OutputTerminalAmethystPathParentChildrenCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringValueDisplayElement.cs" />
+    <Compile Include="StringEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringEditorForm.Designer.cs">
+      <DependentUpon>StringEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringLiteralElement.cs" />
+    <Compile Include="Terminal.cs" />
+    <Compile Include="TestAmethystElement.cs" />
+    <Compile Include="TestNode.cs" />
+    <Compile Include="VarianceCalculatorElement.cs" />
+    <Compile Include="WindowProcessorElement.cs" />
+    <Compile Include="ZetaTrimWindowProcessorElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Amethyst.cd" />
+    <None Include="key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AmethystControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AmethystControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConstructorInvokeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConstructorInvokeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConverterTypeSelectionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConverterTypeSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageDisplayForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImageDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MethodInvokeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MethodInvokeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NodeSelectionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NodeSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringDisplayForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StringDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringEditorForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StringEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextElementPropertiesForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TextElementPropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Crystalline\Crystalline\Crystalline.csproj">
+      <Project>{A2EA7ECC-F70D-40F4-BAEB-8E21608DCDDA}</Project>
+      <Name>Crystalline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ligra\Ligra\Ligra.csproj">
+      <Project>{D9689EE5-94CD-4C13-AD95-FA8780D72545}</Project>
+      <Name>Ligra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ligra\Solus\Solus.csproj">
+      <Project>{A630057C-40CF-4DF3-BE44-FC660B3E6BA3}</Project>
+      <Name>Solus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MetaphysicsIndustries.Build\MetaphysicsIndustries.Build.csproj">
+      <Project>{81E21BB7-DD6A-49AC-93DD-D53F55CF7C60}</Project>
+      <Name>MetaphysicsIndustries.Build</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MetaphysicsIndustries.Collections\MetaphysicsIndustries.Collections.csproj">
+      <Project>{FF2B8A90-E8D2-4CF6-81E6-4A7BCE1FF900}</Project>
+      <Name>MetaphysicsIndustries.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MetaphysicsIndustries.Serialization\MetaphysicsIndustries.Serialization.csproj">
+      <Project>{486F1C93-4C96-436A-860D-D77DC7F48FB9}</Project>
+      <Name>MetaphysicsIndustries.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MetaphysicsIndustries\MetaphysicsIndustries.csproj">
+      <Project>{E9727C2E-C9B0-4487-8EDE-2569970A764A}</Project>
+      <Name>MetaphysicsIndustries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epiphany\Epiphany.csproj">
+      <Project>{1C694875-FA7F-4861-8E96-BC5D5AF47534}</Project>
+      <Name>Epiphany</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>perl -W "C:\Metaphysics Industries\Projects\Publish\publish.pl" $(ConfigurationName) "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
