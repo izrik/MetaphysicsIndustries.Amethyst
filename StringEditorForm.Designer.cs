@@ -1,4 +1,4 @@
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     partial class StringEditorForm
     {

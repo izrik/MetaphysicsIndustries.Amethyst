@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class GetSaveFilenameElement : StringLiteralElement
     {

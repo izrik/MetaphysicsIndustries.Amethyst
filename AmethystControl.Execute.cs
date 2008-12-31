@@ -8,8 +8,9 @@ using System.Windows.Forms;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Collections;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public partial class AmethystControl : CrystallineControl
     {

@@ -5,8 +5,9 @@ using System.Reflection;
 using System.Drawing;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Crystalline;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class ConstructorInvokeElement : AmethystElement
     {

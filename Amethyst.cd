@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Font Name="Tahoma" Size="8.25" />
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AmethystElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AmethystElement" Collapsed="true">
     <Position X="5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>AmethystElement.cs</FileName>
       <HashCode>ACEEABAAAAAIBAQAAAAAAAAEFAACAEAAATAECFEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AmethystPath" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AmethystPath" Collapsed="true">
     <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>AmethystPath.cs</FileName>
       <HashCode>AgAAAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.InputTerminal" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.InputTerminal" Collapsed="true">
     <Position X="1.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <FileName>InputTerminal.cs</FileName>
       <HashCode>AAAABAgAAAACAANAAgAAAEAAAAAAAAAQAiAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.Terminal" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.Terminal" Collapsed="true">
     <Position X="2.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>Terminal.cs</FileName>
@@ -30,118 +30,118 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.OutputTerminal" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.OutputTerminal" Collapsed="true">
     <Position X="3.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <FileName>OutputTerminal.cs</FileName>
       <HashCode>AAAAAAAAAgAAgAEAAAAAAEAAAAAAAAAAACAAAAAgAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MmseAmethystElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MmseAmethystElement" Collapsed="true">
     <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <FileName>MmseAmethystElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.StringLiteralElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.StringLiteralElement" Collapsed="true">
     <Position X="7.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>StringLiteralElement.cs</FileName>
       <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.LoadImageElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.LoadImageElement" Collapsed="true">
     <Position X="4" Y="5" Width="1.5" />
     <TypeIdentifier>
       <FileName>LoadImageElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.GetOpenFilenameElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.GetOpenFilenameElement" Collapsed="true">
     <Position X="6.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>GetOpenFilenameElement.cs</FileName>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ImageDisplayElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ImageDisplayElement" Collapsed="true">
     <Position X="6" Y="5" Width="1.5" />
     <TypeIdentifier>
       <FileName>ImageDisplayElement.cs</FileName>
       <HashCode>ADFAAAAACEAAAAAAAAAAAAAEAAAAAAAAAQAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MatrixFilterElement" Collapsed="true">
     <Position X="2.25" Y="14.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>MatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.GaussianNoiseMatrixFilterGeneratorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.GaussianNoiseMatrixFilterGeneratorElement" Collapsed="true">
     <Position X="0.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>GaussianNoiseMatrixFilterGeneratorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MatrixFilterApplyElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MatrixFilterApplyElement" Collapsed="true">
     <Position X="0.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>MatrixFilterApplyElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MatrixFilterGeneratorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MatrixFilterGeneratorElement" Collapsed="true">
     <Position X="2.25" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>MatrixFilterGeneratorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ImpulseNoiseMatrixFilterGeneratorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ImpulseNoiseMatrixFilterGeneratorElement" Collapsed="true">
     <Position X="2.25" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>ImpulseNoiseMatrixFilterGeneratorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.IntegerLiteralElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.IntegerLiteralElement" Collapsed="true">
     <Position X="9.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>IntegerLiteralElement.cs</FileName>
       <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.LiteralElement&lt;T&gt;" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.LiteralElement&lt;T&gt;" Collapsed="true">
     <Position X="7.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <FileName>LiteralElement.cs</FileName>
       <HashCode>AAEAAAAEAABAAAAAAAAAQAAAAAAAAAAAAQAgCEAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.DoubleLiteralElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.DoubleLiteralElement" Collapsed="true">
     <Position X="6" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>DoubleLiteralElement.cs</FileName>
       <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAACEAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AmethystControl" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AmethystControl" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>AmethystControl.ContextMenuItems.cs</FileName>
       <HashCode>iAIAKAhAIXkgXCUESQKAoVGbqGCGACAkAAYABZAMSGA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AllOutElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AllOutElement" Collapsed="true">
     <Position X="11.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>AllOutElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
-    <InheritanceLine Type="MetaphysicsIndustries.Epiphany.Amethyst.AmethystElement" FixedFromPoint="true">
+    <InheritanceLine Type="MetaphysicsIndustries.Amethyst.AmethystElement" FixedFromPoint="true">
       <Path>
         <Point X="6.5" Y="3.812" />
         <Point X="10.858" Y="3.812" />
@@ -150,195 +150,195 @@
       </Path>
     </InheritanceLine>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AllInElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AllInElement" Collapsed="true">
     <Position X="11.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <FileName>AllInElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AmethystTerminalConnectionEngine" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AmethystTerminalConnectionEngine" Collapsed="true">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>AmethystTerminalConnectionEngine.cs</FileName>
       <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MedianMatrixFilterGeneratorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MedianMatrixFilterGeneratorElement" Collapsed="true">
     <Position X="4" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>MedianMatrixFilterGeneratorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MeanMatrixFilterGeneratorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MeanMatrixFilterGeneratorElement" Collapsed="true">
     <Position X="2.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>MeanMatrixFilterGeneratorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AveragerElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AveragerElement" Collapsed="true">
     <Position X="6" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>AveragerElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ConverterElementBase" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ConverterElementBase" Collapsed="true">
     <Position X="9.5" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>ConverterElementBase.cs</FileName>
       <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ConverterElement&lt;TInput, TOutput&gt;" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ConverterElement&lt;TInput, TOutput&gt;" Collapsed="true">
     <Position X="9.5" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>ConverterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MatrixEnumerableConverter" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MatrixEnumerableConverter" Collapsed="true">
     <Position X="9.5" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>MatrixEnumerableConverter.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.VarianceCalculatorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.VarianceCalculatorElement" Collapsed="true">
     <Position X="7.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>VarianceCalculatorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MatrixConvolutionElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MatrixConvolutionElement" Collapsed="true">
     <Position X="4" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>MatrixConvolutionElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MssimMeasureElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MssimMeasureElement" Collapsed="true">
     <Position X="9.5" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>MssimMeasureElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ValueDisplayElement&lt;T&gt;" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ValueDisplayElement&lt;T&gt;" Collapsed="true">
     <Position X="7.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>ValueDisplayElement.cs</FileName>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgCAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.DoubleValueDisplayElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.DoubleValueDisplayElement" Collapsed="true">
     <Position X="6" Y="10" Width="1.5" />
     <TypeIdentifier>
       <FileName>DoubleValueDisplayElement.cs</FileName>
       <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.StringValueDisplayElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.StringValueDisplayElement" Collapsed="true">
     <Position X="7.75" Y="10" Width="1.5" />
     <TypeIdentifier>
       <FileName>StringValueDisplayElement.cs</FileName>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.GetSaveFilenameElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.GetSaveFilenameElement" Collapsed="true">
     <Position X="8.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>GetSaveFilenameElement.cs</FileName>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.IntegerValueDisplayElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.IntegerValueDisplayElement" Collapsed="true">
     <Position X="9.5" Y="10" Width="1.5" />
     <TypeIdentifier>
       <FileName>IntegerValueDisplayElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MseMeasureElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MseMeasureElement" Collapsed="true">
     <Position X="7.75" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>MseMeasureElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AmethystExecuteException" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AmethystExecuteException" Collapsed="true">
     <Position X="6" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>AmethystExecuteException.cs</FileName>
       <HashCode>AAAAAAAABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.WindowProcessorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.WindowProcessorElement" Collapsed="true">
     <Position X="2.25" Y="19.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>WindowProcessorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AlphaTrimWindowProcessorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AlphaTrimWindowProcessorElement" Collapsed="true">
     <Position X="2.25" Y="20.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>AlphaTrimWindowProcessorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ZetaTrimWindowProcessorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ZetaTrimWindowProcessorElement" Collapsed="true">
     <Position X="0.5" Y="20.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>ZetaTrimWindowProcessorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.SobelMatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.SobelMatrixFilterElement" Collapsed="true">
     <Position X="2.25" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>SobelMatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.DualBellMatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.DualBellMatrixFilterElement" Collapsed="true">
     <Position X="0.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>DualBellMatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.IntervalFitMatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.IntervalFitMatrixFilterElement" Collapsed="true">
     <Position X="4" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>IntervalFitMatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ExpandEdgeMatrixFilterGeneratorElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ExpandEdgeMatrixFilterGeneratorElement" Collapsed="true">
     <Position X="4" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>ExpandEdgeMatrixFilterGeneratorElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.NegOneOneToZeroOneFitMatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.NegOneOneToZeroOneFitMatrixFilterElement" Collapsed="true">
     <Position X="4" Y="16.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>NegOneOneToZeroOneFitMatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.TextElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.TextElement" Collapsed="true">
     <Position X="11.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>TextElement.cs</FileName>
       <HashCode>AAEAAAAAgAAAAIAAAAAAEAAAEAAAAEAIAQAACAAAAAA=</HashCode>
     </TypeIdentifier>
-    <InheritanceLine Type="MetaphysicsIndustries.Epiphany.Amethyst.AmethystElement" ManuallyRouted="true" FixedFromPoint="true">
+    <InheritanceLine Type="MetaphysicsIndustries.Amethyst.AmethystElement" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
         <Point X="6.5" Y="3.812" />
         <Point X="10.858" Y="3.812" />
@@ -347,20 +347,20 @@
       </Path>
     </InheritanceLine>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.NullNode" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.NullNode" Collapsed="true">
     <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>NullNode.cs</FileName>
       <HashCode>AAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AluElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AluElement" Collapsed="true">
     <Position X="11.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>AluElement.cs</FileName>
       <HashCode>AAEAAAAAgAAAAAAAAAAAAAAAEAAAAEIIAQAACAAAAAA=</HashCode>
     </TypeIdentifier>
-    <InheritanceLine Type="MetaphysicsIndustries.Epiphany.Amethyst.AmethystElement" FixedFromPoint="true">
+    <InheritanceLine Type="MetaphysicsIndustries.Amethyst.AmethystElement" FixedFromPoint="true">
       <Path>
         <Point X="6.5" Y="3.812" />
         <Point X="10.858" Y="3.812" />
@@ -369,294 +369,294 @@
       </Path>
     </InheritanceLine>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.HistogramElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.HistogramElement" Collapsed="true">
     <Position X="6" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>HistogramElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MatrixSlicerElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MatrixSlicerElement" Collapsed="true">
     <Position X="4" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>MatrixSlicerElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ToStringElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ToStringElement" Collapsed="true">
     <Position X="9.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <FileName>ToStringElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.SaveImageElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.SaveImageElement" Collapsed="true">
     <Position X="2.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <FileName>SaveImageElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.LoadColorImageElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.LoadColorImageElement" Collapsed="true">
     <Position X="2.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>LoadColorImage.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.RgbToHslConverterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.RgbToHslConverterElement" Collapsed="true">
     <Position X="0.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>RgbToHslConverterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AlphaTrimmedDualBellMatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AlphaTrimmedDualBellMatrixFilterElement" Collapsed="true">
     <Position X="0.5" Y="16.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>AlphaTrimmedDualBellMatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.IdentityFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.IdentityFilterElement" Collapsed="true">
     <Position X="2.25" Y="16.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>IdentityFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ImpulseNoiseFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ImpulseNoiseFilterElement" Collapsed="true">
     <Position X="0.5" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>ImpulseNoiseFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.IntervalFit2FilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.IntervalFit2FilterElement" Collapsed="true">
     <Position X="4" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>IntervalFit2FilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.CalculateIntervalMeasureElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.CalculateIntervalMeasureElement" Collapsed="true">
     <Position X="6" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>CalculateIntervalMeasureElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.CSharpCompilerElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.CSharpCompilerElement" Collapsed="true">
     <Position X="7.75" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>CSharpCompilerElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.LoadTextFileElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.LoadTextFileElement" Collapsed="true">
     <Position X="6" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>LoadTextFileElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.SaveAssemblyElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.SaveAssemblyElement" Collapsed="true">
     <Position X="9.5" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>SaveAssemblyElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MethodInvokeElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MethodInvokeElement" Collapsed="true">
     <Position X="6" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>MethodInvokeElement.cs</FileName>
       <HashCode>AAEAAAAAAAAACAAAAAAAAABAAAAAAAAAAQAACAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.SaveTextFileElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.SaveTextFileElement" Collapsed="true">
     <Position X="6" Y="18.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>SaveTextFileElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.TypeofElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.TypeofElement" Collapsed="true">
     <Position X="7.75" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>TypeofElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ConstructorInvokeElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ConstructorInvokeElement" Collapsed="true">
     <Position X="9.5" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>ConstructorInvokeElement.cs</FileName>
       <HashCode>AAEAAAAAAAAACAAAAAAAAABAAAAAAAAAAQAACAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ThisElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ThisElement" Collapsed="true">
     <Position X="7.75" Y="18.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>ThisElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.CrystallineOpenerElement&lt;T&gt;" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.CrystallineOpenerElement&lt;T&gt;" Collapsed="true">
     <Position X="4" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>CrystallineOpenerElement.cs</FileName>
       <HashCode>AAEAAAAAAAAIAAAAAAAAAAABAAAAAAAAAQAAAAAABAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.InputTerminalElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.InputTerminalElement" Collapsed="true">
     <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <FileName>InputTerminalElement.cs</FileName>
       <HashCode>AIAAAQAAAAAABAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.OutputTerminalElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.OutputTerminalElement" Collapsed="true">
     <Position X="8.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <FileName>OutputTerminalElement.cs</FileName>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAEAICAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.TerminalElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.TerminalElement" Collapsed="true">
     <Position X="6.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>TerminalElement.cs</FileName>
       <HashCode>ACAAAAAAAAAABAAAAAgAAAABAAAAAAAAACAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.NodeElementConverterNode" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.NodeElementConverterNode" Collapsed="true">
     <Position X="2.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>NodeElementConverterNode.cs</FileName>
       <HashCode>AAAAAEAAAAIAAAQAAAAIAAAAEBAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.NodeSourceElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.NodeSourceElement" Collapsed="true">
     <Position X="0.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>NodeSourceElement.cs</FileName>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.ThresholdMatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.ThresholdMatrixFilterElement" Collapsed="true">
     <Position X="2.25" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>ThresholdMatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AndMatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AndMatrixFilterElement" Collapsed="true">
     <Position X="0.5" Y="14.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>AndMatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.InverterMatrixFilterElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.InverterMatrixFilterElement" Collapsed="true">
     <Position X="0.5" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>InverterMatrixFilterElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.MultElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.MultElement" Collapsed="true">
     <Position X="9.5" Y="20.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>MultElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.CosineElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.CosineElement" Collapsed="true">
     <Position X="6" Y="20.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>CosineElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
     <NestedTypes>
-      <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.CosineElement.CosineNode" Collapsed="true">
+      <Class Name="MetaphysicsIndustries.Amethyst.CosineElement.CosineNode" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>CosineElement.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.SineElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.SineElement" Collapsed="true">
     <Position X="7.75" Y="20.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>SineElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
     <NestedTypes>
-      <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.SineElement.SineNode" Collapsed="true">
+      <Class Name="MetaphysicsIndustries.Amethyst.SineElement.SineNode" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>SineElement.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AddElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.AddElement" Collapsed="true">
     <Position X="6" Y="21.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>AddElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
     <NestedTypes>
-      <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.AddElement.AddNode" Collapsed="true">
+      <Class Name="MetaphysicsIndustries.Amethyst.AddElement.AddNode" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>AddElement.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.DegreesToRadiansElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.DegreesToRadiansElement" Collapsed="true">
     <Position X="9.5" Y="21.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>DegreesToRadiansElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
     <NestedTypes>
-      <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.DegreesToRadiansElement.DegreesToRadiansNode" Collapsed="true">
+      <Class Name="MetaphysicsIndustries.Amethyst.DegreesToRadiansElement.DegreesToRadiansNode" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>DegreesToRadiansElement.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.RadiansToDegreesElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.RadiansToDegreesElement" Collapsed="true">
     <Position X="7.75" Y="21.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>RadiansToDegreesElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
     <NestedTypes>
-      <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.RadiansToDegreesElement.RadiansToDegreesNode" Collapsed="true">
+      <Class Name="MetaphysicsIndustries.Amethyst.RadiansToDegreesElement.RadiansToDegreesNode" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>RadiansToDegreesElement.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
   </Class>
-  <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.SqrtElement" Collapsed="true">
+  <Class Name="MetaphysicsIndustries.Amethyst.SqrtElement" Collapsed="true">
     <Position X="6" Y="22.75" Width="1.5" />
     <TypeIdentifier>
       <FileName>SqrtElement.cs</FileName>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
     </TypeIdentifier>
     <NestedTypes>
-      <Class Name="MetaphysicsIndustries.Epiphany.Amethyst.SqrtElement.SqrtNode" Collapsed="true">
+      <Class Name="MetaphysicsIndustries.Amethyst.SqrtElement.SqrtNode" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>SqrtElement.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
   </Class>
-  <Enum Name="MetaphysicsIndustries.Epiphany.Amethyst.TerminalState" Collapsed="true">
+  <Enum Name="MetaphysicsIndustries.Amethyst.TerminalState" Collapsed="true">
     <Position X="1.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <FileName>TerminalState.cs</FileName>

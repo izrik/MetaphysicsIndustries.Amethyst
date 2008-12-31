@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Crystalline;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class AmethystPath : Path
     {

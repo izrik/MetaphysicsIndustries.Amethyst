@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public partial class MethodInvokeForm : Form
     {

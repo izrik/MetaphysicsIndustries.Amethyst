@@ -4,8 +4,9 @@ using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
 using System.Windows.Forms;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class AluElement : AmethystElement
     {

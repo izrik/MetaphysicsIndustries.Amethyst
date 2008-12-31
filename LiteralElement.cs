@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public abstract class LiteralElement<T> : AmethystElement
         where T : IEquatable<T>

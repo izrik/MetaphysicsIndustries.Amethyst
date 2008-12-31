@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Solus;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     //public class MmseNode : Node
     //{

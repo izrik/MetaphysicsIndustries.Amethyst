@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Crystalline;
 using System.Drawing;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class CrystallineOpenerElement<T> : AmethystElement
         where T : CrystallineControl, new()

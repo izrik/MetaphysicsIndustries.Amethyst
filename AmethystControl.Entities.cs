@@ -9,7 +9,7 @@ using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Collections;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public partial class AmethystControl : CrystallineControl
     {

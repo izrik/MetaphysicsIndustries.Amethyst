@@ -7,8 +7,8 @@
     <ProjectGuid>{264485B2-CAFC-4394-8F7D-65749722ED5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MetaphysicsIndustries.Epiphany.Amethyst</RootNamespace>
-    <AssemblyName>Amethyst</AssemblyName>
+    <RootNamespace>MetaphysicsIndustries.Amethyst</RootNamespace>
+    <AssemblyName>MetaphysicsIndustries.Amethyst</AssemblyName>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -246,37 +246,37 @@
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Crystalline\Crystalline\Crystalline.csproj">
-      <Project>{A2EA7ECC-F70D-40F4-BAEB-8E21608DCDDA}</Project>
-      <Name>Crystalline</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Ligra\Ligra\Ligra.csproj">
+    <ProjectReference Include="..\Ligra\Ligra\Ligra.csproj">
       <Project>{D9689EE5-94CD-4C13-AD95-FA8780D72545}</Project>
       <Name>Ligra</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Ligra\Solus\Solus.csproj">
-      <Project>{A630057C-40CF-4DF3-BE44-FC660B3E6BA3}</Project>
-      <Name>Solus</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MetaphysicsIndustries.Build\MetaphysicsIndustries.Build.csproj">
+    <ProjectReference Include="..\MetaphysicsIndustries.Build\MetaphysicsIndustries.Build.csproj">
       <Project>{81E21BB7-DD6A-49AC-93DD-D53F55CF7C60}</Project>
       <Name>MetaphysicsIndustries.Build</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\MetaphysicsIndustries.Collections\MetaphysicsIndustries.Collections.csproj">
+    <ProjectReference Include="..\MetaphysicsIndustries.Collections\MetaphysicsIndustries.Collections.csproj">
       <Project>{FF2B8A90-E8D2-4CF6-81E6-4A7BCE1FF900}</Project>
       <Name>MetaphysicsIndustries.Collections</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\MetaphysicsIndustries.Serialization\MetaphysicsIndustries.Serialization.csproj">
+    <ProjectReference Include="..\MetaphysicsIndustries.Crystalline\MetaphysicsIndustries.Crystalline.csproj">
+      <Project>{A2EA7ECC-F70D-40F4-BAEB-8E21608DCDDA}</Project>
+      <Name>MetaphysicsIndustries.Crystalline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaphysicsIndustries.Epiphany\MetaphysicsIndustries.Epiphany.csproj">
+      <Project>{1C694875-FA7F-4861-8E96-BC5D5AF47534}</Project>
+      <Name>MetaphysicsIndustries.Epiphany</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaphysicsIndustries.Giza\MetaphysicsIndustries.Giza.csproj">
+      <Project>{98B42ACF-8370-4428-9D41-73FF1CEFB2E4}</Project>
+      <Name>MetaphysicsIndustries.Giza</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaphysicsIndustries.Serialization\MetaphysicsIndustries.Serialization.csproj">
       <Project>{486F1C93-4C96-436A-860D-D77DC7F48FB9}</Project>
       <Name>MetaphysicsIndustries.Serialization</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\MetaphysicsIndustries\MetaphysicsIndustries.csproj">
-      <Project>{E9727C2E-C9B0-4487-8EDE-2569970A764A}</Project>
-      <Name>MetaphysicsIndustries</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Epiphany\Epiphany.csproj">
-      <Project>{1C694875-FA7F-4861-8E96-BC5D5AF47534}</Project>
-      <Name>Epiphany</Name>
+    <ProjectReference Include="..\MetaphysicsIndustries.Solus\MetaphysicsIndustries.Solus.csproj">
+      <Project>{A630057C-40CF-4DF3-BE44-FC660B3E6BA3}</Project>
+      <Name>MetaphysicsIndustries.Solus</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

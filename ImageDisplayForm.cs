@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Solus;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public partial class ImageDisplayForm : Form
     {

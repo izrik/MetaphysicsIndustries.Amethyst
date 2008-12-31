@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Solus;
 using System.Drawing;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class MatrixSlicerElement : AmethystElement
     {

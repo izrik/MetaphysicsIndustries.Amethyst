@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Crystalline;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class TextElement : AmethystElement
     {

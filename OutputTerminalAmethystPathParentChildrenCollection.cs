@@ -14,7 +14,7 @@ using System;
 using System.Collections.Generic;
 using MetaphysicsIndustries.Collections;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
 	public class OutputTerminalAmethystPathParentChildrenCollection : ICollection<AmethystPath>, IDisposable
 	{

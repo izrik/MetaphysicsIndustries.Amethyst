@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Build;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public partial class ConverterTypeSelectionForm : Form
     {

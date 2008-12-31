@@ -5,8 +5,10 @@ using System.Reflection;
 using Microsoft.CSharp;
 using System.CodeDom.Compiler;
 using System.Diagnostics;
+using MetaphysicsIndustries.Giza;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class CSharpCompilerElement : AmethystElement
     {
@@ -46,12 +48,13 @@ namespace MetaphysicsIndustries.Epiphany.Amethyst
                 get { return _output; }
             }
 
+            CSharpCompiler _compiler = new CSharpCompiler();
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
                 string source = (string)inputs[Input];
 
-                outputs[Output] = CompileAssemblyFromSource(source);
+                outputs[Output] = _compiler.CompileAssemblyFromSource(source);
             }
         }
     }

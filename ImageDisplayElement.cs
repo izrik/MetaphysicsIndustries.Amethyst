@@ -4,8 +4,9 @@ using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Ligra;
+using MetaphysicsIndustries.Epiphany;
 
-namespace MetaphysicsIndustries.Epiphany.Amethyst
+namespace MetaphysicsIndustries.Amethyst
 {
     public class ImageDisplayElement : AmethystElement
     {
