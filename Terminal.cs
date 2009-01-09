@@ -59,7 +59,12 @@ namespace MetaphysicsIndustries.Amethyst
 
         public PointF GetLocationInDocumentSpace()
         {
-            return ParentAmethystElement.Location + new SizeF(GetLocationInElementSpace());
+            if (ParentAmethystElement != null)
+            {
+                return ParentAmethystElement.Location + new SizeF(GetLocationInElementSpace());
+            }
+
+            return new PointF();
         }
 
         private AmethystElement _parentAmethystElement;
@@ -171,5 +176,11 @@ namespace MetaphysicsIndustries.Amethyst
 
         //public abstract void UpdateTerminalState();
 
+        public override RectangleF GetBoundingBox()
+        {
+            RectangleF rect = new RectangleF(GetLocationInDocumentSpace(), new SizeF());
+            rect.Inflate(Size*2, Size*2);
+            return rect;
+        }
     }
 }
