@@ -72,6 +72,7 @@
     <Compile Include="AndMatrixFilterElement.cs" />
     <Compile Include="AveragerElement.cs" />
     <Compile Include="CalculateIntervalMeasureElement.cs" />
+    <Compile Include="ColorImageDisplayElement.cs" />
     <Compile Include="ConstructorInvokeElement.cs" />
     <Compile Include="ConstructorInvokeForm.cs">
       <SubType>Form</SubType>

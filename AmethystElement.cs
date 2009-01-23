@@ -32,6 +32,15 @@ namespace MetaphysicsIndustries.Amethyst
             InitTerminals();
         }
 
+        protected virtual bool SetInputDisplayNames
+        {
+            get { return false; }
+        }
+        protected virtual bool SetOutputDisplayNames
+        {
+            get { return false; }
+        }
+
         protected virtual void InitTerminals()
         {
             float y = Math.Min(Height / 2 - 10 * (Node.InputConnectionBases.Count - 1), Height / 2);
@@ -40,6 +49,10 @@ namespace MetaphysicsIndustries.Amethyst
                 InputTerminal term = new InputTerminal(icb);
                 term.Side = BoxOrientation.Left;
                 term.Position = y;
+                if (SetInputDisplayNames)
+                {
+                    term.DisplayText = icb.Name;
+                }
                 y += 20;
                 Terminals.Add(term);
             }
@@ -49,6 +62,10 @@ namespace MetaphysicsIndustries.Amethyst
                 OutputTerminal term = new OutputTerminal(ocb);
                 term.Side = BoxOrientation.Right;
                 term.Position = y;
+                if (SetOutputDisplayNames)
+                {
+                    term.DisplayText = ocb.Name;
+                }
                 y += 20;
                 Terminals.Add(term);
             }

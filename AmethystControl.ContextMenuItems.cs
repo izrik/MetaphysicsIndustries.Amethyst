@@ -228,6 +228,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
             ToolStripMenuItem newMenu = CreateMenu("Display", parentMenu);
             AddMenuItemForElement<ImageDisplayElement>("Image", newMenu);
+            AddMenuItemForElement<ColorImageDisplayElement>("Color Image", newMenu);
         }
         private void AddFilterGeneratorItems(ToolStripMenuItem parentMenu)
         {
