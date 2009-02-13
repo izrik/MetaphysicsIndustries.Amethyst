@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Collections;
 
 namespace MetaphysicsIndustries.Amethyst
 {
