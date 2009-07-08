@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Collections;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {

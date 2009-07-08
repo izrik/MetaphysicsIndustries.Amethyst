@@ -4,6 +4,7 @@ using System.Text;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Collections;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {

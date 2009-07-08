@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Solus;
 using System.Drawing;
 using MetaphysicsIndustries.Ligra;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -134,7 +135,7 @@ namespace MetaphysicsIndustries.Amethyst
         Matrix _lastMatrixUncloneB;
         Matrix _lastMatrixB;
         Bitmap _lastBitmap;
-        TriModulatorMatrixFilter _colorModulator = new TriModulatorMatrixFilter(SolusEngine.ConvertRgbTo24cTriModulator);
+        TriModulatorMatrixFilter _colorModulator = new TriModulatorMatrixFilter(AcuityEngine.ConvertRgbTo24cTriModulator);
 
         protected void UpdateImageCache()
         {

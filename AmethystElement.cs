@@ -142,14 +142,19 @@ namespace MetaphysicsIndustries.Amethyst
             get { return _terminals; }
         }
 
-        public virtual bool ShallProcessDoubleClick
-        {
-            get { return false; }
-        }
+        //public virtual bool ShallProcessDoubleClick
+        //{
+        //    get { return false; }
+        //}
 
         public virtual void ProcessDoubleClick(AmethystControl control)
         {
             //ProcessDoubleClick((CrystallineControl)control);
+        }
+
+        public override void ProcessDoubleClick(CrystallineControl control)
+        {
+            ProcessDoubleClick((AmethystControl)control);
         }
 
         //public sealed override void ProcessDoubleClick(CrystallineControl control)

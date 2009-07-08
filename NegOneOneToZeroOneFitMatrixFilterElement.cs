@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Solus;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
     public class NegOneOneToZeroOneFitMatrixFilterElement : MatrixFilterElement
     {
         public NegOneOneToZeroOneFitMatrixFilterElement()
-            : base(new ModulatorMatrixFilter(SolusEngine.ConvertNegOneOneToZeroOne), "[-1,1] -> [0,1]")
+            : base(new ModulatorMatrixFilter(AcuityEngine.ConvertNegOneOneToZeroOne), "[-1,1] -> [0,1]")
         {
         }
 

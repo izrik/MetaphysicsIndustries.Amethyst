@@ -17,29 +17,29 @@ namespace MetaphysicsIndustries.Amethyst
         InputTerminal _connectionCandidate;
         InputTerminal _disconnectionCandidate;
 
-        protected override void ProcessMouseDoubleClick(MouseEventArgs e)
-        {
-            PointF docSpace = DocumentSpaceFromClientSpace(e.Location);
-            Element element = GetFrontmostElementAtPointInDocumentSpace(docSpace);
-            if (element is AmethystElement)
-            {
-                AmethystElement amelem = (AmethystElement)element;
+        //protected override void ProcessMouseDoubleClick(MouseEventArgs e)
+        //{
+        //    PointF docSpace = DocumentSpaceFromClientSpace(e.Location);
+        //    Element element = GetFrontmostElementAtPointInDocumentSpace(docSpace);
+        //    if (element is AmethystElement)
+        //    {
+        //        AmethystElement amelem = (AmethystElement)element;
 
-                try
-                {
-                    if (amelem.ShallProcessDoubleClick)
-                    {
-                        amelem.ProcessDoubleClick(this);
-                    }
-                }
-                catch (Exception ee)
-                {
-                    MessageBox.Show(this, "There was an exception while processing the double-click: " + ee.ToString());
-                }
-            }
+        //        try
+        //        {
+        //            if (amelem.ShallProcessDoubleClick)
+        //            {
+        //                amelem.ProcessDoubleClick(this);
+        //            }
+        //        }
+        //        catch (Exception ee)
+        //        {
+        //            MessageBox.Show(this, "There was an exception while processing the double-click: " + ee.ToString());
+        //        }
+        //    }
 
-            //base.ProcessMouseDoubleClick(e);
-        }
+        //    //base.ProcessMouseDoubleClick(e);
+        //}
 
         protected override void ProcessMouseDown(MouseEventArgs e)
         {

@@ -4,6 +4,7 @@ using System.Text;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Collections;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -78,7 +79,7 @@ namespace MetaphysicsIndustries.Amethyst
                 {
                     for (j = 0; j < r.ColumnCount; j++)
                     {
-                        Triple<double> hsl = SolusEngine.ConvertRgbToHsl(new Triple<double>(r[i, j], g[i, j], b[i, j]));
+                        Triple<double> hsl = AcuityEngine.ConvertRgbToHsl(new Triple<double>(r[i, j], g[i, j], b[i, j]));
                         h[i, j] = hsl.First;
                         s[i, j] = hsl.Second;
                         l[i, j] = hsl.Third;

@@ -5,6 +5,7 @@ using System.Drawing;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Ligra;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -93,7 +94,7 @@ namespace MetaphysicsIndustries.Amethyst
 
                 matrix = matrix.Clone();
 
-                matrix.ApplyToAll(SolusEngine.ConvertFloatTo24g);
+                matrix.ApplyToAll(AcuityEngine.ConvertFloatTo24g);
                 Bitmap bitmap = LigraControl.RenderMatrixToBitmapS(matrix);
 
                 if (_lastMatrix == null || _lastBitmap == null)

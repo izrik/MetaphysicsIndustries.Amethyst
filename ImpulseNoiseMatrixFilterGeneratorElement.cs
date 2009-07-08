@@ -5,6 +5,7 @@ using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {

@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Collections;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -100,14 +101,12 @@ namespace MetaphysicsIndustries.Amethyst
 
             AddLiteralItems(AddItem);
             AddDisplayItems(AddItem);
+            AddFileItems(AddItem);
             AddMathItems(AddItem);
             AddDebugItems(AddItem);
-            AddMenuItemForElement<GetOpenFilenameElement>("Open Filename", AddItem);
-            AddMenuItemForElement<GetSaveFilenameElement>("Save Filename", AddItem);
-            AddMenuItemForElement<LoadTextFileElement>("Load Text File", AddItem);
-            AddMenuItemForElement<SaveTextFileElement>("Save Text File", AddItem);
             AddMenuItemForElement<ToStringElement>("ToString()", AddItem);
             AddMenuItemForElement<TypeofElement>("typeof()", AddItem);
+            AddMenuItemForElement<FeedbackElement>("Feedback Loop", AddItem);
             //AddMenuItemForElement<NodeElementConverterNode.NodeElementConverterElement>("Node-Element Converter", AddItem);
             //AddMenuItem(AddItem, new ToolStripMenuItem("Node Source"), new EventHandler(NodeSourceItem_Click));
 
@@ -120,16 +119,25 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItem(ContextMenuStrip, _deleteItem, new EventHandler(DeleteItem_Click2));
         }
 
+        private void AddFileItems(ToolStripMenuItem parentMenu)
+        {
+            ToolStripMenuItem fileMenu = CreateMenu("File", parentMenu);
+            AddMenuItemForElement<GetOpenFilenameElement>("Open Filename", fileMenu);
+            AddMenuItemForElement<GetSaveFilenameElement>("Save Filename", fileMenu);
+            AddMenuItemForElement<LoadTextFileElement>("Load Text File", fileMenu);
+            AddMenuItemForElement<SaveTextFileElement>("Save Text File", fileMenu);
+        }
+
         private void AddMathItems(ToolStripMenuItem parentMenu)
         {
-            //ToolStripMenuItem newMenu = CreateMenu("Math", parentMenu);
-            AddMenuItemForElement<MultElement>("*", parentMenu);
-            AddMenuItemForElement<AddElement>("+", parentMenu);
-            AddMenuItemForElement<CosineElement>("cos", parentMenu);
-            AddMenuItemForElement<SineElement>("sin", parentMenu);
-            AddMenuItemForElement<DegreesToRadiansElement>("deg. to rad.", parentMenu);
-            AddMenuItemForElement<RadiansToDegreesElement>("rad. to deg.", parentMenu);
-            AddMenuItemForElement<SqrtElement>("sqrt", parentMenu);
+            ToolStripMenuItem mathMenu = /**/CreateMenu("Math", /*/(/**/parentMenu);
+            AddMenuItemForElement<MultElement>("*", mathMenu);
+            AddMenuItemForElement<AddElement>("+", mathMenu);
+            AddMenuItemForElement<CosineElement>("cos", mathMenu);
+            AddMenuItemForElement<SineElement>("sin", mathMenu);
+            AddMenuItemForElement<DegreesToRadiansElement>("deg. to rad.", mathMenu);
+            AddMenuItemForElement<RadiansToDegreesElement>("rad. to deg.", mathMenu);
+            AddMenuItemForElement<SqrtElement>("sqrt", mathMenu);
         }
 
         public void NodeSourceItem_Click(object sender, EventArgs e)
@@ -256,9 +264,12 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItemForElement<MatrixSlicerElement>("Matrix.GetSlice", newMenu);
             AddMenuItemForElement<ThresholdMatrixFilterElement>("Threshold", newMenu);
             AddMenuItemForElement<AndMatrixFilterElement>("Matrix And", newMenu);
-            AddMenuItemForElement<InverterMatrixFilterElement>("Matrix Inerter", newMenu);
+            AddMenuItemForElement<InverterMatrixFilterElement>("Matrix Inverter", newMenu);
+            AddMenuItemForElement<GaussianBlurFilterElement>("Gaussian Blur", newMenu);
+            AddMenuItemForElement<FlattenerFilterElement>("Flattener", newMenu);
 
         }
+
         private void AddMeasureItems(ToolStripMenuItem parentMenu)
         {
             ToolStripMenuItem newMenu = CreateMenu("Measure", parentMenu);
@@ -313,6 +324,12 @@ namespace MetaphysicsIndustries.Amethyst
             _connectItem.Enabled = (_connectionSourceTerminal != null);
             _disconnectItem.Enabled = (_disconnectionCandidate != null && _disconnectionCandidate.Path != null);
         }
+
+        //protected void AddMenuItemForFilter<T>(string text, ToolStripMenuItem menu)
+        //    where T : MatrixFilter
+        //{
+            
+        //}
 
         protected new void AddMenuItemForElement<T>(ToolStripItem item, ToolStripMenuItem menu)
             where T : AmethystElement, new()

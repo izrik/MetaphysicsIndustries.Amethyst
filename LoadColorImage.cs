@@ -4,6 +4,7 @@ using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -70,7 +71,7 @@ namespace MetaphysicsIndustries.Amethyst
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
                 string filename = (string)inputs[Filename];
-                Matrix image = SolusEngine.LoadImage2(filename);
+                Matrix image = AcuityEngine.LoadImage2(filename);
                 Matrix r = image.CloneSize();
                 Matrix g = image.CloneSize();
                 Matrix b = image.CloneSize();

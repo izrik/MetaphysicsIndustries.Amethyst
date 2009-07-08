@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -48,7 +49,7 @@ namespace MetaphysicsIndustries.Amethyst
                 Matrix inputA = (Matrix)inputs[InputA];
                 Matrix inputB = (Matrix)inputs[InputB];
 
-                double measure = SolusEngine.MeanSquareError(inputA, inputB);
+                double measure = AcuityEngine.MeanSquareError(inputA, inputB);
 
                 outputs[MeasureOutput] = measure;
             }

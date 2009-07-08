@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -43,7 +44,7 @@ namespace MetaphysicsIndustries.Amethyst
                 Matrix image = (Matrix)inputs[ImageInput];
                 string filename = (string)inputs[FilenameInput];
 
-                SolusEngine.SaveImage2(filename, image);
+                AcuityEngine.SaveImage2(filename, image);
             }
         }
     }
