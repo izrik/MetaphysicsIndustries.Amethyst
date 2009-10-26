@@ -107,6 +107,10 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItemForElement<ToStringElement>("ToString()", AddItem);
             AddMenuItemForElement<TypeofElement>("typeof()", AddItem);
             AddMenuItemForElement<FeedbackElement>("Feedback Loop", AddItem);
+            AddMenuItemForElement<NestedElement>("Nested Node", AddItem);
+
+            //AddMenuItemForElement<InputTerminalElement>("External Input", AddItem);
+            //AddMenuItemForElement<OutputTerminalElement>("External Output", AddItem);
             //AddMenuItemForElement<NodeElementConverterNode.NodeElementConverterElement>("Node-Element Converter", AddItem);
             //AddMenuItem(AddItem, new ToolStripMenuItem("Node Source"), new EventHandler(NodeSourceItem_Click));
 

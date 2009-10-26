@@ -182,5 +182,17 @@ namespace MetaphysicsIndustries.Amethyst
             rect.Inflate(Size*2, Size*2);
             return rect;
         }
+
+        public override CrystallineControl ParentCrystallineControl
+        {
+            get
+            {
+                return ParentAmethystElement != null ? ParentAmethystElement.ParentAmethystControl : null;
+            }
+            set
+            {
+                //base.ParentCrystallineControl = value;
+            }
+        }
     }
 }

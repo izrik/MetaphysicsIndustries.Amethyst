@@ -105,6 +105,10 @@ namespace MetaphysicsIndustries.Amethyst
         {
             StringEditorForm form = new StringEditorForm();
             form.Value = Value.ToString();
+            if (typeof(T) != typeof(string))
+            {
+                form.Multiline = false;
+            }
             if (form.ShowDialog(control) == DialogResult.OK && IsConvertable(form.Value))
             {
                 Value = ConvertString(form.Value);

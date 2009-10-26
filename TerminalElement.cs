@@ -8,8 +8,17 @@ namespace MetaphysicsIndustries.Amethyst
 {
     public abstract class TerminalElement : AmethystElement
     {
-        public TerminalElement()
-            : base(new NullNode(), new SizeF(50,50))
+        public TerminalElement(Terminal terminal)
+            : base(new NullNode(), new SizeF(60,60))
+        {
+            _terminal = terminal;
+
+            InitTerminals2();
+        }
+
+        //eww...
+        protected abstract void InitTerminals2();
+        protected override void InitTerminals()
         {
         }
 
@@ -33,6 +42,7 @@ namespace MetaphysicsIndustries.Amethyst
             for (i = 0; i < pt.Length; i++)
             {
                 pt[i].X *= 25;
+                pt[i].X -= 25;
                 pt[i].Y *= 25;
                 pt[i] += position;
             }
@@ -41,15 +51,40 @@ namespace MetaphysicsIndustries.Amethyst
             g.DrawPolygon(pen, pt);
         }
 
-        protected override void RenderText(Graphics g, Pen pen, Brush brush, Font font)
+        //protected override void RenderText(Graphics g, Pen pen, Brush brush, Font font)
+        //{
+        //    base.RenderText(g, pen, brush, font);
+        //}
+
+        Terminal _terminal;
+        public Terminal Terminal
         {
-            base.RenderText(g, pen, brush, font);
+            get { return _terminal; }
         }
 
-        public abstract Terminal Terminal
+        public override string Text
         {
-            get;
+            get
+            {
+                return Terminal != null ? Terminal.DisplayText : "{null}";
+            }
         }
 
+        public override bool ShallProcessDoubleClick
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public override void ProcessDoubleClick(AmethystControl control)
+        {
+            //TerminalEditorForm form = new TerminalEditorForm(Terminal);
+
+            //if (form.ShowDialog(control) == System.Windows.Forms.DialogResult.OK)
+            //{
+            //}
+        }
     }
 }

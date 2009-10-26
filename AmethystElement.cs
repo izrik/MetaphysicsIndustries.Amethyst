@@ -149,18 +149,12 @@ namespace MetaphysicsIndustries.Amethyst
 
         public virtual void ProcessDoubleClick(AmethystControl control)
         {
-            //ProcessDoubleClick((CrystallineControl)control);
         }
 
-        public override void ProcessDoubleClick(CrystallineControl control)
+        public sealed override void ProcessDoubleClick(CrystallineControl control)
         {
             ProcessDoubleClick((AmethystControl)control);
         }
-
-        //public sealed override void ProcessDoubleClick(CrystallineControl control)
-        //{
-        //    base.ProcessDoubleClick(control);
-        //}
 
         public override PointF GetInboundConnectionPoint(Path path)
         {

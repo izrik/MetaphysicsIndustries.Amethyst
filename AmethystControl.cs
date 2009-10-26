@@ -24,20 +24,20 @@ namespace MetaphysicsIndustries.Amethyst
         {
             base.ProcessLoad();
 
-            GetOpenFilenameElement gof = new GetOpenFilenameElement();
-            LoadImageElement li = new LoadImageElement();
-            ImageDisplayElement id = new ImageDisplayElement();
+            //GetOpenFilenameElement gof = new GetOpenFilenameElement();
+            //LoadImageElement li = new LoadImageElement();
+            //ImageDisplayElement id = new ImageDisplayElement();
 
-            gof.Location = new PointF(100, 100);
-            li.Location = new PointF(175, 175);
-            id.Location = new PointF(275, 275);
+            //gof.Location = new PointF(100, 100);
+            //li.Location = new PointF(175, 175);
+            //id.Location = new PointF(275, 275);
 
-            AddElement(gof);
-            AddElement(li);
-            AddElement(id);
+            //AddElement(gof);
+            //AddElement(li);
+            //AddElement(id);
 
-            MakeConnection((OutputTerminal)gof.TerminalsByConnection[gof.Node2.Output], (InputTerminal)li.TerminalsByConnection[li.Node.Input]);
-            MakeConnection((OutputTerminal)li.TerminalsByConnection[li.Node.Output], (InputTerminal)id.TerminalsByConnection[id.Node.Input]);
+            //MakeConnection((OutputTerminal)gof.TerminalsByConnection[gof.Node2.Output], (InputTerminal)li.TerminalsByConnection[li.Node.Input]);
+            //MakeConnection((OutputTerminal)li.TerminalsByConnection[li.Node.Output], (InputTerminal)id.TerminalsByConnection[id.Node.Input]);
         }
     }
 }

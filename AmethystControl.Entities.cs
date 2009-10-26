@@ -573,8 +573,19 @@ namespace MetaphysicsIndustries.Amethyst
         //    }
         //}
 
-        protected void MakeConnection(OutputTerminal from, InputTerminal to)
+        public void MakeConnection(OutputTerminal from, InputTerminal to)
         {
+            if (from == null) { throw new ArgumentNullException("from"); }
+            if (to == null) { throw new ArgumentNullException("to"); }
+            if (from.ParentCrystallineControl != this)
+            {
+                throw new ArgumentException("The output terminal is not owned by the AmethystControl");
+            }
+            if (to.ParentCrystallineControl != this)
+            {
+                throw new ArgumentException("The input terminal is not owned by the AmethystControl");
+            }
+							
             if (to.Path != null)
             {
                 DisconnectInputTerminal(to);

@@ -18,6 +18,10 @@ namespace MetaphysicsIndustries.Amethyst
 
         public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
         {
+            foreach (OutputConnectionBase con in OutputConnectionBases)
+            {
+                outputs[con] = null;
+            }
         }
     }
 }

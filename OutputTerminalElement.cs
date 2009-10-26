@@ -8,18 +8,27 @@ namespace MetaphysicsIndustries.Amethyst
 {
     public class OutputTerminalElement : TerminalElement
     {
+        public OutputTerminalElement(OutputTerminal terminal)
+            : base(terminal)
+        {
+        }
 
-        private OutputTerminal _outputTerminal;
+        protected override void InitTerminals2()
+        {
+            throw new NotImplementedException();
+        }
+
+        //private OutputTerminal _outputTerminal;
         public OutputTerminal outputTerminal
         {
-            get { return _outputTerminal; }
-            set { _outputTerminal = value; }
+            get { return (OutputTerminal)Terminal; }
+            //set { _outputTerminal = value; }
         }
 
-        public override Terminal Terminal
-        {
-            get { return _outputTerminal; }
-        }
+        //public override Terminal Terminal
+        //{
+        //    get { return _outputTerminal; }
+        //}
 
         protected override PointF[] GetPolygon()
         {
@@ -27,7 +36,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             if (Terminal == null)
             {
-                pt = new PointF[1];
+                //pt = new PointF[1];
             }
             else if (Terminal.Side == BoxOrientation.Up)
             {

@@ -3,13 +3,31 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
+using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
     public class InputTerminalElement : TerminalElement
     {
-        public InputTerminalElement()
+        public InputTerminalElement(InputTerminal terminal)
+            :base(terminal)
         {
+            //if (terminal == null) { throw new ArgumentNullException("terminal"); }
+							
+            //_inputTerminal = terminal;
+        }
+
+        protected override void InitTerminals2()
+        {
+            System.Type conType = Terminal.ConnectionBase.TypeForConnection;
+            OutputConnectionBase con = OutputConnectionBase.ConstructOutputConnection(conType,"");
+            Node.OutputConnectionBases.Add(con);
+            OutputTerminal term = new OutputTerminal(con);
+            term.Side = BoxOrientation.Right;
+            term.Position = Height / 2;
+            Terminals.Add(term);
+
+            base.InitTerminals();
         }
 
         protected override PointF[] GetPolygon()
@@ -18,7 +36,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             if (Terminal == null)
             {
-                pt = new PointF[1];
+                //pt = new PointF[1];
             }
             else if (Terminal.Side == BoxOrientation.Up)
             {
@@ -48,18 +66,16 @@ namespace MetaphysicsIndustries.Amethyst
             return pt;
         }
 
-        private InputTerminal _inputTerminal;
+        //private InputTerminal _inputTerminal;
         public InputTerminal InputTerminal
         {
-            get { return _inputTerminal; }
-            set { _inputTerminal = value; }
+            get { return (InputTerminal)Terminal; }
+            //set { _inputTerminal = value; }
         }
 
-        public override Terminal Terminal
-        {
-            get { return _inputTerminal; }
-        }
-
-
+        //public override Terminal Terminal
+        //{
+        //    get { return _inputTerminal; }
+        //}
     }
 }

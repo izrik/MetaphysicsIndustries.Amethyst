@@ -134,6 +134,13 @@
     <Compile Include="MultElement.cs" />
     <Compile Include="NegOneOneToZeroOneFitMatrixFilterElement.cs" />
     <Compile Include="IdentityFilterElement.cs" />
+    <Compile Include="NestedElement.cs" />
+    <Compile Include="NestedElementEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NestedElementEditorForm.Designer.cs">
+      <DependentUpon>NestedElementEditorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NodeElementConverterNode.cs" />
     <Compile Include="NodeSelectionForm.cs">
       <SubType>Form</SubType>
@@ -158,6 +165,12 @@
     </Compile>
     <Compile Include="StringDisplayForm.Designer.cs">
       <DependentUpon>StringDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerminalEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerminalEditorForm.Designer.cs">
+      <DependentUpon>TerminalEditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TerminalElement.cs" />
     <Compile Include="TerminalState.cs" />
@@ -228,6 +241,10 @@
     <EmbeddedResource Include="MethodInvokeForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MethodInvokeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NestedElementEditorForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NestedElementEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NodeSelectionForm.resx">
       <SubType>Designer</SubType>

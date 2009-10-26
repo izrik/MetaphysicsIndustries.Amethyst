@@ -40,8 +40,8 @@ namespace MetaphysicsIndustries.Amethyst
             this._okButton.Location = new System.Drawing.Point(124, 38);
             this._okButton.Name = "_okButton";
             this._okButton.Size = new System.Drawing.Size(75, 23);
-            this._okButton.TabIndex = 0;
-            this._okButton.Text = "Ok";
+            this._okButton.TabIndex = 1;
+            this._okButton.Text = "OK";
             this._okButton.UseVisualStyleBackColor = true;
             this._okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
@@ -52,7 +52,7 @@ namespace MetaphysicsIndustries.Amethyst
             this._cancelButton.Location = new System.Drawing.Point(205, 38);
             this._cancelButton.Name = "_cancelButton";
             this._cancelButton.Size = new System.Drawing.Size(75, 23);
-            this._cancelButton.TabIndex = 1;
+            this._cancelButton.TabIndex = 2;
             this._cancelButton.Text = "Cancel";
             this._cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -67,7 +67,8 @@ namespace MetaphysicsIndustries.Amethyst
             this._valueTextBox.Multiline = true;
             this._valueTextBox.Name = "_valueTextBox";
             this._valueTextBox.Size = new System.Drawing.Size(268, 20);
-            this._valueTextBox.TabIndex = 2;
+            this._valueTextBox.TabIndex = 0;
+            this._valueTextBox.TextChanged += new System.EventHandler(this._valueTextBox_TextChanged);
             // 
             // StringEditorForm
             // 

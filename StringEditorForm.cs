@@ -15,6 +15,12 @@ namespace MetaphysicsIndustries.Amethyst
             InitializeComponent();
         }
 
+        public bool Multiline
+        {
+            get { return _valueTextBox.Multiline; }
+            set { _valueTextBox.Multiline = value; }
+        }
+
         private string _value = string.Empty;
         public string Value
         {
@@ -30,6 +36,11 @@ namespace MetaphysicsIndustries.Amethyst
         private void StringEditorForm_Load(object sender, EventArgs e)
         {
             _valueTextBox.Text = Value;
+        }
+
+        private void _valueTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
