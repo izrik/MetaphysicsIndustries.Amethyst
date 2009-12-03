@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public abstract class LiteralElement<T> : AmethystElement
         where T : IEquatable<T>
     {
@@ -16,6 +17,7 @@ namespace MetaphysicsIndustries.Amethyst
             node.ValueChanged += new EventHandler(node_ValueChanged);
         }
 
+        [Serializable]
         public class LiteralNode : Node
         {
             public LiteralNode(string name)

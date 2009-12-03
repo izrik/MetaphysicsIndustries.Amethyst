@@ -272,6 +272,10 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItemForElement<GaussianBlurFilterElement>("Gaussian Blur", newMenu);
             AddMenuItemForElement<FlattenerFilterElement>("Flattener", newMenu);
 
+            AddMenuItemForElement<ArithmeticMeanPyramidProcessor>("Arithmetic Mean Pyramid Processor", newMenu);
+            AddMenuItemForElement<GeometricMeanPyramidProcessor>("Geometric Mean Pyramid Processor", newMenu);
+            AddMenuItemForElement<MaxPyramidProcessor>("Max Pyramid Processor", newMenu);
+
         }
 
         private void AddMeasureItems(ToolStripMenuItem parentMenu)

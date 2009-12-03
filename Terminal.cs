@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public abstract class Terminal : Entity//, IConnectee<Terminal, Terminal>, IConnector<Terminal, Terminal>
     {
         private BoxOrientation _side = BoxOrientation.Left;

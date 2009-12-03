@@ -16,7 +16,8 @@ using MetaphysicsIndustries.Collections;
 
 namespace MetaphysicsIndustries.Amethyst
 {
-	public class OutputTerminalAmethystPathParentChildrenCollection : ICollection<AmethystPath>, IDisposable
+    [Serializable]
+    public class OutputTerminalAmethystPathParentChildrenCollection : ICollection<AmethystPath>, IDisposable
 	{
 		public OutputTerminalAmethystPathParentChildrenCollection(OutputTerminal parent)
 		{

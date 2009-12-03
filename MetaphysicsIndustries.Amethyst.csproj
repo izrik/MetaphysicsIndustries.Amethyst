@@ -152,6 +152,7 @@
     <Compile Include="NodeSourceNode.cs" />
     <Compile Include="NullNode.cs" />
     <Compile Include="OutputTerminalElement.cs" />
+    <Compile Include="PyramidProcessorMatrixFilterElement.cs" />
     <Compile Include="RadiansToDegreesElement.cs" />
     <Compile Include="RgbToHslConverterElement.cs" />
     <Compile Include="SaveAssemblyElement.cs" />

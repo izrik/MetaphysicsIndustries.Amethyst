@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Crystalline;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class AmethystPath : Path
     {
         private OutputTerminal _fromTerminal;

@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class GetOpenFilenameElement : StringLiteralElement
     {
         public GetOpenFilenameElement()
@@ -16,6 +17,8 @@ namespace MetaphysicsIndustries.Amethyst
         {
             get { return true; }
         }
+
+        public string asdlnfjkasd = "asdf";
 
         public override void ProcessDoubleClick(AmethystControl control)
         {

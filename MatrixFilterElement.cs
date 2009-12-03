@@ -14,6 +14,10 @@ namespace MetaphysicsIndustries.Amethyst
             : this(new MatrixFilterNode(filter, name))
         {
         }
+        public MatrixFilterElement(MatrixFilter filter, string name, SizeF size)
+            : this(new MatrixFilterNode(filter, name), size)
+        {
+        }
 
         protected MatrixFilterElement(MatrixFilterNode node)
             : base(node)

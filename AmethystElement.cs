@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public abstract class AmethystElement : Element
     {
         public AmethystElement(Node node)
