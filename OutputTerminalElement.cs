@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Crystalline;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class OutputTerminalElement : TerminalElement
     {
         public OutputTerminalElement(OutputTerminal terminal)

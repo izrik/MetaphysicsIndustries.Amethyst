@@ -90,6 +90,13 @@
     </Compile>
     <Compile Include="CosineElement.cs" />
     <Compile Include="CrystallineOpenerElement.cs" />
+    <Compile Include="CSharpCodeEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSharpCodeEditorForm.Designer.cs">
+      <DependentUpon>CSharpCodeEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSharpCodeElement.cs" />
     <Compile Include="CSharpCompilerElement.cs" />
     <Compile Include="DegreesToRadiansElement.cs" />
     <Compile Include="DoubleValueDisplayElement.cs" />
@@ -235,6 +242,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>ConverterTypeSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CSharpCodeEditorForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CSharpCodeEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImageDisplayForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ImageDisplayForm.cs</DependentUpon>
@@ -268,7 +279,7 @@
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ligra\Ligra\Ligra.csproj">
+    <ProjectReference Include="..\Ligra\Ligra.csproj">
       <Project>{D9689EE5-94CD-4C13-AD95-FA8780D72545}</Project>
       <Name>Ligra</Name>
     </ProjectReference>

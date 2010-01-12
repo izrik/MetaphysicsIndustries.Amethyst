@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class ZetaTrimWindowProcessorElement : WindowProcessorElement
     {
         public ZetaTrimWindowProcessorElement()
@@ -14,6 +15,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class ZetaTrimWindowProcessorNode : WindowProcessorNode
         {
             public ZetaTrimWindowProcessorNode()

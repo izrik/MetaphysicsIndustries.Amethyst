@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class FeedbackElement : AmethystElement
     {
         public FeedbackElement()
@@ -13,6 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         protected class FeedbackNode : Node
         {
             public FeedbackNode()

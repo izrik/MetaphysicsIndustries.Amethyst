@@ -5,6 +5,7 @@ using System.Drawing;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class IntegerValueDisplayElement : ValueDisplayElement<int>
     {
         public IntegerValueDisplayElement()

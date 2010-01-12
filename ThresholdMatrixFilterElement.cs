@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class ThresholdMatrixFilterElement : MatrixFilterElement
     {
         public ThresholdMatrixFilterElement()
@@ -31,6 +32,7 @@ namespace MetaphysicsIndustries.Amethyst
             TerminalsByConnection[Node.Threshold].Position = Width / 2;
         }
 
+        [Serializable]
         public class ThresholdMatrixFilterNode : MatrixFilterNode
         {
             public ThresholdMatrixFilterNode()

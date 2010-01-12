@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class DualBellMatrixFilterElement : MatrixFilterElement
     {
         public DualBellMatrixFilterElement()

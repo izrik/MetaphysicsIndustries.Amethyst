@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class ConverterElement<TInput, TOutput> : ConverterElementBase
         where TInput : TOutput
     {
@@ -13,6 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class ConverterNode : Node
         {
             public ConverterNode()

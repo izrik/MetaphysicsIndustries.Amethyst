@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class DegreesToRadiansElement : AmethystElement
     {
         public DegreesToRadiansElement()
@@ -17,6 +18,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (DegreesToRadiansNode)base.Node; }
         }
 
+        [Serializable]
         public class DegreesToRadiansNode : Node
         {
             public DegreesToRadiansNode()

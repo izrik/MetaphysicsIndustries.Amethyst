@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public abstract class ConverterElementBase : AmethystElement
     {
         public static ConverterElementBase CreateConverter(Type inputType, Type outputType)

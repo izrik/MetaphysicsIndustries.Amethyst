@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class LoadImageElement : AmethystElement
     {
         public LoadImageElement()
@@ -20,6 +21,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (LoadImageNode)base.Node; }
         }
 
+        [Serializable]
         public class LoadImageNode : Node
         {
             protected static SolusEngine _engine = new SolusEngine();

@@ -12,13 +12,13 @@ namespace MetaphysicsIndustries.Amethyst
         {
             ((LiteralNode)Node).Value = "Filename";
         }
-
+        
         public override bool ShallProcessDoubleClick
         {
             get { return true; }
         }
 
-        public string asdlnfjkasd = "asdf";
+        public string asdhhfgjr5d = "asdf";
 
         public override void ProcessDoubleClick(AmethystControl control)
         {

@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class HistogramElement : AmethystElement
     {
         public HistogramElement()
@@ -14,6 +15,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class HistogramNode : Node
         {
             public HistogramNode()

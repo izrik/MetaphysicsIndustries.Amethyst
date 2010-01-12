@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class InverterMatrixFilterElement : MatrixFilterElement
     {
         public InverterMatrixFilterElement()
@@ -29,6 +30,7 @@ namespace MetaphysicsIndustries.Amethyst
         //    //TerminalsByConnection[Node.Input2].Position = Width / 2;
         //}
 
+        [Serializable]
         public class InverterMatrixFilterNode : MatrixFilterNode
         {
             public InverterMatrixFilterNode()
@@ -63,6 +65,7 @@ namespace MetaphysicsIndustries.Amethyst
             //}
         }
 
+        [Serializable]
         public class InverterModulatorMatrixFilter : ModulatorMatrixFilter
         {
             public InverterModulatorMatrixFilter()

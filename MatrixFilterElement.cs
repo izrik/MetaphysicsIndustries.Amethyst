@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public abstract class MatrixFilterElement : AmethystElement
     {
         public MatrixFilterElement(MatrixFilter filter, string name)
@@ -29,6 +30,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class MatrixFilterNode : Node
         {
             public MatrixFilterNode(string name)

@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Crystalline;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class TestAmethystElement : AmethystElement
     {
         public TestAmethystElement()

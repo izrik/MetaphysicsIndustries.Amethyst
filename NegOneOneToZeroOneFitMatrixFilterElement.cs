@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class NegOneOneToZeroOneFitMatrixFilterElement : MatrixFilterElement
     {
         public NegOneOneToZeroOneFitMatrixFilterElement()
@@ -13,6 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class ModulatorMatrixFilter : MatrixFilter
         {
             public ModulatorMatrixFilter(Modulator mod)

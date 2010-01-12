@@ -10,6 +10,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class CSharpCompilerElement : AmethystElement
     {
         public CSharpCompilerElement()
@@ -24,6 +25,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (CSharpCompilerNode)base.Node; }
         }
 
+        [Serializable]
         public class CSharpCompilerNode : Node
         {
             public CSharpCompilerNode()

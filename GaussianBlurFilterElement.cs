@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Crystalline;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class GaussianBlurFilterElement : MatrixFilterElement
     {
         public GaussianBlurFilterElement()
@@ -30,6 +31,7 @@ namespace MetaphysicsIndustries.Amethyst
             TerminalsByConnection[Node.Width].Position = Width / 2;
         }
 
+        [Serializable]
         public class GaussianBlurFilterNode : MatrixFilterNode
         {
             public GaussianBlurFilterNode()

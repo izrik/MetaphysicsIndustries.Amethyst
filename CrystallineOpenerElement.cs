@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class CrystallineOpenerElement<T> : AmethystElement
         where T : CrystallineControl, new()
     {
@@ -24,6 +25,7 @@ namespace MetaphysicsIndustries.Amethyst
         Color _color;
         SolidBrush _fillBrush;
 
+        [Serializable]
         public class CrystallineOpenerNode : Node
         {
             public CrystallineOpenerNode()

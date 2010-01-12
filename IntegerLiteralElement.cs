@@ -5,6 +5,7 @@ using System.Drawing;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class IntegerLiteralElement : LiteralElement<int>
     {
         public IntegerLiteralElement()

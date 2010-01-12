@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class CosineElement : AmethystElement
     {
         public CosineElement()
@@ -24,6 +25,7 @@ namespace MetaphysicsIndustries.Amethyst
         //    TerminalsByConnection[Node.Input].DisplayText = "x";
         //}
 
+        [Serializable]
         public class CosineNode : Node
         {
             public CosineNode()

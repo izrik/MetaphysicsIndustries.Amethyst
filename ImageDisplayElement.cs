@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class ImageDisplayElement : AmethystElement
     {
         public ImageDisplayElement()
@@ -21,6 +22,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (ImageDisplayNode)base.Node; }
         }
 
+        [Serializable]
         public class ImageDisplayNode : Node
         {
             public ImageDisplayNode()

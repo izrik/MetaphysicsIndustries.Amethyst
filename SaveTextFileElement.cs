@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class SaveTextFileElement : AmethystElement
     {
 
@@ -14,6 +15,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class SaveTextFileNode : Node
         {
             public SaveTextFileNode()

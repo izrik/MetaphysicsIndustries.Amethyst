@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class SobelMatrixFilterElement : MatrixFilterElement
     {
         public SobelMatrixFilterElement()
@@ -30,6 +31,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (SobelMatrixFilterNode)Node; }
         }
 
+        [Serializable]
         public class SobelMatrixFilterNode : MatrixFilterNode
         {
             public SobelMatrixFilterNode()

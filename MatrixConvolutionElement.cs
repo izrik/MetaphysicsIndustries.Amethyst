@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class MatrixConvolutionElement : AmethystElement
     {
         public MatrixConvolutionElement()
@@ -15,6 +16,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class MatrixConvolutionNode : Node
         {
             public MatrixConvolutionNode()

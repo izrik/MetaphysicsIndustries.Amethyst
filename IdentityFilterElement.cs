@@ -4,6 +4,7 @@ using System.Text;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class IdentityFilterElement : MatrixFilterElement
     {
         public IdentityFilterElement()

@@ -6,12 +6,17 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class PyramidProcessorMatrixFilterElement : MatrixFilterElement
     {
-        public delegate double Calculation(IEnumerable<double> measures);
+        //public delegate double Calculation(IEnumerable<double> measures);
+        public interface ICalculation
+        {
+            double Calculate(IEnumerable<double> measures);
+        }
 
-        public PyramidProcessorMatrixFilterElement(Calculation estimator, string name)
-            : base(new PyramidProcessorMatrixFilter(estimator), name + " Pyramid", new SizeF(60,100))
+        public PyramidProcessorMatrixFilterElement(ICalculation estimator, string name)
+            : base(new PyramidProcessorMatrixFilter(estimator), name + " Pyramid", new SizeF(60, 100))
         {
         }
 
@@ -28,16 +33,17 @@ namespace MetaphysicsIndustries.Amethyst
             g.DrawPolygon(pen, pts);
         }
 
+        [Serializable]
         public class PyramidProcessorMatrixFilter : MatrixFilter
         {
-            public PyramidProcessorMatrixFilter(Calculation estimator)
+            public PyramidProcessorMatrixFilter(ICalculation estimator)
             {
                 if (estimator == null) { throw new ArgumentNullException("estimator"); }
-							
+
                 _estimator = estimator;
             }
 
-            private Calculation _estimator;
+            private ICalculation _estimator;
 
             public override Matrix Apply(Matrix input)
             {
@@ -59,7 +65,7 @@ namespace MetaphysicsIndustries.Amethyst
                         samples[2] = input[row, col + 1];
                         samples[3] = input[row + 1, col + 1];
 
-                        res[row / 2, col / 2] = _estimator(samples);
+                        res[row / 2, col / 2] = _estimator.Calculate(samples);
                     }
                 }
 
@@ -68,40 +74,66 @@ namespace MetaphysicsIndustries.Amethyst
         }
     }
 
+    [Serializable]
     public class ArithmeticMeanPyramidProcessor : PyramidProcessorMatrixFilterElement
     {
         public ArithmeticMeanPyramidProcessor()
-            : base(AcuityEngine.CalculateMean, "Arith Mean")
+            : base(new MeanCalculator(), "Arith Mean")
         {
+        }
+
+        public class MeanCalculator : ICalculation
+        {
+            public double Calculate(IEnumerable<double> measures)
+            {
+                return AcuityEngine.CalculateMean(measures);
+            }
         }
     }
 
+    [Serializable]
     public class GeometricMeanPyramidProcessor : PyramidProcessorMatrixFilterElement
     {
         public GeometricMeanPyramidProcessor()
-            : base(AcuityEngine.CalculateGeometricMean, "Geo Mean")
+            : base(new GeometricMeanCalculator(), "Geo Mean")
         {
+        }
+
+        public class GeometricMeanCalculator : ICalculation
+        {
+            public double Calculate(IEnumerable<double> measures)
+            {
+                return AcuityEngine.CalculateGeometricMean(measures);
+            }
         }
     }
 
+    [Serializable]
     public class MaxPyramidProcessor : PyramidProcessorMatrixFilterElement
     {
-        public static double Max(IEnumerable<double> measures)
-        {
-            double max = 0;
-
-            foreach (double measure in measures)
-            {
-                max = Math.Max(max, measure);
-            }
-
-            return max;
-        }
 
         public MaxPyramidProcessor()
-            : base(Max, "Max")
+            : base(new MaxCalculator(), "Max")
         {
         }
+
+
+        public class MaxCalculator : ICalculation
+        {
+            //public static double Max(IEnumerable<double> measures)
+            public double Calculate(IEnumerable<double> measures)
+            {
+                double max = 0;
+
+                foreach (double measure in measures)
+                {
+                    max = Math.Max(max, measure);
+                }
+
+                return max;
+            }
+        }
+
     }
 
 }

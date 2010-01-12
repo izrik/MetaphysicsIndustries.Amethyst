@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class SaveAssemblyElement : AmethystElement
     {
         public SaveAssemblyElement()
@@ -13,6 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class SaveAssemblyNode : Node
         {
             public SaveAssemblyNode()

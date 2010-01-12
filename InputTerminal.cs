@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class InputTerminal : Terminal
     {
         public InputTerminal(InputConnectionBase inputConnectionBase)

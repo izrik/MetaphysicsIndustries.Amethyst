@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class ConstructorInvokeElement : AmethystElement
     {
         public ConstructorInvokeElement()
@@ -21,6 +22,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (ConstructorInvokeNode)base.Node; }
         }
 
+        [Serializable]
         public class ConstructorInvokeNode : Node
         {
             public ConstructorInvokeNode()

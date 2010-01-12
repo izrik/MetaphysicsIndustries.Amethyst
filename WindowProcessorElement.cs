@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public abstract class WindowProcessorElement : AmethystElement
     {
         public WindowProcessorElement(WindowProcessorNode node)
@@ -18,6 +19,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public abstract class WindowProcessorNode : Node
         {
             public WindowProcessorNode(string name)

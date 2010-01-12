@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class LoadColorImageElement : AmethystElement
     {
         public LoadColorImageElement()
@@ -29,6 +30,7 @@ namespace MetaphysicsIndustries.Amethyst
             TerminalsByConnection[Node.BlueChannel].DisplayText = "b";
         }
 
+        [Serializable]
         public class LoadColorImageNode : Node
         {
             protected static SolusEngine _engine = new SolusEngine();

@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class AndMatrixFilterElement : MatrixFilterElement
     {
         public AndMatrixFilterElement()
@@ -31,6 +32,7 @@ namespace MetaphysicsIndustries.Amethyst
             //TerminalsByConnection[Node.Input2].Position = Width / 2;
         }
 
+        [Serializable]
         public class AndMatrixFilterNode : MatrixFilterNode
         {
             public AndMatrixFilterNode()

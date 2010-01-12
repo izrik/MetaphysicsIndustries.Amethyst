@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class SaveImageElement : AmethystElement
     {
         public SaveImageElement()
@@ -14,6 +15,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class SaveImageNode : Node
         {
             public SaveImageNode()

@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class ExpandEdgeMatrixFilterGeneratorElement : MatrixFilterGeneratorElement
     {
         //ExpandEdgeMatrixFilter
@@ -18,6 +19,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class ExpandEdgeMatrixFilterNode : MatrixFilterGeneratorNode
         {
             public ExpandEdgeMatrixFilterNode()

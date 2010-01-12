@@ -8,7 +8,8 @@ using MetaphysicsIndustries.Crystalline;
 
 namespace MetaphysicsIndustries.Amethyst
 {
-    public class FlattenerFilterElement:MatrixFilterElement
+    [Serializable]
+    public class FlattenerFilterElement : MatrixFilterElement
     {
         public FlattenerFilterElement()
             : base(new FlattenerFilterNode(), new SizeF(100, 80))
@@ -30,6 +31,7 @@ namespace MetaphysicsIndustries.Amethyst
             TerminalsByConnection[Node.Width].Position = Width / 2;
         }
 
+        [Serializable]
         public class FlattenerFilterNode : MatrixFilterNode
         {
             public FlattenerFilterNode()

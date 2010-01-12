@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class MseMeasureElement : AmethystElement
     {
         public MseMeasureElement()
@@ -14,6 +15,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class MseMeasureNode : Node
         {
             public MseMeasureNode()

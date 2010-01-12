@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class ThisElement : AmethystElement
     {
         public ThisElement()
@@ -18,6 +19,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (ThisNode)base.Node; }
         }
 
+        [Serializable]
         public class ThisNode : Node
         {
             public ThisNode()

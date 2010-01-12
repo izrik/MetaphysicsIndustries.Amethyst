@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public abstract class ValueDisplayElement<T> : AmethystElement
     {
         public ValueDisplayElement(ValueDisplayNode node, SizeF size)
@@ -13,6 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class ValueDisplayNode : Node
         {
             public ValueDisplayNode(string name)

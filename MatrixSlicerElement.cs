@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class MatrixSlicerElement : AmethystElement
     {
         public MatrixSlicerElement()
@@ -33,6 +34,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (MatrixSlicerNode)base.Node; }
         }
 
+        [Serializable]
         public class MatrixSlicerNode : Node
         {
             public MatrixSlicerNode()

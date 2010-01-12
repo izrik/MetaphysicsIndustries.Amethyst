@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class LoadTextFileElement : AmethystElement
     {
 
@@ -20,6 +21,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (LoadTextFileNode)base.Node; }
         }
 
+        [Serializable]
         public class LoadTextFileNode : Node
         {
             public LoadTextFileNode()

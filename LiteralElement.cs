@@ -7,19 +7,29 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    //public interface INodeValueChangedReceiver
+    //{
+    //    void OnValueChanged(object sender, EventArgs e);
+    //}
+
     [Serializable]
-    public abstract class LiteralElement<T> : AmethystElement
+    public abstract class LiteralElement<T> : AmethystElement//, INodeValueChangedReceiver
         where T : IEquatable<T>
     {
         public LiteralElement(LiteralNode node, SizeF size)
             : base(node, size)
         {
             node.ValueChanged += new EventHandler(node_ValueChanged);
+            //node.NodeValueChangeReceiver = this;
         }
 
         [Serializable]
         public class LiteralNode : Node
         {
+            //protected LiteralNode() //required for serialization
+            //{
+            //}
+
             public LiteralNode(string name)
                 : base(name)
             {
@@ -50,15 +60,28 @@ namespace MetaphysicsIndustries.Amethyst
                 }
             }
 
+            //private INodeValueChangedReceiver _nodeValueChangeReceiver;
+
+            //public INodeValueChangedReceiver NodeValueChangeReceiver
+            //{
+            //    get { return _nodeValueChangeReceiver; }
+            //    set { _nodeValueChangeReceiver = value; }
+            //}
+
             protected void OnValueChanged(EventArgs e)
             {
                 if (ValueChanged != null)
                 {
                     ValueChanged(this, e);
                 }
+                //if (NodeValueChangeReceiver != null)
+                //{
+                //    NodeValueChangeReceiver.OnValueChanged(this, e);
+                //}
             }
 
             public event EventHandler ValueChanged;
+            //
 
             private OutputConnection<T> _output = new OutputConnection<T>("Output");
             public OutputConnection<T> Output
@@ -130,5 +153,10 @@ namespace MetaphysicsIndustries.Amethyst
                 }
             }
         }
+
+        //public void OnValueChanged(object sender, EventArgs e)
+        //{
+        //    node_ValueChanged(sender, e);
+        //}
     }
 }

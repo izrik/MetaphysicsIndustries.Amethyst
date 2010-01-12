@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class ImpulseNoiseMatrixFilterGeneratorElement : MatrixFilterGeneratorElement
     {
         public ImpulseNoiseMatrixFilterGeneratorElement()
@@ -16,6 +17,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class ImpulseNoiseMatrixFilterGeneratorNode : MatrixFilterGeneratorNode
         {
             public ImpulseNoiseMatrixFilterGeneratorNode()

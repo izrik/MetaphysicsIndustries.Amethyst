@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class CalculateIntervalMeasureElement : AmethystElement
     {
         public CalculateIntervalMeasureElement()
@@ -21,6 +22,7 @@ namespace MetaphysicsIndustries.Amethyst
             get { return (CalculateIntervalMeasureNode)base.Node; }
         }
 
+        [Serializable]
         public class CalculateIntervalMeasureNode : Node
         {
             public CalculateIntervalMeasureNode()

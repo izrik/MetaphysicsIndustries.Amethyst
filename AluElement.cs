@@ -96,6 +96,7 @@ namespace MetaphysicsIndustries.Amethyst
         }
     }
 
+    [Serializable]
     public class MuxElement : AluElement
     {
         public MuxElement()
@@ -169,6 +170,7 @@ namespace MetaphysicsIndustries.Amethyst
         }
     }
 
+    [Serializable]
     public class MultAluElement : AluElement
     {
         protected override void InitOutTerminals()

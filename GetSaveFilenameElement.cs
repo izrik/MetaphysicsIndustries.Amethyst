@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class GetSaveFilenameElement : StringLiteralElement
     {
         public GetSaveFilenameElement()

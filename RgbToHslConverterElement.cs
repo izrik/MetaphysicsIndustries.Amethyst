@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class RgbToHslConverterElement : AmethystElement
     {
         public RgbToHslConverterElement()
@@ -15,6 +16,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class RgbToHslConverterNode : Node
         {
             public RgbToHslConverterNode()

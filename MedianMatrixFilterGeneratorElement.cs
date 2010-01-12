@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class MedianMatrixFilterGeneratorElement : MatrixFilterGeneratorElement
     {
         public MedianMatrixFilterGeneratorElement()
@@ -16,6 +17,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
+        [Serializable]
         public class MedianMatrixFilterGeneratorNode : MatrixFilterGeneratorNode
         {
             public MedianMatrixFilterGeneratorNode()

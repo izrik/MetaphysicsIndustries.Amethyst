@@ -8,6 +8,7 @@ using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class IntervalFit2FilterElement : MatrixFilterElement
     {
         public IntervalFit2FilterElement()
@@ -28,6 +29,7 @@ namespace MetaphysicsIndustries.Amethyst
             TerminalsByConnection[Node.Max].DisplayText = "max";
         }
 
+        [Serializable]
         public class IntervalFit2FilterNode : MatrixFilterNode
         {
             public IntervalFit2FilterNode()

@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class AddElement : AmethystElement
     {
         public AddElement()
@@ -25,6 +26,7 @@ namespace MetaphysicsIndustries.Amethyst
             TerminalsByConnection[Node.InputB].DisplayText = "B";
         }
 
+        [Serializable]
         public class AddNode : Node
         {
             public AddNode()

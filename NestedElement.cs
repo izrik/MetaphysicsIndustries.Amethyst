@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Crystalline;
 
 namespace MetaphysicsIndustries.Amethyst
 {
+    [Serializable]
     public class NestedElement : AmethystElement
     {
         public NestedElement()
@@ -17,6 +18,7 @@ namespace MetaphysicsIndustries.Amethyst
             Text = Node.Name;
         }
 
+        [Serializable]
         public class NestedNode : Node
         {
             public NestedNode()
