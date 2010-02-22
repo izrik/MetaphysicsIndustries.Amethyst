@@ -6,7 +6,7 @@
  *  Written by: Richard Sartor                                               *
  *  Copyright © 2008 Metaphysics Industries, Inc.                            *
  *                                                                           *
- *  An unordered collection of AmethystPath objects.                         *
+ *  An unordered collection of AmethystPath graph.                         *
  *                                                                           *
  *****************************************************************************/
 

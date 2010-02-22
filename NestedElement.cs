@@ -18,6 +18,17 @@ namespace MetaphysicsIndustries.Amethyst
             Text = Node.Name;
         }
 
+        delegate void SuperDelegate<T0>(T0 param0);
+        delegate void SuperDelegate<T0, T1>(T0 param0, T0 param1);
+        delegate void SuperDelegate<T0, T1, T2>(T0 param0, T1 param1, T2 param2);
+        delegate void SuperDelegate<T0, T1, T2, T3>(T0 param0, T1 param1, T2 param2, T3 param3);
+        delegate void SuperDelegate<T0, T1, T2, T3, T4>(T0 param0, T1 param1, T2 param2, T3 param3, T4 param4);
+        delegate R SuperDelegateR<R, T0>(T0 param0);
+        delegate R SuperDelegateR<R, T0, T1>(T0 param0, T0 param1);
+        delegate R SuperDelegateR<R, T0, T1, T2>(T0 param0, T1 param1, T2 param2);
+        delegate R SuperDelegateR<R, T0, T1, T2, T3>(T0 param0, T1 param1, T2 param2, T3 param3);
+        delegate R SuperDelegateR<R, T0, T1, T2, T3, T4>(T0 param0, T1 param1, T2 param2, T3 param3, T4 param4);
+
         [Serializable]
         public class NestedNode : Node
         {
