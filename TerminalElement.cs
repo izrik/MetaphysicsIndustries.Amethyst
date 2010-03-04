@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -23,7 +24,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
-        protected override void RenderShape(Graphics g, Pen pen, Brush fillBrush, RectangleF rect)
+        protected override void RenderShape(Graphics g, Pen pen, Brush fillBrush, RectangleV rect)
         {
             g.FillEllipse(fillBrush, rect);
             g.DrawEllipse(pen, rect);
@@ -33,7 +34,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         protected abstract PointF[] GetPolygon();
 
-        protected virtual void RenderPolygon(Graphics g, Pen pen, Brush brush, RectangleF rect)
+        protected virtual void RenderPolygon(Graphics g, Pen pen, Brush brush, RectangleV rect)
         {
             PointF[] pt = GetPolygon();
             int i;

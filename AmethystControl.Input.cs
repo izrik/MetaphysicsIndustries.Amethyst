@@ -58,7 +58,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             if (_connecting)
             {
-                Set<Element> elems = GetElementsAtPoint(docSpace);
+                //Set<Element> elems = GetElementsAtPoint(docSpace);
 
                 if (_connectionCandidate != null)
                 {

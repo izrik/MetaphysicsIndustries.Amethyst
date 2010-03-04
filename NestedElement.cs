@@ -70,7 +70,7 @@ namespace MetaphysicsIndustries.Amethyst
             {
             }
 
-            control.InvalidateRectFromElement(this);
+            control.InvalidateRectFromEntity(this);
         }
 
         private Set<Element> _elements = new Set<Element>();

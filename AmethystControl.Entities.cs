@@ -14,7 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
 {
     public partial class AmethystControl : CrystallineControl
     {
-        private PointF GetConnectionSourceTerminalLocationInDocumentSpace()
+        private Utilities.Vector GetConnectionSourceTerminalLocationInDocumentSpace()
         {
             if (_connectionSourceTerminal != null)
             {
@@ -22,24 +22,24 @@ namespace MetaphysicsIndustries.Amethyst
             }
             else
             {
-                return new PointF(0, 0);
+                return new Utilities.Vector(0, 0);
             }
         }
 
-        protected Terminal GetFrontmostTerminalAtPointInDocumentSpace(PointF docSpace)
+        protected Terminal GetFrontmostTerminalAtPointInDocumentSpace(Utilities.Vector docSpace)
         {
             return GetFrontmostTerminalAtPointInDocumentSpace<Terminal>(docSpace);
         }
 
-        protected T GetFrontmostTerminalAtPointInDocumentSpace<T>(PointF docSpace)
+        protected T GetFrontmostTerminalAtPointInDocumentSpace<T>(Utilities.Vector docSpace)
             where T : Terminal
         {
             return GetFrontmostTerminalAtPointInDocumentSpace<T>(docSpace, null);
         }
 
-        public delegate bool GetFrontmostTerminalCheck<T>(PointF docSpace, T terminal) where T : Terminal;
+        public delegate bool GetFrontmostTerminalCheck<T>(Utilities.Vector docSpace, T terminal) where T : Terminal;
 
-        protected T GetFrontmostTerminalAtPointInDocumentSpace<T>(PointF docSpace, GetFrontmostTerminalCheck<T> check)
+        protected T GetFrontmostTerminalAtPointInDocumentSpace<T>(Utilities.Vector docSpace, GetFrontmostTerminalCheck<T> check)
             where T : Terminal
         {
 
@@ -71,12 +71,12 @@ namespace MetaphysicsIndustries.Amethyst
             return ret;
         }
 
-        protected InputTerminal GetFrontmostConnectableInputTerminalAtPointInDocumentSpace(PointF docSpace)
+        protected InputTerminal GetFrontmostConnectableInputTerminalAtPointInDocumentSpace(Utilities.Vector docSpace)
         {
             return GetFrontmostTerminalAtPointInDocumentSpace<InputTerminal>(docSpace, GetFrontmostConnectableInputTerminalCheck);
         }
 
-        protected bool GetFrontmostConnectableInputTerminalCheck(PointF docSpace, InputTerminal terminal)
+        protected bool GetFrontmostConnectableInputTerminalCheck(Utilities.Vector docSpace, InputTerminal terminal)
         {
             return terminal.IsConnectable(_connectionSourceTerminal);
         }
@@ -142,7 +142,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
             //+90 degrees
 
-            PointF[] pts = new PointF[5];
+            Utilities.Vector[] pts = new Utilities.Vector[5];
 
             Element from = apath.From;
             Element to = apath.To;
@@ -150,8 +150,8 @@ namespace MetaphysicsIndustries.Amethyst
             BoxOrientation toSide = apath.ToTerminal.Side;
             int toSideQuadrant = GetTerminalQuadrant(apath.ToTerminal);
 
-            PointF inbound = to.GetInboundConnectionPoint(apath);
-            PointF outbound = from.GetOutboundConnectionPoint(apath);
+            Utilities.Vector inbound = to.GetInboundConnectionPoint(apath);
+            Utilities.Vector outbound = from.GetOutboundConnectionPoint(apath);
 
             float peripherySize = 2 * apath.ArrowSize;
             bool swap = (toSideQuadrant % 2) == 1;
@@ -181,8 +181,8 @@ namespace MetaphysicsIndustries.Amethyst
 
 
 
-            SizeF offset1 = new SizeF(apath.ArrowSize, 0);
-            SizeF offset2 = new SizeF(0, -apath.ArrowSize);
+            Utilities.Vector offset1 = new Utilities.Vector(apath.ArrowSize, 0);
+            Utilities.Vector offset2 = new Utilities.Vector(0, -apath.ArrowSize);
 
             //switch (toSide)
             //{
@@ -213,6 +213,8 @@ namespace MetaphysicsIndustries.Amethyst
             float measureForNormalVsAside = pts[4].X - pts[1].X;//swap ? pts[4].Y - pts[1].Y : pts[4].X - pts[1].X;
             float measureForUpVsLoop = toLeft - fromRight;//toMeasure[(toSideQuadrant + 0) % 4] - fromMeasure[(toSideQuadrant + 2) % 4];
 
+            float measureForLoopAsideVsUpNormal = pts[4].X - pts[0].X;
+
             float thresholdForNormalVsUp = 0;
             float thresholdForNormalVsAside = 0;
             float thresholdForUpVsLoop = peripherySize;
@@ -224,16 +226,15 @@ namespace MetaphysicsIndustries.Amethyst
                 {
                     //normal
                     pts[2] = pts[4];
-                    pts[1].X = pts[2].X;
-                    pts[1].Y = pts[0].Y;
+                    pts[1] = new MetaphysicsIndustries.Utilities.Vector(pts[2].X,pts[0].Y);
                     Array.Resize(ref pts, 3);
                 }
                 else
                 {
                     //bend aside
-                    pts[3].Y = (fromBottom + toTop) / 2;
-                    pts[2].X = pts[1].X;
-                    pts[2].Y = pts[3].Y;
+                    float y = (fromBottom + toTop) / 2;
+                    pts[3] = new MetaphysicsIndustries.Utilities.Vector(pts[3].X, y);
+                    pts[2] = new MetaphysicsIndustries.Utilities.Vector(pts[1].X, y);
                 }
             }
             else
@@ -241,24 +242,25 @@ namespace MetaphysicsIndustries.Amethyst
                 if (measureForUpVsLoop > thresholdForUpVsLoop)
                 {
                     //bend up
-                    pts[1].X = (fromLeft + toRight) / 2;
-                    pts[2].X = pts[1].X;
-                    pts[2].Y = pts[3].Y;
+                    pts[1] = new MetaphysicsIndustries.Utilities.Vector((fromLeft + toRight) / 2, pts[1].Y);
+                    pts[2] = new MetaphysicsIndustries.Utilities.Vector(pts[1].X, pts[3].Y);
                 }
                 else
                 {
                     //loop
-                    pts[1].X = Math.Max(fromRight + apath.ArrowSize, toRight + apath.ArrowSize);
-                    pts[3].Y = Math.Min(fromTop - apath.ArrowSize, toTop - apath.ArrowSize);
-                    pts[2].X = pts[1].X;
-                    pts[2].Y = pts[3].Y;
+                    float x = Math.Max(fromRight + apath.ArrowSize, toRight + apath.ArrowSize);
+                    float y = Math.Min(fromTop - apath.ArrowSize, toTop - apath.ArrowSize);
+
+                    pts[1] = new Utilities.Vector(x, pts[1].Y);
+                    pts[2] = new MetaphysicsIndustries.Utilities.Vector(x, y);
+                    pts[3] = new MetaphysicsIndustries.Utilities.Vector(pts[3].X, y);
                 }
             }
 
 
 
             apath.PathJoints.Clear();
-            foreach (PointF pt in pts)
+            foreach (Utilities.Vector pt in pts)
             {
                 apath.PathJoints.Add(new PathJoint(pt));
             }
@@ -266,7 +268,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         private void RoutePathType2(AmethystPath apath)
         {
-            PointF[] pts = new PointF[6];
+            Utilities.Vector[] pts = new Utilities.Vector[6];
 
             Element from = apath.From;
             Element to = apath.To;
@@ -274,8 +276,8 @@ namespace MetaphysicsIndustries.Amethyst
             BoxOrientation toSide = apath.ToTerminal.Side;
             int toSideQuadrant = GetTerminalQuadrant(apath.ToTerminal);
 
-            PointF inbound = to.GetInboundConnectionPoint(apath);
-            PointF outbound = from.GetOutboundConnectionPoint(apath);
+            Utilities.Vector inbound = to.GetInboundConnectionPoint(apath);
+            Utilities.Vector outbound = from.GetOutboundConnectionPoint(apath);
 
             float peripherySize = 2 * apath.ArrowSize;
             bool swap = (toSideQuadrant % 2) == 1;
@@ -286,21 +288,21 @@ namespace MetaphysicsIndustries.Amethyst
 
 
 
-            SizeF offset;
+            Utilities.Vector offset;
 
             switch (toSide)
             {
                 case BoxOrientation.Up:
-                    offset = new SizeF(0, apath.ArrowSize);
+                    offset = new Utilities.Vector(0, apath.ArrowSize);
                     break;
                 case BoxOrientation.Right:
-                    offset = new SizeF(-apath.ArrowSize, 0);
+                    offset = new Utilities.Vector(-apath.ArrowSize, 0);
                     break;
                 case BoxOrientation.Down:
-                    offset = new SizeF(0, -apath.ArrowSize);
+                    offset = new Utilities.Vector(0, -apath.ArrowSize);
                     break;
                 default:
-                    offset = new SizeF(apath.ArrowSize, 0);
+                    offset = new Utilities.Vector(apath.ArrowSize, 0);
                     break;
             }
 
@@ -363,13 +365,15 @@ namespace MetaphysicsIndustries.Amethyst
                 pts[3] = pts[5];
                 if (swap)
                 {
-                    pts[1].Y = (pts[0].Y + pts[3].Y) / 2;
-                    pts[2] = new PointF(pts[3].X, pts[1].Y);
+                    float y = (pts[0].Y + pts[3].Y) / 2;
+                    pts[1] = new MetaphysicsIndustries.Utilities.Vector(pts[1].X, y);
+                    pts[2] = new PointF(pts[3].X, y);
                 }
                 else
                 {
-                    pts[1].X = (pts[0].X + pts[3].X) / 2;
-                    pts[2] = new PointF(pts[1].X, pts[3].Y);
+                    float x = (pts[0].X + pts[3].X) / 2;
+                    pts[1] = new MetaphysicsIndustries.Utilities.Vector(x, pts[1].Y);
+                    pts[2] = new PointF(x, pts[3].Y);
                 }
                 Array.Resize(ref pts, 4);
             }
@@ -405,20 +409,20 @@ namespace MetaphysicsIndustries.Amethyst
 
                 if (swap)
                 {
-                    pts[2] = new PointF(z, pts[1].Y);
-                    pts[3] = new PointF(z, pts[4].Y);
+                    pts[2] = new Utilities.Vector(z, pts[1].Y);
+                    pts[3] = new Utilities.Vector(z, pts[4].Y);
                 }
                 else
                 {
-                    pts[2] = new PointF(pts[1].X, z);
-                    pts[3] = new PointF(pts[4].X, z);
+                    pts[2] = new Utilities.Vector(pts[1].X, z);
+                    pts[3] = new Utilities.Vector(pts[4].X, z);
                 }
             }
 
 
 
             apath.PathJoints.Clear();
-            foreach (PointF pt in pts)
+            foreach (Utilities.Vector pt in pts)
             {
                 apath.PathJoints.Add(new PathJoint(pt));
             }
@@ -453,6 +457,15 @@ namespace MetaphysicsIndustries.Amethyst
             if (pathToRemove is AmethystPath)
             {
                 AmethystPath apath = (AmethystPath)pathToRemove;
+
+                if (apath.ToTerminal != null)
+                {
+                    InvalidateRectFromEntity(apath.ToTerminal);
+                }
+                if (apath.FromTerminal != null)
+                {
+                    InvalidateRectFromEntity(apath.FromTerminal);
+                }
 
                 apath.ToTerminal = null;
                 apath.FromTerminal = null;

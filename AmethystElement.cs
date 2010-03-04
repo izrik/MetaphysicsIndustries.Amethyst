@@ -4,6 +4,7 @@ using System.Text;
 using MetaphysicsIndustries.Crystalline;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Acuity;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -157,7 +158,7 @@ namespace MetaphysicsIndustries.Amethyst
             ProcessDoubleClick((AmethystControl)control);
         }
 
-        public override PointF GetInboundConnectionPoint(Path path)
+        public override Utilities.Vector GetInboundConnectionPoint(Path path)
         {
             if (path is AmethystPath)
             {
@@ -172,7 +173,7 @@ namespace MetaphysicsIndustries.Amethyst
             return base.GetInboundConnectionPoint(path);
         }
 
-        public override PointF GetOutboundConnectionPoint(Path path)
+        public override Utilities.Vector GetOutboundConnectionPoint(Path path)
         {
             if (path is AmethystPath)
             {

@@ -177,7 +177,7 @@ namespace MetaphysicsIndustries.Amethyst
                             //    }
                             //}
 
-                            InvalidateRectFromElement(elem);
+                            InvalidateRectFromEntity(elem);
                             Refresh();
                         }
                         catch (Exception ee)
@@ -200,7 +200,8 @@ namespace MetaphysicsIndustries.Amethyst
                         //UpdateTerminalStatesForElement(aee.Element);
                     }
 
-                    MessageBox.Show(this, "There was an exception: " + ee.ToString());
+                    //MessageBox.Show(this, "There was an exception: " + ee.ToString());
+                    ReportException(ee);
                 }
 
                 Invalidate();

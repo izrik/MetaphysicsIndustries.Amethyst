@@ -4,6 +4,7 @@ using System.Text;
 using MetaphysicsIndustries.Crystalline;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -34,23 +35,23 @@ namespace MetaphysicsIndustries.Amethyst
         public abstract Connection ConnectionBase { get; }
         
 
-        public PointF GetLocationInElementSpace()
+        public Vector GetLocationInElementSpace()
         {
             if (Side == BoxOrientation.Up)
             {
-                return new PointF(Position, 0);
+                return new Vector(Position, 0);
             }
             else if (Side == BoxOrientation.Right)
             {
-                return new PointF(ParentAmethystElement.Width, Position);
+                return new Vector(ParentAmethystElement.Width, Position);
             }
             else if (Side == BoxOrientation.Down)
             {
-                return new PointF(Position, ParentAmethystElement.Height);
+                return new Vector(Position, ParentAmethystElement.Height);
             }
             else if (Side == BoxOrientation.Left)
             {
-                return new PointF(0, Position);
+                return new Vector(0, Position);
             }
             else
             {
@@ -58,14 +59,14 @@ namespace MetaphysicsIndustries.Amethyst
             }
         }
 
-        public PointF GetLocationInDocumentSpace()
+        public Vector GetLocationInDocumentSpace()
         {
             if (ParentAmethystElement != null)
             {
-                return ParentAmethystElement.Location + new SizeF(GetLocationInElementSpace());
+                return ParentAmethystElement.Location + GetLocationInElementSpace();
             }
 
-            return new PointF();
+            return new Vector();
         }
 
         private AmethystElement _parentAmethystElement;
@@ -177,11 +178,11 @@ namespace MetaphysicsIndustries.Amethyst
 
         //public abstract void UpdateTerminalState();
 
-        public override RectangleF GetBoundingBox()
+        public override RectangleV GetBoundingBox()
         {
-            RectangleF rect = new RectangleF(GetLocationInDocumentSpace(), new SizeF());
-            rect.Inflate(Size*2, Size*2);
-            return rect;
+            RectangleV rect = new RectangleV(GetLocationInDocumentSpace(), new SizeF());
+
+            return rect.Inflate(Size * 2, Size * 2);
         }
 
         public override CrystallineControl ParentCrystallineControl

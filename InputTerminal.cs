@@ -89,6 +89,8 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 if (_path != value)
                 {
+                    InvalidateRectInParentControlFromSelf();
+
                     AmethystPath tempPath = _path;
 
                     _path = value;

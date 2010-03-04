@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -20,7 +21,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
-        protected override void RenderShape(Graphics g, Pen pen, Brush fillBrush, RectangleF rect)
+        protected override void RenderShape(Graphics g, Pen pen, Brush fillBrush, RectangleV rect)
         {
             float th = Height / 4;
 

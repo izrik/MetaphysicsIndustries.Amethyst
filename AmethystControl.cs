@@ -28,9 +28,9 @@ namespace MetaphysicsIndustries.Amethyst
             //LoadImageElement li = new LoadImageElement();
             //ImageDisplayElement id = new ImageDisplayElement();
 
-            //gof.Location = new PointF(100, 100);
-            //li.Location = new PointF(175, 175);
-            //id.Location = new PointF(275, 275);
+            //gof.Location = new Vector(100, 100);
+            //li.Location = new Vector(175, 175);
+            //id.Location = new Vector(275, 275);
 
             //AddElement(gof);
             //AddElement(li);

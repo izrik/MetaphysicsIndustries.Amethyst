@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Collections;
 using MetaphysicsIndustries.Acuity;
+using System.Drawing.Imaging;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -121,6 +122,8 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItem(ContextMenuStrip, _executeItem, new EventHandler(ExecuteItem_Click));
             ContextMenuStrip.Items.Add(new ToolStripSeparator());
             AddMenuItem(ContextMenuStrip, _deleteItem, new EventHandler(DeleteItem_Click2));
+            ContextMenuStrip.Items.Add(new ToolStripSeparator());
+            AddMenuItem(ContextMenuStrip, new ToolStripMenuItem("Save as image..."), new EventHandler(SaveAsImageItem_Click));
         }
 
         private void AddFileItems(ToolStripMenuItem parentMenu)
@@ -324,6 +327,8 @@ namespace MetaphysicsIndustries.Amethyst
         void ExecuteItem_Click(object sender, EventArgs e)
         {
             Execute();
+
+            //return;
         }
 
         protected override void UpdateContextMenuItems()
@@ -336,7 +341,7 @@ namespace MetaphysicsIndustries.Amethyst
         //protected void AddMenuItemForFilter<T>(string text, ToolStripMenuItem menu)
         //    where T : MatrixFilter
         //{
-            
+
         //}
 
         protected new void AddMenuItemForElement<T>(ToolStripItem item, ToolStripMenuItem menu)
@@ -376,7 +381,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         void ConnectItem_Click(object sender, EventArgs e)
         {
-                _connecting = true;
+            _connecting = true;
         }
 
         void DeleteItem_Click2(object sender, EventArgs e)
@@ -400,6 +405,11 @@ namespace MetaphysicsIndustries.Amethyst
                 InputTerminal terminalToDisconnect = _disconnectionCandidate;
                 DisconnectInputTerminal(terminalToDisconnect);
             }
+        }
+
+        void SaveAsImageItem_Click(object sender, EventArgs e)
+        {
+            SaveContentsAsImagePrompt();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 using MetaphysicsIndustries.Crystalline;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -42,7 +43,7 @@ namespace MetaphysicsIndustries.Amethyst
             }
         }
 
-        protected override void RenderShape(Graphics g, Pen pen, Brush fillBrush, RectangleF rect)
+        protected override void RenderShape(Graphics g, Pen pen, Brush fillBrush, RectangleV rect)
         {
             base.RenderShape(g, pen, _fillBrush, rect);
 

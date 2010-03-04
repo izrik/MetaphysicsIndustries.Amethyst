@@ -315,6 +315,10 @@
       <Project>{A630057C-40CF-4DF3-BE44-FC660B3E6BA3}</Project>
       <Name>MetaphysicsIndustries.Solus</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MetaphysicsIndustries.Utilities\MetaphysicsIndustries.Utilities.csproj">
+      <Project>{221A3FBA-E14C-4F05-A099-42508116E910}</Project>
+      <Name>MetaphysicsIndustries.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
