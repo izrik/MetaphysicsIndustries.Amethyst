@@ -210,6 +210,7 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItemForElement<AluElement>("ALU", newMenu);
             AddMenuItemForElement<MuxElement>("MUX", newMenu);
             AddMenuItemForElement<MultAluElement>("Mult", newMenu);
+            AddMenuItemForElement<OneOutElement>("One Out", newMenu);
         }
         private void AddDisplayItems(ToolStripMenuItem parentMenu)
         {
@@ -327,13 +328,11 @@ namespace MetaphysicsIndustries.Amethyst
         void ExecuteItem_Click(object sender, EventArgs e)
         {
             Execute();
-
-            //return;
         }
 
         protected override void UpdateContextMenuItems()
         {
-            _deleteItem.Enabled = (SelectionElement.Count > 0);
+            _deleteItem.Enabled = (SelectionElement.Length > 0);
             _connectItem.Enabled = (_connectionSourceTerminal != null);
             _disconnectItem.Enabled = (_disconnectionCandidate != null && _disconnectionCandidate.Path != null);
         }
@@ -386,15 +385,14 @@ namespace MetaphysicsIndustries.Amethyst
 
         void DeleteItem_Click2(object sender, EventArgs e)
         {
-            if (SelectionElement.Count > 0)
+            if (SelectionElement.Length > 0)
             {
-                Element[] elems = new Element[SelectionElement.Count];
-                SelectionElement.CopyTo(elems, 0);
+                Element[] elems = SelectionElement;
                 foreach (Element elem in elems)
                 {
                     RemoveElement(elem);
                 }
-                SelectionElement.Clear();
+                Selection.RemoveRange<Element>(elems);
             }
         }
 

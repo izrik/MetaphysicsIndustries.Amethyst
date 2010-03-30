@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Solus;
+using MetaphysicsIndustries.Crystalline;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -75,14 +76,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         private void saveImageAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-
-            sfd.Filter = "Bitmap Images (*.bmp)|*.bmp|All Files (*.*)|*.*";
-
-            if (sfd.ShowDialog(this) == DialogResult.OK)
-            {
-                Image.Save(sfd.FileName);
-            }
+            CrystallineControl.SaveImagePrompt(Image, this);
         }
 
         private static Dictionary<Bitmap, ImageDisplayForm> _forms = new Dictionary<Bitmap, ImageDisplayForm>();

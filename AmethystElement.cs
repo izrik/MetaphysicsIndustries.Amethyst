@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Crystalline;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using System.Diagnostics;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -90,7 +91,9 @@ namespace MetaphysicsIndustries.Amethyst
 
 
             AmethystControl control = (AmethystControl)(Framework.ParentControl);
-            if (ShallRenderTerminals)
+            Debug.Assert(control != null);
+
+            if (control != null && ShallRenderTerminals)
             {
                 RenderTerminals(g, pen, brush, font, control);
             }

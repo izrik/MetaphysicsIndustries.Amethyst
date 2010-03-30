@@ -5,7 +5,7 @@ using System.Reflection;
 using Microsoft.CSharp;
 using System.CodeDom.Compiler;
 using System.Diagnostics;
-using MetaphysicsIndustries.Giza;
+//using MetaphysicsIndustries.Giza;
 using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
@@ -50,7 +50,7 @@ namespace MetaphysicsIndustries.Amethyst
                 get { return _output; }
             }
 
-            CSharpCompiler _compiler = new CSharpCompiler();
+            MetaphysicsIndustries.Giza.CSharpCompiler _compiler = new MetaphysicsIndustries.Giza.CSharpCompiler();
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {

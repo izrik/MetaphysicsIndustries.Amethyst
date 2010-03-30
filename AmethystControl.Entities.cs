@@ -260,10 +260,7 @@ namespace MetaphysicsIndustries.Amethyst
 
 
             apath.PathJoints.Clear();
-            foreach (Utilities.Vector pt in pts)
-            {
-                apath.PathJoints.Add(new PathJoint(pt));
-            }
+            apath.PathJoints.AddRange(pts);
         }
 
         private void RoutePathType2(AmethystPath apath)
@@ -422,10 +419,7 @@ namespace MetaphysicsIndustries.Amethyst
 
 
             apath.PathJoints.Clear();
-            foreach (Utilities.Vector pt in pts)
-            {
-                apath.PathJoints.Add(new PathJoint(pt));
-            }
+            apath.PathJoints.AddRange(pts);
         }
 
         protected int GetTerminalQuadrant(Terminal fromTerminal)
