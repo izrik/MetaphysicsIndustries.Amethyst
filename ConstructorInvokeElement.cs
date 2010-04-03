@@ -246,7 +246,7 @@ namespace MetaphysicsIndustries.Amethyst
                     if (path != null)
                     {
                         term2.Path = null;
-                        ParentAmethystControl.RemovePath(path);
+                        ParentAmethystControl.RemoveEntity(path);
                     }
                 }
                 else if (term is OutputTerminal)
@@ -256,7 +256,7 @@ namespace MetaphysicsIndustries.Amethyst
                     term2.AmethystPaths.CopyTo(paths, 0);
                     foreach (AmethystPath path in paths)
                     {
-                        ParentAmethystControl.RemovePath(path);
+                        ParentAmethystControl.RemoveEntity(path);
                     }
                     term2.AmethystPaths.Clear();
                 }

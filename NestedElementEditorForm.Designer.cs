@@ -74,14 +74,12 @@ namespace MetaphysicsIndustries.Amethyst
             this.amethystControl1.AutoScrollMinSize = new System.Drawing.Size(360, 360);
             this.amethystControl1.BackColor = System.Drawing.SystemColors.Window;
             this.amethystControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.amethystControl1.ElementCollisions = true;
+            this.amethystControl1.BoxCollisions = true;
             this.amethystControl1.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amethystControl1.Location = new System.Drawing.Point(12, 38);
             this.amethystControl1.Name = "amethystControl1";
             this.amethystControl1.ShallRenderElements = true;
-            this.amethystControl1.ShallRenderPathingJunctions = false;
             this.amethystControl1.ShallRenderPaths = true;
-            this.amethystControl1.ShallRenderPathways = false;
             this.amethystControl1.ShowDebugInfo = false;
             this.amethystControl1.ShowPathArrows = true;
             this.amethystControl1.ShowPathJoints = false;

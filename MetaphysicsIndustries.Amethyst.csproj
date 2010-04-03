@@ -70,6 +70,7 @@
     <Compile Include="AmethystPath.cs" />
     <Compile Include="AmethystTerminalConnectionEngine.cs" />
     <Compile Include="AndMatrixFilterElement.cs" />
+    <Compile Include="AsynchronousExecutionEngine.cs" />
     <Compile Include="AveragerElement.cs" />
     <Compile Include="CalculateIntervalMeasureElement.cs" />
     <Compile Include="ColorImageDisplayElement.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="DoubleValueDisplayElement.cs" />
     <Compile Include="DoubleLiteralElement.cs" />
     <Compile Include="DualBellMatrixFilterElement.cs" />
+    <Compile Include="ExecutionEngine.cs" />
     <Compile Include="ExpandEdgeMatrixFilterGeneratorElement.cs" />
     <Compile Include="FeedbackElement.cs" />
     <Compile Include="FlattenerFilterElement.cs" />
@@ -194,6 +196,7 @@
     <Compile Include="ThresholdMatrixFilterElement.cs" />
     <Compile Include="ToStringElement.cs" />
     <Compile Include="TypeofElement.cs" />
+    <Compile Include="ValueCache.cs" />
     <Compile Include="ValueDisplayElement.cs" />
     <Compile Include="LiteralElement.cs" />
     <Compile Include="LoadImageElement.cs" />

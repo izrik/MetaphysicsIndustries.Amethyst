@@ -49,7 +49,7 @@ namespace MetaphysicsIndustries.Amethyst
             T ret = null;
 
             int i;
-            BoxList list = Framework.ZOrder;
+            ReadOnlyList<Box> list = Framework.ZOrder;
             for (i = list.Count - 1; i >= 0; i--)
             {
                 if (list[i] is AmethystElement)
@@ -131,6 +131,11 @@ namespace MetaphysicsIndustries.Amethyst
                     default:
                         break;
                 }
+
+                apath.PathJoints.Clear();
+                apath.PathJoints.Add(apath.From.GetOutboundConnectionPoint(apath));
+                apath.PathJoints.Add(apath.To.GetInboundConnectionPoint(apath));
+                return;
             }
             //else
             {
@@ -446,7 +451,7 @@ namespace MetaphysicsIndustries.Amethyst
             return sourceQuadrant;
         }
 
-        public override void RemovePath(Path pathToRemove)
+        protected override void InternalRemovePath(Path pathToRemove)
         {
             if (pathToRemove is AmethystPath)
             {
@@ -465,16 +470,16 @@ namespace MetaphysicsIndustries.Amethyst
                 apath.FromTerminal = null;
             }
             
-            base.RemovePath(pathToRemove);
+            base.InternalRemovePath(pathToRemove);
         }
 
-        public override void RemoveElement(Element elementToRemove)
+        protected override void InternalRemoveElement(Element elementToRemove)
         {
             Set<Path> paths = new Set<Path>(elementToRemove.Inbound);
             paths.AddRange(elementToRemove.Outbound);
             foreach (Path path in paths)
             {
-                RemovePath(path);
+                RemoveEntity(path);
             }
             if (elementToRemove is AmethystElement)
             {
@@ -485,7 +490,7 @@ namespace MetaphysicsIndustries.Amethyst
                 }
             }
 
-            base.RemoveElement(elementToRemove);
+            base.InternalRemoveElement(elementToRemove);
         }
 
         //public void UpdateTerminalState(Terminal terminal)
@@ -600,7 +605,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             AmethystPath path = new AmethystPath();
 
-            AddPath(path);
+            AddEntity(path);
 
             path.FromTerminal = from;
             path.ToTerminal = to;
@@ -617,7 +622,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
             AmethystPath path = terminalToDisconnect.Path;
             terminalToDisconnect.Path = null;
-            RemovePath(path);
+            RemoveEntity(path);
 
             RemoveFromValueCache(terminalToDisconnect);
         }

@@ -81,7 +81,7 @@ namespace MetaphysicsIndustries.Amethyst
 
                 InputTerminalElement elem = new InputTerminalElement(term);
                 elem.Location = amethystControl1.LastRightClickInDocument;
-                amethystControl1.AddElement(elem);
+                amethystControl1.AddEntity(elem);
             }
         }
 

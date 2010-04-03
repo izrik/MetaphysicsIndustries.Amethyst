@@ -90,7 +90,7 @@ namespace MetaphysicsIndustries.Amethyst
             g.TranslateTransform(X , Y );
 
 
-            AmethystControl control = (AmethystControl)(Framework.ParentControl);
+            AmethystControl control = ParentAmethystControl;
             Debug.Assert(control != null);
 
             if (control != null && ShallRenderTerminals)
@@ -230,12 +230,15 @@ namespace MetaphysicsIndustries.Amethyst
         {
             get
             {
-                if (Framework == null)
-                {
-                    return null;
-                }
+                return (ParentCrystallineControl as AmethystControl);
+            }
+        }
 
-                return (AmethystControl)Framework.ParentControl;
+        protected override void SetParentCrystallineControl(CrystallineControl value)
+        {
+            if (value is AmethystControl)
+            {
+                base.SetParentCrystallineControl(value);
             }
         }
     }

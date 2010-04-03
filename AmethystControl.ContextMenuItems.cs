@@ -86,6 +86,7 @@ namespace MetaphysicsIndustries.Amethyst
         ToolStripMenuItem _connectItem = new ToolStripMenuItem("Connect");
         ToolStripMenuItem _disconnectItem = new ToolStripMenuItem("Disconnect");
         ToolStripMenuItem _executeItem = new ToolStripMenuItem("Execute");
+        ToolStripMenuItem _executeAsyncItem = new ToolStripMenuItem("Execute Async");
         ToolStripMenuItem _deleteItem = new ToolStripMenuItem("Delete");
 
         ToolStripSeparator _separator = new ToolStripSeparator();
@@ -120,6 +121,7 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItem(ContextMenuStrip, _disconnectItem, new EventHandler(DisconnectItem_Click));
             ContextMenuStrip.Items.Add(new ToolStripSeparator());
             AddMenuItem(ContextMenuStrip, _executeItem, new EventHandler(ExecuteItem_Click));
+            AddMenuItem(ContextMenuStrip, _executeAsyncItem, new EventHandler(ExecuteAsyncItem_Click));
             ContextMenuStrip.Items.Add(new ToolStripSeparator());
             AddMenuItem(ContextMenuStrip, _deleteItem, new EventHandler(DeleteItem_Click2));
             ContextMenuStrip.Items.Add(new ToolStripSeparator());
@@ -330,9 +332,14 @@ namespace MetaphysicsIndustries.Amethyst
             Execute();
         }
 
+        void ExecuteAsyncItem_Click(object sender, EventArgs e)
+        {
+            ExecuteAsync();
+        }
+
         protected override void UpdateContextMenuItems()
         {
-            _deleteItem.Enabled = (SelectionElement.Length > 0);
+            _deleteItem.Enabled = (Selection.Count > 0);
             _connectItem.Enabled = (_connectionSourceTerminal != null);
             _disconnectItem.Enabled = (_disconnectionCandidate != null && _disconnectionCandidate.Path != null);
         }
@@ -385,14 +392,14 @@ namespace MetaphysicsIndustries.Amethyst
 
         void DeleteItem_Click2(object sender, EventArgs e)
         {
-            if (SelectionElement.Length > 0)
+            if (Selection.Count > 0)
             {
-                Element[] elems = SelectionElement;
-                foreach (Element elem in elems)
+                Entity[] elems = Selection.ToArray();
+                foreach (Entity elem in elems)
                 {
-                    RemoveElement(elem);
+                    RemoveEntity(elem);
                 }
-                Selection.RemoveRange<Element>(elems);
+                Selection.RemoveRange(elems);
             }
         }
 
