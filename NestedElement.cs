@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using MetaphysicsIndustries.Collections;
 using MetaphysicsIndustries.Crystalline;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,7 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class NestedElement : AmethystElement
     {
         public NestedElement()
-            : base(new NestedNode(), new SizeF(60, 60))
+            : base(new NestedNode(), new SizeV(60, 60))
         {
             Text = Node.Name;
         }
@@ -73,16 +74,10 @@ namespace MetaphysicsIndustries.Amethyst
             control.InvalidateRectFromEntity(this);
         }
 
-        private Set<Element> _elements = new Set<Element>();
-        public Set<Element> Elements
+        private Set<Entity> _entities = new Set<Entity>();
+        public Set<Entity> Entities
         {
-            get { return _elements; }
-        }
-
-        private Set<Path> _paths = new Set<Path>();
-        public Set<Path> Paths
-        {
-            get { return _paths; }
+            get { return _entities; }
         }
 
     }

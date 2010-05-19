@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Solus;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -12,7 +13,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class LoadImageElement : AmethystElement
     {
         public LoadImageElement()
-            : base(new LoadImageNode(), new SizeF(120, 60))
+            : base(new LoadImageNode(), new SizeV(120, 60))
         {
         }
 

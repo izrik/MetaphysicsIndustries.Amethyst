@@ -28,12 +28,9 @@ namespace MetaphysicsIndustries.Amethyst
 
             AddTeminalMenuItems();
 
-            amethystControl1.Elements.Clear();
-            amethystControl1.Paths.Clear();
             amethystControl1.Entities.Clear();
 
-            amethystControl1.Elements.AddRange(_target.Elements);
-            amethystControl1.Paths.AddRange(_target.Paths);
+            amethystControl1.Entities.AddRange(_target.Entities);
 
             amethystControl1.RouteAllPaths();
         }
@@ -89,31 +86,10 @@ namespace MetaphysicsIndustries.Amethyst
         {
             _target.Text = _nameTextBox.Text;
 
-            _target.Elements.Clear();
-            _target.Elements.AddRange(amethystControl1.Elements);
+            _target.Entities.Clear();
+            _target.Entities.AddRange(amethystControl1.Entities);
 
-            _target.Paths.Clear();
-            _target.Paths.AddRange(amethystControl1.Paths);
-
-            //this feels soooo kludgy
-            Dictionary<Path, Element> froms = new Dictionary<Path, Element>();
-            Dictionary<Path, Element> tos = new Dictionary<Path, Element>();
-            foreach (Path p in _target.Paths)
-            {
-                froms[p] = p.From;
-                tos[p] = p.To;
-            }
-
-            amethystControl1.Elements.Clear();
-            amethystControl1.Paths.Clear();
             amethystControl1.Entities.Clear();
-
-            //kludge, part 2
-            foreach (Path p in _target.Paths)
-            {
-                p.From = froms[p];
-                p.To = tos[p];
-            }
         }
     }
 }

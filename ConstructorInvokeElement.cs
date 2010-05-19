@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,7 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class ConstructorInvokeElement : AmethystElement
     {
         public ConstructorInvokeElement()
-            : base(new ConstructorInvokeNode(), new SizeF(80, 80))
+            : base(new ConstructorInvokeNode(), new SizeV(80, 80))
         {
         }
 
@@ -232,7 +233,7 @@ namespace MetaphysicsIndustries.Amethyst
                 y += 20;
             }
 
-            Size = new SizeF(Width, Math.Max((Node.InputConnectionBases.Count + 1) * 20, (Node.OutputConnectionBases.Count + 1) * 20 + 10));
+            Size = new SizeV(Width, Math.Max((Node.InputConnectionBases.Count + 1) * 20, (Node.OutputConnectionBases.Count + 1) * 20 + 10));
         }
 
         private void ClearTerminals()
@@ -246,7 +247,7 @@ namespace MetaphysicsIndustries.Amethyst
                     if (path != null)
                     {
                         term2.Path = null;
-                        ParentAmethystControl.RemoveEntity(path);
+                        ParentAmethystControl.DisconnectAndRemoveEntity(path);
                     }
                 }
                 else if (term is OutputTerminal)
@@ -256,7 +257,7 @@ namespace MetaphysicsIndustries.Amethyst
                     term2.AmethystPaths.CopyTo(paths, 0);
                     foreach (AmethystPath path in paths)
                     {
-                        ParentAmethystControl.RemoveEntity(path);
+                        ParentAmethystControl.DisconnectAndRemoveEntity(path);
                     }
                     term2.AmethystPaths.Clear();
                 }

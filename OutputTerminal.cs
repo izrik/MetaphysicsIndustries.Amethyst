@@ -78,5 +78,21 @@ namespace MetaphysicsIndustries.Amethyst
         {
             get { return _amethystPaths; }
         }
+
+        public override void Disconnect(out Entity[] entitiesToRemove)
+        {
+            List<Entity> list = new List<Entity>();
+            Entity[] array;
+
+            list.AddRange(AmethystPaths.ToArray());
+
+            base.Disconnect(out array);
+            if (array != null)
+            {
+                list.AddRange(array);
+            }
+
+            entitiesToRemove = list.ToArray();
+        }
     }
 }

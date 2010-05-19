@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Crystalline;
-using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
 using System.Diagnostics;
+using MetaphysicsIndustries.Utilities;
+using System.Drawing;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -17,12 +18,12 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
-        protected static SizeF CalcSizeFromNodeConnections(Node node)
+        protected static SizeV CalcSizeFromNodeConnections(Node node)
         {
-            return new SizeF(60, 20 + 20 * (int)Math.Max(node.InputConnectionBases.Count, node.OutputConnectionBases.Count));
+            return new SizeV(60, 20 + 20 * (int)Math.Max(node.InputConnectionBases.Count, node.OutputConnectionBases.Count));
         }
 
-        public AmethystElement(Node node, SizeF size)
+        public AmethystElement(Node node, SizeV size)
         {
             if (node == null) { throw new ArgumentNullException("node"); }
 
@@ -236,10 +237,27 @@ namespace MetaphysicsIndustries.Amethyst
 
         protected override void SetParentCrystallineControl(CrystallineControl value)
         {
-            if (value is AmethystControl)
+            if (value == null || value is AmethystControl)
             {
                 base.SetParentCrystallineControl(value);
             }
+        }
+
+        public override void Disconnect(out Entity[] entitiesToRemove)
+        {
+            List<Entity> list = new List<Entity>();
+            Entity[] array;
+
+            list.AddRange(Terminals.ToArray());
+
+            base.Disconnect(out array);
+
+            if (array != null)
+            {
+                list.AddRange(array);
+            }
+
+            entitiesToRemove = list.ToArray();
         }
     }
 }

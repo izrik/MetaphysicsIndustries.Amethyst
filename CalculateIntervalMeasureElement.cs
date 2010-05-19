@@ -6,6 +6,7 @@ using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Collections;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,7 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class CalculateIntervalMeasureElement : AmethystElement
     {
         public CalculateIntervalMeasureElement()
-            : base(new CalculateIntervalMeasureNode(), new SizeF(80,60))
+            : base(new CalculateIntervalMeasureNode(), new SizeV(80,60))
         {
         }
 

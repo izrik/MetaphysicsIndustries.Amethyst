@@ -11,7 +11,7 @@ namespace MetaphysicsIndustries.Amethyst
     public abstract class TerminalElement : AmethystElement
     {
         public TerminalElement(Terminal terminal)
-            : base(new NullNode(), new SizeF(60,60))
+            : base(new NullNode(), new SizeV(60,60))
         {
             _terminal = terminal;
 
@@ -39,7 +39,7 @@ namespace MetaphysicsIndustries.Amethyst
             PointF[] pt = GetPolygon();
             int i;
 
-            SizeF position = new SizeF(GetCenterOfBox());
+            SizeV position = new SizeV(GetCenterOfBox());
 
             for (i = 0; i < pt.Length; i++)
             {

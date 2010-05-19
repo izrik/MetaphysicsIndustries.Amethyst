@@ -17,7 +17,7 @@ namespace MetaphysicsIndustries.Amethyst
         }
 
         public PyramidProcessorMatrixFilterElement(ICalculation estimator, string name)
-            : base(new PyramidProcessorMatrixFilter(estimator), name + " Pyramid", new SizeF(60, 100))
+            : base(new PyramidProcessorMatrixFilter(estimator), name + " Pyramid", new SizeV(60, 100))
         {
         }
 

@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,7 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class ThresholdMatrixFilterElement : MatrixFilterElement
     {
         public ThresholdMatrixFilterElement()
-            : base(new ThresholdMatrixFilterNode(), new SizeF(100, 80))
+            : base(new ThresholdMatrixFilterNode(), new SizeV(100, 80))
         {
         }
 

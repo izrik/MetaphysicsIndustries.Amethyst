@@ -60,5 +60,21 @@ namespace MetaphysicsIndustries.Amethyst
             }
         }
 
+        public override void Disconnect(out Entity[] entitiesToRemove)
+        {
+            if (ToTerminal != null)
+            {
+                ParentCrystallineControl.InvalidateRectFromEntity(ToTerminal);
+            }
+            if (FromTerminal != null)
+            {
+                ParentCrystallineControl.InvalidateRectFromEntity(FromTerminal);
+            }
+
+            ToTerminal = null;
+            FromTerminal = null;
+
+            base.Disconnect(out entitiesToRemove);
+        }
     }
 }

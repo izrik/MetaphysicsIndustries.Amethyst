@@ -5,18 +5,19 @@ using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
     public class AluElement : AmethystElement
     {
-        protected AluElement(Node node, SizeF size)
+        protected AluElement(Node node, SizeV size)
             : base(node, size)
         {
         }
 
         public AluElement()
-            : this(new NullNode(), new SizeF(80, 60))
+            : this(new NullNode(), new SizeV(80, 60))
         {
         }
 
@@ -100,7 +101,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class MuxElement : AluElement
     {
         public MuxElement()
-            : base(new NullNode(), new SizeF(180, 60))
+            : base(new NullNode(), new SizeV(180, 60))
         {
         }
 

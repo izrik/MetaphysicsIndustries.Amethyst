@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Solus;
 using System.Drawing;
 using MetaphysicsIndustries.Ligra;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -15,7 +16,7 @@ namespace MetaphysicsIndustries.Amethyst
         public ColorImageDisplayElement()
             : base(new ColorImageDisplayNode())
         {
-            Size = new SizeF(100, Height);
+            Size = new SizeV(100, Height);
         }
 
         public new ColorImageDisplayNode Node
@@ -61,18 +62,21 @@ namespace MetaphysicsIndustries.Amethyst
                 get { return _inputB; }
             }
 
+            [NonSerialized]
             private Matrix _imageR;
             public Matrix ImageR
             {
                 get { return _imageR; }
                 set { _imageR = value; }
             }
+            [NonSerialized]
             private Matrix _imageG;
             public Matrix ImageG
             {
                 get { return _imageG; }
                 set { _imageG = value; }
             }
+            [NonSerialized]
             private Matrix _imageB;
             public Matrix ImageB
             {
@@ -130,14 +134,22 @@ namespace MetaphysicsIndustries.Amethyst
             }
         }
 
+        [NonSerialized]
         Matrix _lastMatrixUncloneR;
+        [NonSerialized]
         Matrix _lastMatrixR;
+        [NonSerialized]
         Matrix _lastMatrixUncloneG;
+        [NonSerialized]
         Matrix _lastMatrixG;
+        [NonSerialized]
         Matrix _lastMatrixUncloneB;
+        [NonSerialized]
         Matrix _lastMatrixB;
+        [NonSerialized]
         Bitmap _lastBitmap;
-        TriModulatorMatrixFilter _colorModulator = new TriModulatorMatrixFilter(AcuityEngine.ConvertRgbTo24cTriModulator);
+
+        //TriModulatorMatrixFilter _colorModulator = new TriModulatorMatrixFilter(AcuityEngine.ConvertRgbTo24cTriModulator);
 
         protected void UpdateImageCache()
         {

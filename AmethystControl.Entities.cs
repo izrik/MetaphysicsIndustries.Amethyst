@@ -9,6 +9,7 @@ using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Collections;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -43,7 +44,7 @@ namespace MetaphysicsIndustries.Amethyst
             where T : Terminal
         {
 
-            //RectangleF rect = new RectangleF(docSpace, new SizeF(0, 0));
+            //RectangleF rect = new RectangleF(docSpace, new SizeV(0, 0));
             //rect.Inflate(20, 20);
 
             T ret = null;
@@ -83,7 +84,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         protected virtual RectangleF GetRectFromTerminalInDocumentSpace(Terminal term)
         {
-            RectangleF rect = new RectangleF(term.GetLocationInDocumentSpace(), new SizeF(0, 0));
+            RectangleF rect = new RectangleF(term.GetLocationInDocumentSpace(), new SizeV(0, 0));
             rect.Inflate(2 * term.Size, 2 * term.Size);
 
             switch (term.Side)
@@ -192,20 +193,20 @@ namespace MetaphysicsIndustries.Amethyst
             //switch (toSide)
             //{
             //    case BoxOrientation.Up:
-            //        offset1 = new SizeF(apath.ArrowSize, 0);
-            //        offset2 = new SizeF(0, -apath.ArrowSize);
+            //        offset1 = new SizeV(apath.ArrowSize, 0);
+            //        offset2 = new SizeV(0, -apath.ArrowSize);
             //        break;
             //    case BoxOrientation.Right:
-            //        offset1 = new SizeF(0, apath.ArrowSize);
-            //        offset2 = new SizeF(apath.ArrowSize, 0);
+            //        offset1 = new SizeV(0, apath.ArrowSize);
+            //        offset2 = new SizeV(apath.ArrowSize, 0);
             //        break;
             //    case BoxOrientation.Down:
-            //        offset1 = new SizeF(-apath.ArrowSize, 0);
-            //        offset2 = new SizeF(0, apath.ArrowSize);
+            //        offset1 = new SizeV(-apath.ArrowSize, 0);
+            //        offset2 = new SizeV(0, apath.ArrowSize);
             //        break;
             //    default:
-            //        offset1 = new SizeF(0, -apath.ArrowSize);
-            //        offset2 = new SizeF(-apath.ArrowSize, 0);
+            //        offset1 = new SizeV(0, -apath.ArrowSize);
+            //        offset2 = new SizeV(-apath.ArrowSize, 0);
             //        break;
             //}
             
@@ -451,46 +452,31 @@ namespace MetaphysicsIndustries.Amethyst
             return sourceQuadrant;
         }
 
-        protected override void InternalRemovePath(Path pathToRemove)
+        public override void DisconnectAndRemoveEntity(Entity ent)
         {
-            if (pathToRemove is AmethystPath)
+            if (ent is AmethystElement)
             {
-                AmethystPath apath = (AmethystPath)pathToRemove;
-
-                if (apath.ToTerminal != null)
-                {
-                    InvalidateRectFromEntity(apath.ToTerminal);
-                }
-                if (apath.FromTerminal != null)
-                {
-                    InvalidateRectFromEntity(apath.FromTerminal);
-                }
-
-                apath.ToTerminal = null;
-                apath.FromTerminal = null;
-            }
-            
-            base.InternalRemovePath(pathToRemove);
-        }
-
-        protected override void InternalRemoveElement(Element elementToRemove)
-        {
-            Set<Path> paths = new Set<Path>(elementToRemove.Inbound);
-            paths.AddRange(elementToRemove.Outbound);
-            foreach (Path path in paths)
-            {
-                RemoveEntity(path);
-            }
-            if (elementToRemove is AmethystElement)
-            {
-                AmethystElement elem = (AmethystElement)elementToRemove;
+                AmethystElement elem = (AmethystElement)ent;
                 foreach (Terminal terminal in elem.Terminals)
                 {
-                    RemoveFromValueCache(terminal);
+                    _valueCache.Remove(terminal);
                 }
             }
+            else if (ent is InputTerminal)
+            {
+                DisconnectInputTerminal(ent as InputTerminal);
+            }
 
-            base.InternalRemoveElement(elementToRemove);
+            base.DisconnectAndRemoveEntity(ent);
+        }
+
+        protected void DisconnectInputTerminal(InputTerminal terminalToDisconnect)
+        {
+            AmethystPath path = terminalToDisconnect.Path;
+            terminalToDisconnect.Path = null;
+            DisconnectAndRemoveEntity(path);
+
+            _valueCache.Remove(terminalToDisconnect);
         }
 
         //public void UpdateTerminalState(Terminal terminal)
@@ -612,19 +598,10 @@ namespace MetaphysicsIndustries.Amethyst
 
             RoutePath(path);
 
-            RemoveFromValueCache(to);
+            _valueCache.Remove(to);
 
             //UpdateOutputTerminalState(from);
             //UpdateInputTerminalState(to);
-        }
-
-        protected void DisconnectInputTerminal(InputTerminal terminalToDisconnect)
-        {
-            AmethystPath path = terminalToDisconnect.Path;
-            terminalToDisconnect.Path = null;
-            RemoveEntity(path);
-
-            RemoveFromValueCache(terminalToDisconnect);
         }
     }
 }

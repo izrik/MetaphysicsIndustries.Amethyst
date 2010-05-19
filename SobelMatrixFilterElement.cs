@@ -6,6 +6,7 @@ using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Collections;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,7 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class SobelMatrixFilterElement : MatrixFilterElement
     {
         public SobelMatrixFilterElement()
-            : base(new SobelMatrixFilterNode(), new SizeF(100,100))
+            : base(new SobelMatrixFilterNode(), new SizeV(100,100))
         {
         }
 

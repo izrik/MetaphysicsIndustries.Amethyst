@@ -110,7 +110,12 @@ namespace MetaphysicsIndustries.Amethyst
 
 		private OutputTerminal _parent;
 		private Set<AmethystPath> _set = new Set<AmethystPath>();
-	}
+
+        public AmethystPath[] ToArray()
+        {
+            return _set.ToArray();
+        }
+    }
 }
 
 

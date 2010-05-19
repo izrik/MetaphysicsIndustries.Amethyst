@@ -16,6 +16,9 @@ namespace MetaphysicsIndustries.Amethyst
             InitializeComponent();
 
             //_terminalConnectionEngine = new AmethystTerminalConnectionEngine(this);
+
+            _valueCache.TerminalRemoved += new EventHandler<TerminalEventArgs>(valueCache_TerminalRemoved);
+            _executionEngine.ElementExecuted += new EventHandler<AmethystElementEventArgs>(executionEngine_ElementExecuted);
         }
 
         AmethystTerminalConnectionEngine _terminalConnectionEngine;
@@ -38,6 +41,13 @@ namespace MetaphysicsIndustries.Amethyst
 
             //MakeConnection((OutputTerminal)gof.TerminalsByConnection[gof.Node2.Output], (InputTerminal)li.TerminalsByConnection[li.Node.Input]);
             //MakeConnection((OutputTerminal)li.TerminalsByConnection[li.Node.Output], (InputTerminal)id.TerminalsByConnection[id.Node.Input]);
+        }
+
+        public void RemoveFromValueCache(Terminal terminal)
+        {
+            if (terminal == null) { throw new ArgumentNullException("terminal"); }
+
+            _valueCache.Remove(terminal);
         }
     }
 }

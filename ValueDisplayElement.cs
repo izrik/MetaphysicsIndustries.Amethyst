@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
     [Serializable]
     public abstract class ValueDisplayElement<T> : AmethystElement
     {
-        public ValueDisplayElement(ValueDisplayNode node, SizeF size)
+        public ValueDisplayElement(ValueDisplayNode node, SizeV size)
             : base(node, size)
         {
         }
@@ -27,6 +28,7 @@ namespace MetaphysicsIndustries.Amethyst
                 InputConnectionBases.Add(Input);
             }
 
+            [NonSerialized]
             private T _value;
             public T Value
             {

@@ -4,6 +4,8 @@ using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Epiphany;
+using System.Runtime.Serialization;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,10 +15,10 @@ namespace MetaphysicsIndustries.Amethyst
     //}
 
     [Serializable]
-    public abstract class LiteralElement<T> : AmethystElement//, INodeValueChangedReceiver
+    public abstract class LiteralElement<T> : AmethystElement, IDeserializationCallback//, INodeValueChangedReceiver
         where T : IEquatable<T>
     {
-        public LiteralElement(LiteralNode node, SizeF size)
+        public LiteralElement(LiteralNode node, SizeV size)
             : base(node, size)
         {
             node.ValueChanged += new EventHandler(node_ValueChanged);
@@ -80,6 +82,7 @@ namespace MetaphysicsIndustries.Amethyst
                 //}
             }
 
+            [field: NonSerialized]
             public event EventHandler ValueChanged;
             //
 
@@ -158,5 +161,14 @@ namespace MetaphysicsIndustries.Amethyst
         //{
         //    node_ValueChanged(sender, e);
         //}
+
+        #region IDeserializationCallback Members
+
+        public void OnDeserialization(object sender)
+        {
+            Node2.ValueChanged += new EventHandler(node_ValueChanged);
+        }
+
+        #endregion
     }
 }

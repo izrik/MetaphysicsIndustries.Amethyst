@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -14,7 +15,7 @@ namespace MetaphysicsIndustries.Amethyst
         //where T : MatrixFilter
     {
         public MatrixFilterApplyElement()
-            : base(new MatrixFilterApplyNode(), new SizeF(120,60))
+            : base(new MatrixFilterApplyNode(), new SizeV(120,60))
         {
         }
 

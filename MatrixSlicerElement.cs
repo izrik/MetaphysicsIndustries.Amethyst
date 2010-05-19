@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Solus;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -14,7 +15,7 @@ namespace MetaphysicsIndustries.Amethyst
         public MatrixSlicerElement()
             : base(new MatrixSlicerNode())
         {
-            Size = Size + new SizeF(50, 0);
+            Size = new SizeV(Size.Width + 50, Size.Height);
         }
 
         protected override void InitTerminals()

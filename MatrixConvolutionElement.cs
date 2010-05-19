@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Solus;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -12,7 +13,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class MatrixConvolutionElement : AmethystElement
     {
         public MatrixConvolutionElement()
-            : base(new MatrixConvolutionNode(), new SizeF(80,80))
+            : base(new MatrixConvolutionNode(), new SizeV(80,80))
         {
         }
 

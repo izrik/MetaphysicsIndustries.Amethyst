@@ -41,9 +41,10 @@
     <Compile Include="AllInElement.cs" />
     <Compile Include="AllOutElement.cs" />
     <Compile Include="AlphaTrimmedDualBellMatrixFilterElement.cs" />
+    <Compile Include="AlphaTrimmedMeanElement.cs" />
     <Compile Include="AlphaTrimWindowProcessorElement.cs" />
     <Compile Include="AluElement.cs" />
-    <Compile Include="AmethystControl.ContextMenuItems.cs">
+    <Compile Include="AmethystControl.Menu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AmethystControl.cs">
@@ -65,6 +66,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AmethystElement.cs" />
+    <Compile Include="AmethystElementEventHandler.cs" />
     <Compile Include="AmethystElementTerminalParentChildrenCollection.cs" />
     <Compile Include="AmethystExecuteException.cs" />
     <Compile Include="AmethystPath.cs" />
@@ -104,15 +106,16 @@
     <Compile Include="DoubleLiteralElement.cs" />
     <Compile Include="DualBellMatrixFilterElement.cs" />
     <Compile Include="ExecutionEngine.cs" />
-    <Compile Include="ExpandEdgeMatrixFilterGeneratorElement.cs" />
+    <Compile Include="ExpandEdgeMatrixFilterElement.cs" />
     <Compile Include="FeedbackElement.cs" />
     <Compile Include="FlattenerFilterElement.cs" />
     <Compile Include="GaussianBlurFilterElement.cs" />
-    <Compile Include="GaussianNoiseMatrixFilterGeneratorElement.cs" />
+    <Compile Include="GaussianNoiseMatrixFilterElement.cs" />
     <Compile Include="GetOpenFilenameElement.cs" />
     <Compile Include="GetSaveFilenameElement.cs" />
     <Compile Include="HistogramElement.cs" />
     <Compile Include="HslToRgbConverterElement.cs" />
+    <Compile Include="IExecutionEngine.cs" />
     <Compile Include="ImageDisplayElement.cs" />
     <Compile Include="ImageDisplayForm.cs">
       <SubType>Form</SubType>
@@ -184,6 +187,7 @@
       <DependentUpon>TerminalEditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TerminalElement.cs" />
+    <Compile Include="TerminalEventHandler.cs" />
     <Compile Include="TerminalState.cs" />
     <Compile Include="TextElement.cs" />
     <Compile Include="TextElementPropertiesForm.cs">
@@ -205,9 +209,8 @@
     <Compile Include="MatrixFilterApplyElement.cs" />
     <Compile Include="MatrixFilterElement.cs" />
     <Compile Include="MatrixFilterGeneratorElement.cs" />
-    <Compile Include="MeanMatrixFilterElement.cs" />
-    <Compile Include="MeanMatrixFilterGeneratorElement.cs" />
-    <Compile Include="MedianMatrixFilterGeneratorElement.cs" />
+    <Compile Include="ArithmeticMeanFilterElement.cs" />
+    <Compile Include="MedianMatrixFilterElement.cs" />
     <Compile Include="MmseAmethystElement.cs" />
     <Compile Include="MmseNode.cs" />
     <Compile Include="MssimMeasureElement.cs" />
@@ -227,6 +230,7 @@
     <Compile Include="TestNode.cs" />
     <Compile Include="VarianceCalculatorElement.cs" />
     <Compile Include="WindowProcessorElement.cs" />
+    <Compile Include="ZetaTrimmedMeanElement.cs" />
     <Compile Include="ZetaTrimWindowProcessorElement.cs" />
   </ItemGroup>
   <ItemGroup>

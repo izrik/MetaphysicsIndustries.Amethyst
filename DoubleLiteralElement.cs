@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -9,7 +10,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class DoubleLiteralElement : LiteralElement<double>
     {
         public DoubleLiteralElement()
-            : base(new LiteralNode("Double Literal"), new SizeF(80, 40))
+            : base(new LiteralNode("Double Literal"), new SizeV(80, 40))
         {
         }
 

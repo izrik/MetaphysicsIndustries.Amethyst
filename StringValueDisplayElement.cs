@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -9,7 +10,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class StringValueDisplayElement : ValueDisplayElement<string>
     {
         public StringValueDisplayElement()
-            : base(new ValueDisplayNode("String Value"), new SizeF(80, 40))
+            : base(new ValueDisplayNode("String Value"), new SizeV(80, 40))
         {
         }
 

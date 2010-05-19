@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -10,7 +11,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class FeedbackElement : AmethystElement
     {
         public FeedbackElement()
-            : base(new FeedbackNode(), new SizeF(100, 100))
+            : base(new FeedbackNode(), new SizeV(100, 100))
         {
         }
 

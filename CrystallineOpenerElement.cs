@@ -17,7 +17,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
         public CrystallineOpenerElement(Color color)
-            : base(new CrystallineOpenerNode(), new SizeF(120, 50))
+            : base(new CrystallineOpenerNode(), new SizeV(120, 50))
         {
             _color = color;
             _fillBrush = new SolidBrush(color);

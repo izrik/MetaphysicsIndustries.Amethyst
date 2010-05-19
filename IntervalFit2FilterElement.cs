@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Solus;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -12,7 +13,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class IntervalFit2FilterElement : MatrixFilterElement
     {
         public IntervalFit2FilterElement()
-            : base(new IntervalFit2FilterNode(), new SizeF(100, 80))
+            : base(new IntervalFit2FilterNode(), new SizeV(100, 80))
         {
         }
 

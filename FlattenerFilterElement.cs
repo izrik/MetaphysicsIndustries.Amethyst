@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
 using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -12,7 +13,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class FlattenerFilterElement : MatrixFilterElement
     {
         public FlattenerFilterElement()
-            : base(new FlattenerFilterNode(), new SizeF(100, 80))
+            : base(new FlattenerFilterNode(), new SizeV(100, 80))
         {
         }
 

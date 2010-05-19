@@ -5,6 +5,7 @@ using MetaphysicsIndustries.Solus;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -15,7 +16,7 @@ namespace MetaphysicsIndustries.Amethyst
             : this(new MatrixFilterNode(filter, name))
         {
         }
-        public MatrixFilterElement(MatrixFilter filter, string name, SizeF size)
+        public MatrixFilterElement(MatrixFilter filter, string name, SizeV size)
             : this(new MatrixFilterNode(filter, name), size)
         {
         }
@@ -25,7 +26,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
-        protected MatrixFilterElement(MatrixFilterNode node, SizeF size)
+        protected MatrixFilterElement(MatrixFilterNode node, SizeV size)
             : base(node, size)
         {
         }
@@ -71,6 +72,10 @@ namespace MetaphysicsIndustries.Amethyst
             }
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
+            {
+                Execute(inputs, outputs, Filter);
+            }
+            public virtual void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs, MatrixFilter filter)
             {
                 Matrix image = (Matrix)inputs[Input];
 

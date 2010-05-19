@@ -111,7 +111,18 @@ namespace MetaphysicsIndustries.Amethyst
 
 		private AmethystElement _parent;
 		private Set<Terminal> _set = new Set<Terminal>();
-	}
+
+        public T[] Extract<T>()
+            where T : Terminal
+        {
+            return _set.Extract<T>();
+        }
+
+        public Terminal[] ToArray()
+        {
+            return _set.ToArray();
+        }
+    }
 }
 
 

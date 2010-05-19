@@ -12,7 +12,7 @@ using System.Drawing.Imaging;
 
 namespace MetaphysicsIndustries.Amethyst
 {
-    public partial class AmethystControl : MetaphysicsIndustries.Crystalline.CrystallineControl
+    public partial class AmethystControl : CrystallineControl
     {
         ToolStripMenuItem _addItem = new ToolStripMenuItem("Add");
         public ToolStripMenuItem AddItem
@@ -195,14 +195,6 @@ namespace MetaphysicsIndustries.Amethyst
             }
         }
 
-        private void AddMiscItems(ToolStripMenuItem parentMenu)
-        {
-            AddMenuItemForElement<LoadImageElement>("Load Image", parentMenu);
-            AddMenuItemForElement<SaveImageElement>("Save Image", parentMenu);
-            AddMenuItemForElement<LoadColorImageElement>("Load Color Image", parentMenu);
-            AddMenuItemForElement<MmseAmethystElement>("MMSE", parentMenu);
-            AddMenuItemForElement<MatrixConvolutionElement>("Matrix Convolution", parentMenu);
-        }
         private void AddDebugItems(ToolStripMenuItem parentMenu)
         {
             ToolStripMenuItem newMenu = CreateMenu("Debug", parentMenu);
@@ -233,51 +225,90 @@ namespace MetaphysicsIndustries.Amethyst
         {
             ToolStripMenuItem solusMenu = CreateSectionMenu("Solus");
 
-            AddSolusDisplayItems(solusMenu);
+            AddMenuItemForElement<ImageDisplayElement>("Image Display", solusMenu);
+            AddMenuItemForElement<ColorImageDisplayElement>("Color Image Display", solusMenu);
+
+            solusMenu.DropDownItems.Add(new ToolStripSeparator());
+
             AddFilterItems(solusMenu);
-            AddFilterGeneratorItems(solusMenu);
+            AddNoiseItems(solusMenu);
+            AddEdgeDetectorsItems(solusMenu);
+            AddLevelsItems(solusMenu);
+            AddMatrixOpsItems(solusMenu);
+            AddPyramidProcessorItems(solusMenu);
             AddWindowProcessorItems(solusMenu);
             AddWindowCalculationItems(solusMenu);
             AddMeasureItems(solusMenu);
-            AddMiscItems(solusMenu);
+
+            solusMenu.DropDownItems.Add(new ToolStripSeparator());
+
+            AddMenuItemForElement<LoadImageElement>("Load Image", solusMenu);
+            AddMenuItemForElement<LoadColorImageElement>("Load Color Image", solusMenu);
+            AddMenuItemForElement<SaveImageElement>("Save Image", solusMenu);
+
+            solusMenu.DropDownItems.Add(new ToolStripSeparator());
+
+            AddMenuItemForElement<MmseAmethystElement>("MMSE", solusMenu);
+            AddMenuItemForElement<MatrixConvolutionElement>("Matrix Convolution", solusMenu);
         }
 
-        private void AddSolusDisplayItems(ToolStripMenuItem parentMenu)
+        private void AddNoiseItems(ToolStripMenuItem solusMenu)
         {
-            ToolStripMenuItem newMenu = CreateMenu("Display", parentMenu);
-            AddMenuItemForElement<ImageDisplayElement>("Image", newMenu);
-            AddMenuItemForElement<ColorImageDisplayElement>("Color Image", newMenu);
+            ToolStripMenuItem newMenu = CreateMenu("Noise", solusMenu);
+
+            AddMenuItemForElement<GaussianNoiseMatrixFilterElement>("Gaussian Noise", newMenu);
+            AddMenuItemForElement<ImpulseNoiseFilterElement>("Impulse Noise", newMenu);
         }
-        private void AddFilterGeneratorItems(ToolStripMenuItem parentMenu)
-        {
-            ToolStripMenuItem newMenu = CreateMenu("Filter Generator", parentMenu);
-            //AddMenuItemForElement<ImpulseNoiseMatrixFilterGeneratorElement>(_addImpulseNoiseFilterGeneratorItem, menu3);
-            AddMenuItemForElement<GaussianNoiseMatrixFilterGeneratorElement>("Gaussian Noise", newMenu);
-            newMenu.DropDownItems.Add(new ToolStripSeparator());
-            AddMenuItemForElement<MedianMatrixFilterGeneratorElement>("Median", newMenu);
-            AddMenuItemForElement<MeanMatrixFilterGeneratorElement>("Mean Filter", newMenu);
-            AddMenuItemForElement<ExpandEdgeMatrixFilterGeneratorElement>("Expand Edge", newMenu);
-        }
+
         private void AddFilterItems(ToolStripMenuItem parentMenu)
         {
             ToolStripMenuItem newMenu = CreateMenu("Filter", parentMenu);
-            AddMenuItemForElement<MatrixFilterApplyElement>("Filter Apply", newMenu);
-            newMenu.DropDownItems.Add(new ToolStripSeparator());
-            AddMenuItemForElement<ImpulseNoiseFilterElement>("Impulse Noise", newMenu);
+            AddMenuItemForElement<MedianMatrixFilterElement>("Median", newMenu);
+            AddMenuItemForElement<GaussianBlurFilterElement>("Gaussian Blur", newMenu);
+            AddMenuItemForElement<ArithmeticMeanFilterElement>("Arithmetic Mean", newMenu);
+            AddMenuItemForElement<AlphaTrimmedMeanElement>("Alpha-trimmed Mean", newMenu);
+            AddMenuItemForElement<ZetaTrimmedMeanElement>("Zeta-trimmed Mean", newMenu);
+
+
+
+        }
+        private void AddEdgeDetectorsItems(ToolStripMenuItem parentMenu)
+        {
+            ToolStripMenuItem newMenu = CreateMenu("Edge Detect", parentMenu);
+
             AddMenuItemForElement<SobelMatrixFilterElement>("Sobel Filter", newMenu);
             AddMenuItemForElement<DualBellMatrixFilterElement>("Dual Bell Filter", newMenu);
             AddMenuItemForElement<AlphaTrimmedDualBellMatrixFilterElement>("Alpha Trimmed Dual Bell Filter", newMenu);
+        }
+
+        private void AddLevelsItems(ToolStripMenuItem parentMenu)
+        {
+            ToolStripMenuItem newMenu = CreateMenu("Levels", parentMenu);
+
             AddMenuItemForElement<IntervalFitMatrixFilterElement>("Interval Fit", newMenu);
             AddMenuItemForElement<IntervalFit2FilterElement>("Interval Fit 2", newMenu);
             AddMenuItemForElement<NegOneOneToZeroOneFitMatrixFilterElement>("[-1,1] -> [0,1]", newMenu);
-            AddMenuItemForElement<RgbToHslConverterElement>("RGB -> HSL", newMenu);
-            AddMenuItemForElement<MatrixSlicerElement>("Matrix.GetSlice", newMenu);
             AddMenuItemForElement<ThresholdMatrixFilterElement>("Threshold", newMenu);
             AddMenuItemForElement<AndMatrixFilterElement>("Matrix And", newMenu);
             AddMenuItemForElement<InverterMatrixFilterElement>("Matrix Inverter", newMenu);
-            AddMenuItemForElement<GaussianBlurFilterElement>("Gaussian Blur", newMenu);
-            AddMenuItemForElement<FlattenerFilterElement>("Flattener", newMenu);
+            //AddMenuItemForElement<FlattenerFilterElement>("Flattener", newMenu);
 
+            newMenu.DropDownItems.Add(new ToolStripSeparator());
+
+            AddMenuItemForElement<RgbToHslConverterElement>("RGB -> HSL", newMenu);
+            AddMenuItemForElement<HslToRgbConverterElement>("HSL -> RGB", newMenu);
+        }
+
+        private void AddMatrixOpsItems(ToolStripMenuItem parentMenu)
+        {
+            ToolStripMenuItem newMenu = CreateMenu("Matrix Ops", parentMenu);
+            AddMenuItemForElement<MatrixSlicerElement>("Matrix.GetSlice", newMenu);
+            AddMenuItemForElement<ExpandEdgeMatrixFilterElement>("Expand Edge", newMenu);
+        }
+
+        private void AddPyramidProcessorItems(ToolStripMenuItem parentMenu)
+        {
+            ToolStripMenuItem newMenu = CreateMenu("Pyramid Processors", parentMenu);
             AddMenuItemForElement<ArithmeticMeanPyramidProcessor>("Arithmetic Mean Pyramid Processor", newMenu);
             AddMenuItemForElement<GeometricMeanPyramidProcessor>("Geometric Mean Pyramid Processor", newMenu);
             AddMenuItemForElement<MaxPyramidProcessor>("Max Pyramid Processor", newMenu);
@@ -329,7 +360,31 @@ namespace MetaphysicsIndustries.Amethyst
 
         void ExecuteItem_Click(object sender, EventArgs e)
         {
-            Execute();
+            try
+            {
+                AmethystElement[] elements = Entities.Extract<AmethystElement>();
+
+                _executionEngine.Execute(elements, _valueCache);
+
+                StringBuilder sb = new StringBuilder();
+                foreach (AmethystElement elem in elements)
+                {
+                    sb.AppendLine(elem.Text);
+                }
+                MessageBox.Show(this, "Success: \r\n" + sb.ToString());
+            }
+            catch (Exception ex)
+            {
+                ReportException(ex);
+            }
+
+            Invalidate();
+        }
+
+        void executionEngine_OnElementExecuted(object sender, AmethystElementEventArgs e)
+        {
+            InvalidateRectFromEntity(e.Element);
+            Refresh();
         }
 
         void ExecuteAsyncItem_Click(object sender, EventArgs e)
@@ -392,14 +447,20 @@ namespace MetaphysicsIndustries.Amethyst
 
         void DeleteItem_Click2(object sender, EventArgs e)
         {
-            if (Selection.Count > 0)
+            try
             {
-                Entity[] elems = Selection.ToArray();
-                foreach (Entity elem in elems)
+                AmethystElement[] elems = Selection.Extract<AmethystElement>();
+                if (elems.Length > 0)
                 {
-                    RemoveEntity(elem);
+                    foreach (Entity elem in elems)
+                    {
+                        DisconnectAndRemoveEntity(elem);
+                    }
                 }
-                Selection.RemoveRange(elems);
+            }
+            catch (Exception ex)
+            {
+                ReportException(ex);
             }
         }
 

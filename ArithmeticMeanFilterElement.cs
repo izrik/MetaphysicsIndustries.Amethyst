@@ -1,25 +1,26 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Solus;
+using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Epiphany;
-using MetaphysicsIndustries.Solus;
+using MetaphysicsIndustries.Acuity;
 using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
     [Serializable]
-    public class GaussianBlurFilterElement : MatrixFilterElement
+    public class ArithmeticMeanFilterElement : MatrixFilterElement
     {
-        public GaussianBlurFilterElement()
-            : base(new GaussianBlurFilterNode(), new SizeV(100, 80))
+        public ArithmeticMeanFilterElement()
+            : base(new ArithmeticMeanFilterNode(), new SizeV(120, 80))
         {
         }
 
-        public new GaussianBlurFilterNode Node
+        public new ArithmeticMeanFilterNode Node
         {
-            get { return (GaussianBlurFilterNode)base.Node; }
+            get { return (base.Node as ArithmeticMeanFilterNode); }
         }
 
         protected override void InitTerminals()
@@ -27,20 +28,21 @@ namespace MetaphysicsIndustries.Amethyst
             base.InitTerminals();
 
             TerminalsByConnection[Node.Input].Position = Height / 2;
+
             TerminalsByConnection[Node.Width].Side = BoxOrientation.Up;
             TerminalsByConnection[Node.Width].DisplayText = "w";
             TerminalsByConnection[Node.Width].Position = Width / 2;
         }
 
         [Serializable]
-        public class GaussianBlurFilterNode : MatrixFilterNode
+        public class ArithmeticMeanFilterNode : MatrixFilterNode
         {
-            public GaussianBlurFilterNode()
-                : base("Gaussian Blur")
+            public ArithmeticMeanFilterNode()
+                : base("Alpha Trimmed Mean")
             {
             }
 
-            private InputConnection<int> _width = new InputConnection<int>("Width");
+            private InputConnection<int> _width = new InputConnection<int>("Window Size");
             public InputConnection<int> Width
             {
                 get { return _width; }
@@ -55,10 +57,10 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                int w = (int)inputs[Width];
-                Filter = new GaussianBlurMatrixFilter(w);
+                int width = (int)inputs[Width];
+                Filter = new ArithmeticMeanFilter(width);
 
-                base.Execute(inputs, outputs);
+                Execute(inputs, outputs, Filter);
             }
         }
     }

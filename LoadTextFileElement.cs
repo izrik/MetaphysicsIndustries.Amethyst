@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -12,7 +13,7 @@ namespace MetaphysicsIndustries.Amethyst
     {
 
         public LoadTextFileElement()
-            : base(new LoadTextFileNode(), new SizeF(120, 60))
+            : base(new LoadTextFileNode(), new SizeV(120, 60))
         {
         }
 

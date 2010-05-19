@@ -131,9 +131,9 @@ namespace MetaphysicsIndustries.Amethyst
                         break;
                 }
 
-                Font font2 = new Font(font.FontFamily, font.Size - 2);
+                Font font2 = new Font(font.FontFamily, font.Size - 1);
 
-                SizeF displayTextSize = g.MeasureString(DisplayText, font2);
+                SizeV displayTextSize = g.MeasureString(DisplayText, font2);
 
                 displayTextLocation.X -= displayTextSize.Width / 2;
                 displayTextLocation.Y -= displayTextSize.Height / 2;
@@ -154,7 +154,7 @@ namespace MetaphysicsIndustries.Amethyst
             PointF[] pt = GetPolygon();
             int i;
 
-            SizeF position = new SizeF(GetLocationInElementSpace());
+            SizeV position = new SizeV(GetLocationInElementSpace());
 
             for (i = 0; i < pt.Length; i++)
             {
@@ -180,7 +180,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         public override RectangleV GetBoundingBox()
         {
-            RectangleV rect = new RectangleV(GetLocationInDocumentSpace(), new SizeF());
+            RectangleV rect = new RectangleV(GetLocationInDocumentSpace(), new SizeV());
 
             return rect.Inflate(Size * 2, Size * 2);
         }

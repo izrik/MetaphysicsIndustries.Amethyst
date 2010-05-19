@@ -4,6 +4,7 @@ using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -11,7 +12,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class AllInElement : AmethystElement
     {
         public AllInElement()
-            : base(new NullNode(), new SizeF(50, 50))
+            : base(new NullNode(), new SizeV(50, 50))
         {
         }
 

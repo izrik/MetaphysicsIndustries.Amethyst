@@ -6,6 +6,7 @@ using MetaphysicsIndustries.Solus;
 using MetaphysicsIndustries.Ligra;
 using MetaphysicsIndustries.Epiphany;
 using MetaphysicsIndustries.Acuity;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,7 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
     public class ImageDisplayElement : AmethystElement
     {
         public ImageDisplayElement()
-            : base(new ImageDisplayNode(), new SizeF(60, 60))
+            : base(new ImageDisplayNode(), new SizeV(60, 60))
         {
         }
 
@@ -41,6 +42,7 @@ namespace MetaphysicsIndustries.Amethyst
                 get { return _input; }
             }
 
+            [NonSerialized]
             private Matrix _image;
             public Matrix Image
             {
@@ -82,8 +84,11 @@ namespace MetaphysicsIndustries.Amethyst
             }
         }
 
+        [NonSerialized]
         Matrix _lastMatrixUnclone;
+        [NonSerialized]
         Matrix _lastMatrix;
+        [NonSerialized]
         Bitmap _lastBitmap;
 
         protected void UpdateImageCache()

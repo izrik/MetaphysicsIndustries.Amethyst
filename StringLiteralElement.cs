@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -9,13 +10,13 @@ namespace MetaphysicsIndustries.Amethyst
     public class StringLiteralElement : LiteralElement<string>
     {
         public StringLiteralElement()
-            : base(new LiteralNode("String Literal"), new SizeF(150,30))
+            : base(new LiteralNode("String Literal"), new SizeV(150,30))
         {
             Value = "String Literal";
         }
 
         //public StringLiteralElement(LiteralNode node)
-        //    : base(node, new SizeF(150,30))
+        //    : base(node, new SizeV(150,30))
         //{
         //}
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Epiphany;
+using MetaphysicsIndustries.Utilities;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -14,7 +15,7 @@ namespace MetaphysicsIndustries.Amethyst
         {
         }
 
-        public WindowProcessorElement(WindowProcessorNode node, SizeF size)
+        public WindowProcessorElement(WindowProcessorNode node, SizeV size)
             : base(node , size)
         {
         }
