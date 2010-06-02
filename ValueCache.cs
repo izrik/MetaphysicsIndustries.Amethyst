@@ -95,7 +95,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         public void Clear()
         {
-            OutputTerminal[] terminals = Collection.ToArray(_collection.Keys);
+            OutputTerminal[] terminals = _collection.Keys.ToArray();
             foreach (OutputTerminal terminal in terminals)
             {
                 Remove(terminal);
