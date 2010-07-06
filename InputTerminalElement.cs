@@ -4,6 +4,7 @@ using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Epiphany;
+using System.Windows.Forms;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,9 +14,6 @@ namespace MetaphysicsIndustries.Amethyst
         public InputTerminalElement(InputTerminal terminal)
             :base(terminal)
         {
-            //if (terminal == null) { throw new ArgumentNullException("terminal"); }
-							
-            //_inputTerminal = terminal;
         }
 
         protected override void InitTerminals2()
@@ -67,16 +65,14 @@ namespace MetaphysicsIndustries.Amethyst
             return pt;
         }
 
-        //private InputTerminal _inputTerminal;
         public InputTerminal InputTerminal
         {
             get { return (InputTerminal)Terminal; }
-            //set { _inputTerminal = value; }
         }
 
-        //public override Terminal Terminal
-        //{
-        //    get { return _inputTerminal; }
-        //}
+        protected override Terminal CreateTerminal(Type type, string name)
+        {
+            return new InputTerminal(InputConnectionBase.ConstructInputConnection(type, name));
+        }
     }
 }

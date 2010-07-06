@@ -4,6 +4,7 @@ using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
 using MetaphysicsIndustries.Utilities;
+using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -13,7 +14,7 @@ namespace MetaphysicsIndustries.Amethyst
         public TerminalElement(Terminal terminal)
             : base(new NullNode(), new SizeV(60,60))
         {
-            _terminal = terminal;
+            Terminal = terminal;
 
             InitTerminals2();
         }
@@ -53,15 +54,11 @@ namespace MetaphysicsIndustries.Amethyst
             g.DrawPolygon(pen, pt);
         }
 
-        //protected override void RenderText(Graphics g, Pen pen, Brush brush, Font font)
-        //{
-        //    base.RenderText(g, pen, brush, font);
-        //}
-
         Terminal _terminal;
         public Terminal Terminal
         {
             get { return _terminal; }
+            protected set { _terminal = value; }
         }
 
         public override string Text
@@ -82,11 +79,31 @@ namespace MetaphysicsIndustries.Amethyst
 
         public override void ProcessDoubleClick(AmethystControl control)
         {
-            //TerminalEditorForm form = new TerminalEditorForm(Terminal);
+            TerminalEditorForm form =
+                new TerminalEditorForm(
+                    Terminal.ConnectionBase.Name,
+                    Terminal.DisplayText,
+                    Terminal.ConnectionBase.TypeForConnection,
+                    Terminal.Side,
+                    Terminal.Position, 
+                    this.Size);
 
-            //if (form.ShowDialog(control) == System.Windows.Forms.DialogResult.OK)
-            //{
-            //}
+            if (form.ShowDialog(control) == System.Windows.Forms.DialogResult.OK)
+            {
+                if (form.TerminalType != Terminal.ConnectionBase.TypeForConnection ||
+                    form.TerminalName != Terminal.ConnectionBase.Name)
+                {
+                    Terminal term = CreateTerminal(form.TerminalType, form.TerminalName);
+                    Terminal.ParentAmethystElement.SwapTerminal(Terminal, term);
+                    Terminal = term;
+                }
+
+                Terminal.DisplayText = form.TerminalDisplayText;
+                Terminal.Side = form.TerminalOrientation;
+                Terminal.Position = form.TerminalPosition;
+            }
         }
+
+        protected abstract Terminal CreateTerminal(Type type, string name);
     }
 }

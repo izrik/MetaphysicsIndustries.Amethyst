@@ -140,6 +140,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         public override void Disconnect(out Entity[] entitiesToRemove)
         {
+            base.Disconnect(out entitiesToRemove);
             List<Entity> list = new List<Entity>();
 
             if (Path != null)
@@ -157,6 +158,11 @@ namespace MetaphysicsIndustries.Amethyst
             }
 
             entitiesToRemove = list.ToArray();
+        }
+
+        public override void DisconnectTerminal()
+        {
+            Path = null;
         }
     }
 }

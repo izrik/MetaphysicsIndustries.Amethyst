@@ -6,10 +6,9 @@ using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
-    public class ValueCache //: IDictionary<OutputTerminal, object>
+    public class ValueCache 
     {
         Dictionary<OutputTerminal, object> _collection = new Dictionary<OutputTerminal,object>();
-
 
         public void Remove(AmethystElement element)
         {
@@ -21,6 +20,8 @@ namespace MetaphysicsIndustries.Amethyst
 
         public void Remove(Terminal terminal)
         {
+            if (terminal == null) { throw new ArgumentNullException("terminal"); }
+
             if (terminal is OutputTerminal)
             {
                 Remove((OutputTerminal)terminal);
@@ -33,6 +34,8 @@ namespace MetaphysicsIndustries.Amethyst
 
         public bool Remove(OutputTerminal terminal)
         {
+            if (terminal == null) { throw new ArgumentNullException("terminal"); }
+
             if (this.ContainsKey(terminal))
             {
                 bool ret = _collection.Remove(terminal);
@@ -63,9 +66,11 @@ namespace MetaphysicsIndustries.Amethyst
 
         private void Remove(InputTerminal terminal)
         {
+            if (terminal == null) { throw new ArgumentNullException("terminal"); }
+
             foreach (OutputConnectionBase con in terminal.Connection.Dependants)
             {
-                Remove(terminal.ParentAmethystElement.TerminalsByConnection[con]);
+                this.Remove(terminal.ParentAmethystElement.TerminalsByConnection[con]);
             }
 
             OnTerminalRemoved(terminal);
@@ -95,7 +100,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         public void Clear()
         {
-            OutputTerminal[] terminals = _collection.Keys.ToArray();
+            OutputTerminal[] terminals = Collection.ToArray(_collection.Keys);
             foreach (OutputTerminal terminal in terminals)
             {
                 Remove(terminal);

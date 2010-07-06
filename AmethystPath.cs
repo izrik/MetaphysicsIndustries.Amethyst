@@ -23,7 +23,15 @@ namespace MetaphysicsIndustries.Amethyst
 
                     From = null;
                     _fromTerminal = value;
-                    if (_fromTerminal != null) { From = _fromTerminal.ParentAmethystElement; }
+                    if (_fromTerminal != null)
+                    {
+                        From = _fromTerminal.ParentAmethystElement;
+                    }
+                    //else
+                    //{
+                    //    ToTerminal = null;
+                    //    ParentCrystallineControl.DisconnectAndRemoveEntity(this);
+                    //}
 
                     if (_fromTerminal != null)
                     {
@@ -45,7 +53,15 @@ namespace MetaphysicsIndustries.Amethyst
 
                     To = null;
                     _toTerminal = value;
-                    if (_toTerminal != null) { To = _toTerminal.ParentAmethystElement; }
+                    if (_toTerminal != null)
+                    {
+                        To = _toTerminal.ParentAmethystElement;
+                    }
+                    //else
+                    //{
+                    //    FromTerminal = null;
+                    //    ParentCrystallineControl.DisconnectAndRemoveEntity(this);
+                    //}
 
                     if (tempTerminal != null)
                     {

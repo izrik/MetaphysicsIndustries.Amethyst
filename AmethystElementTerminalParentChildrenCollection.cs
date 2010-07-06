@@ -1,3 +1,4 @@
+
 /*****************************************************************************
  *                                                                           *
  *  AmethystElementTerminalParentChildrenCollection.cs                       *
@@ -6,7 +7,7 @@
  *  Written by: Richard Sartor                                               *
  *  Copyright © 2008 Metaphysics Industries, Inc.                            *
  *                                                                           *
- *  An unordered collection of Terminal graph.                             *
+ *  An unordered collection of Terminals.                                    *
  *                                                                           *
  *****************************************************************************/
 
@@ -28,7 +29,6 @@ namespace MetaphysicsIndustries.Amethyst
 		{
 			Clear();
 		}
-
 
 		//ICollection<Terminal>
 		public virtual void Add(Terminal item)
@@ -55,6 +55,8 @@ namespace MetaphysicsIndustries.Amethyst
 			{
 				bool ret = _set.Remove(item);
 				item.ParentAmethystElement = null;
+                _parent.TerminalsByConnection.Remove(item.ConnectionBase);
+                item.DisconnectTerminal();
 				return ret;
 			}
 
@@ -63,11 +65,7 @@ namespace MetaphysicsIndustries.Amethyst
 
 		public virtual void Clear()
 		{
-			Terminal[] r = new Terminal[Count];
-
-			CopyTo(r, 0);
-
-			foreach (Terminal item in r)
+			foreach (Terminal item in this.ToArray())
 			{
 				Remove(item);
 			}
@@ -85,14 +83,10 @@ namespace MetaphysicsIndustries.Amethyst
 			return _set.GetEnumerator();
 		}
 
-
 		//ICollection<Terminal>
 		public virtual int Count
 		{
-			get
-			{
-				return _set.Count;
-			}
+            get { return _set.Count; }
 		}
 
 		public virtual bool IsReadOnly
@@ -108,15 +102,14 @@ namespace MetaphysicsIndustries.Amethyst
 			return GetEnumerator();
 		}
 
-
 		private AmethystElement _parent;
 		private Set<Terminal> _set = new Set<Terminal>();
 
-        public T[] Extract<T>()
-            where T : Terminal
-        {
-            return _set.Extract<T>();
-        }
+        //public T[] Extract<T>()
+        //    where T : Terminal
+        //{
+        //    return _set.Extract<T>();
+        //}
 
         public Terminal[] ToArray()
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using MetaphysicsIndustries.Crystalline;
+using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -19,17 +20,10 @@ namespace MetaphysicsIndustries.Amethyst
             throw new NotImplementedException();
         }
 
-        //private OutputTerminal _outputTerminal;
         public OutputTerminal outputTerminal
         {
             get { return (OutputTerminal)Terminal; }
-            //set { _outputTerminal = value; }
         }
-
-        //public override Terminal Terminal
-        //{
-        //    get { return _outputTerminal; }
-        //}
 
         protected override PointF[] GetPolygon()
         {
@@ -69,6 +63,11 @@ namespace MetaphysicsIndustries.Amethyst
             }
 
             return pt;
+        }
+
+        protected override Terminal CreateTerminal(Type type, string name)
+        {
+            return new OutputTerminal(OutputConnectionBase.ConstructOutputConnection(type, name));
         }
     }
 }

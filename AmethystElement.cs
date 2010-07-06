@@ -224,7 +224,7 @@ namespace MetaphysicsIndustries.Amethyst
         public Dictionary<Connection, Terminal> TerminalsByConnection
         {
             get { return _terminalsByConnection; }
-            set { _terminalsByConnection = value; }
+            //set { _terminalsByConnection = value; }
         }
 
         public AmethystControl ParentAmethystControl
@@ -258,6 +258,66 @@ namespace MetaphysicsIndustries.Amethyst
             }
 
             entitiesToRemove = list.ToArray();
+        }
+
+        public void SwapTerminal(Terminal currentTerminal, Terminal newTerminal)
+        {
+            if (currentTerminal == null) throw new ArgumentNullException("currentTerminal");
+            if (newTerminal == null) throw new ArgumentNullException("newTerminal");
+
+            if (currentTerminal == newTerminal) return;
+
+            if (!((currentTerminal is InputTerminal && newTerminal is InputTerminal) ||
+                 (currentTerminal is OutputTerminal && newTerminal is OutputTerminal)))
+            {
+                throw new InvalidOperationException("The terminals must be both input or both output");
+            }
+
+            this.Terminals.Add(newTerminal);
+
+            if (currentTerminal is InputTerminal)
+            {
+                InputTerminal icur = (InputTerminal)currentTerminal;
+                InputTerminal inew = (InputTerminal)newTerminal;
+
+                AmethystPath path = icur.Path;
+
+                if (path != null)
+                {
+                    if (inew.IsConnectable(path.FromTerminal))
+                    {
+                        path.ToTerminal = inew;
+                    }
+                    else
+                    {
+                        icur.Path = null;
+                    }
+                }
+            }
+            else if (currentTerminal is OutputTerminal)
+            {
+                OutputTerminal ocur = (OutputTerminal)currentTerminal;
+                OutputTerminal onew = (OutputTerminal)newTerminal;
+
+                AmethystPath[] paths = ocur.AmethystPaths.ToArray();
+
+                if (paths != null && paths.Length > 0)
+                {
+                    foreach (AmethystPath path in paths)
+                    {
+                        if (path.ToTerminal.IsConnectable(onew))
+                        {
+                            path.FromTerminal = onew;
+                        }
+                        else
+                        {
+                            path.FromTerminal = null;
+                        }
+                    }
+                }
+            }
+
+            this.Terminals.Remove(currentTerminal);
         }
     }
 }

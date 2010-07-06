@@ -15,12 +15,20 @@ namespace MetaphysicsIndustries.Amethyst
     {
         public NestedElementEditorForm(NestedElement target)
         {
+            if (target == null) { throw new ArgumentNullException("target"); }
+
             _target = target;
 
             InitializeComponent();
         }
 
         NestedElement _target;
+        string _text;
+        InputConnectionBase[] _inputs;
+        InputTerminal[] _inputs2;
+        OutputConnectionBase[] _outputs;
+        OutputTerminal[] _outputs2;
+        Entity[] _entities;
 
         private void NestedElementEditorForm_Load(object sender, EventArgs e)
         {
@@ -77,13 +85,33 @@ namespace MetaphysicsIndustries.Amethyst
                 _target.Terminals.Add(term);
 
                 InputTerminalElement elem = new InputTerminalElement(term);
+                _inputElementsByTerminal[term] = elem;
                 elem.Location = amethystControl1.LastRightClickInDocument;
                 amethystControl1.AddEntity(elem);
             }
         }
 
+        Dictionary<InputTerminal, InputTerminalElement> _inputElementsByTerminal = new Dictionary<InputTerminal, InputTerminalElement>();
+        Dictionary<OutputTerminal, OutputTerminalElement> _outputElementsByTerminal = new Dictionary<OutputTerminal, OutputTerminalElement>();
+
         private void _closeButton_Click(object sender, EventArgs e)
         {
+            ApplyChanges();
+        }
+
+        private void ApplyChanges()
+        {
+            float value;
+
+            if (float.TryParse(_widthTextBox.Text, out value))
+            {
+                _target.Width = value;
+            }
+            if (float.TryParse(_heightTextBox.Text, out value))
+            {
+                _target.Height = value;
+            }
+
             _target.Text = _nameTextBox.Text;
 
             _target.Entities.Clear();

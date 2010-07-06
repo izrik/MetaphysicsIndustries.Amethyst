@@ -94,5 +94,10 @@ namespace MetaphysicsIndustries.Amethyst
 
             entitiesToRemove = list.ToArray();
         }
+
+        public override void DisconnectTerminal()
+        {
+            AmethystPaths.Clear();
+        }
     }
 }

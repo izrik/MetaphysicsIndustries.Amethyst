@@ -47,6 +47,7 @@ namespace MetaphysicsIndustries.Amethyst
                 ExecutionEngine exe = new ExecutionEngine();
                 //exe.Execute( ... )
 
+                //exe.Execute(entit
                 
             }
         }

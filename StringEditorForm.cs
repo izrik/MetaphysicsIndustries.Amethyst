@@ -11,8 +11,14 @@ namespace MetaphysicsIndustries.Amethyst
     public partial class StringEditorForm : Form
     {
         public StringEditorForm()
+            : this(string.Empty)
+        {
+        }
+        public StringEditorForm(string value)
         {
             InitializeComponent();
+
+            Value = value;
         }
 
         public bool Multiline

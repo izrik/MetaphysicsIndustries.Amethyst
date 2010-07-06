@@ -79,7 +79,7 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 Matrix image = (Matrix)inputs[Input];
 
-                outputs[Output] = Filter.Apply(image);
+                outputs[Output] = filter.Apply(image);
             }
         }
     }

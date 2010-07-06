@@ -134,6 +134,12 @@ namespace MetaphysicsIndustries.Amethyst
 
                     inputs[terminal2.Connection] = valueCache[terminal2.FromTerminal];
                 }
+                else if (terminal is OutputTerminal)
+                {
+                    OutputTerminal terminal2 = (OutputTerminal)terminal;
+
+                    outputs[terminal2.Connection] = null;
+                }
             }
 
             elem.Execute(inputs, outputs);

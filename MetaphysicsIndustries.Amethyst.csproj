@@ -107,6 +107,8 @@
     </Compile>
     <Compile Include="CSharpCodeElement.cs" />
     <Compile Include="CSharpCompilerElement.cs" />
+    <Compile Include="CSharpRendererElement.cs" />
+    <Compile Include="DefinitionBuilderElement.cs" />
     <Compile Include="DegreesToRadiansElement.cs" />
     <Compile Include="DoubleValueDisplayElement.cs" />
     <Compile Include="DoubleLiteralElement.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="FlattenerFilterElement.cs" />
     <Compile Include="GaussianBlurFilterElement.cs" />
     <Compile Include="GaussianNoiseMatrixFilterElement.cs" />
+    <Compile Include="GenericParserElement.cs" />
     <Compile Include="GetOpenFilenameElement.cs" />
     <Compile Include="GetSaveFilenameElement.cs" />
     <Compile Include="HistogramElement.cs" />
@@ -148,6 +151,7 @@
     <Compile Include="MethodInvokeForm.Designer.cs">
       <DependentUpon>MethodInvokeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MosaicMatrixFilterElement.cs" />
     <Compile Include="MseMeasureElement.cs" />
     <Compile Include="MultElement.cs" />
     <Compile Include="NegOneOneToZeroOneFitMatrixFilterElement.cs" />
@@ -158,6 +162,12 @@
     </Compile>
     <Compile Include="NestedElementEditorForm.Designer.cs">
       <DependentUpon>NestedElementEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptElementConnectionEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptElementConnectionEditorForm.Designer.cs">
+      <DependentUpon>ScriptElementConnectionEditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NodeElementConverterNode.cs" />
     <Compile Include="NodeSelectionForm.cs">
@@ -171,12 +181,20 @@
     <Compile Include="NullNode.cs" />
     <Compile Include="OneOutElement.cs" />
     <Compile Include="OutputTerminalElement.cs" />
+    <Compile Include="ParserBuilderElement.cs" />
     <Compile Include="PyramidProcessorMatrixFilterElement.cs" />
     <Compile Include="RadiansToDegreesElement.cs" />
     <Compile Include="RgbToHslConverterElement.cs" />
     <Compile Include="SaveAssemblyElement.cs" />
     <Compile Include="SaveImageElement.cs" />
     <Compile Include="SaveTextFileElement.cs" />
+    <Compile Include="ScriptElement.cs" />
+    <Compile Include="ScriptElementEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptElementEditorForm.Designer.cs">
+      <DependentUpon>ScriptElementEditorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SineElement.cs" />
     <Compile Include="SobelMatrixFilterElement.cs" />
     <Compile Include="SqrtElement.cs" />
@@ -186,6 +204,7 @@
     <Compile Include="StringDisplayForm.Designer.cs">
       <DependentUpon>StringDisplayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupergrammarParserElement.cs" />
     <Compile Include="TerminalEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,9 +291,15 @@
       <SubType>Designer</SubType>
       <DependentUpon>NestedElementEditorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ScriptElementConnectionEditorForm.resx">
+      <DependentUpon>ScriptElementConnectionEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NodeSelectionForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>NodeSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptElementEditorForm.resx">
+      <DependentUpon>ScriptElementEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StringDisplayForm.resx">
       <SubType>Designer</SubType>
@@ -283,6 +308,9 @@
     <EmbeddedResource Include="StringEditorForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>StringEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerminalEditorForm.resx">
+      <DependentUpon>TerminalEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextElementPropertiesForm.resx">
       <SubType>Designer</SubType>

@@ -96,7 +96,11 @@ namespace MetaphysicsIndustries.Amethyst
         protected void SetParentAmethystElement(AmethystElement value)
         {
             _parentAmethystElement = value;
+
+            DisconnectTerminal();
         }
+
+        public abstract void DisconnectTerminal();
 
         public override void Render(Graphics g, Pen pen, Brush brush, Font font)
         {

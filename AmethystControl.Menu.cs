@@ -98,6 +98,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             AddSolusItems(AddItem);
             AddZirconiaItems(AddItem);
+            AddGizaItems(AddItem);
 
             AddSectionSeparator();
 
@@ -110,6 +111,7 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItemForElement<TypeofElement>("typeof()", AddItem);
             AddMenuItemForElement<FeedbackElement>("Feedback Loop", AddItem);
             AddMenuItemForElement<NestedElement>("Nested Node", AddItem);
+            AddMenuItemForElement<ScriptElement>("Script Node", AddItem);
 
             //AddMenuItemForElement<InputTerminalElement>("External Input", AddItem);
             //AddMenuItemForElement<OutputTerminalElement>("External Output", AddItem);
@@ -268,8 +270,7 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItemForElement<ArithmeticMeanFilterElement>("Arithmetic Mean", newMenu);
             AddMenuItemForElement<AlphaTrimmedMeanElement>("Alpha-trimmed Mean", newMenu);
             AddMenuItemForElement<ZetaTrimmedMeanElement>("Zeta-trimmed Mean", newMenu);
-
-
+            AddMenuItemForElement<MosaicMatrixFilterElement>("Mosaic", newMenu);
 
         }
         private void AddEdgeDetectorsItems(ToolStripMenuItem parentMenu)
@@ -344,6 +345,17 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItemForElement<SaveAssemblyElement>("Save Assembly", zirconiaMenu);
             AddMenuItemForElement<MethodInvokeElement>("Method Invoke", zirconiaMenu);
             AddMenuItemForElement<ConstructorInvokeElement>("Constructor", zirconiaMenu);
+            AddMenuItemForElement<CSharpRendererElement>("C# Renderer", zirconiaMenu);
+        }
+
+        private void AddGizaItems(ToolStripMenuItem parentMenu)
+        {
+            ToolStripMenuItem gizaMenu = CreateSectionMenu("Giza");
+
+            AddMenuItemForElement<SupergrammarParserElement>("Supergrammar Parser", gizaMenu);
+            AddMenuItemForElement<DefinitionBuilderElement>("Definition Builder", gizaMenu);
+            AddMenuItemForElement<ParserBuilderElement>("Parser Builder", gizaMenu);
+            AddMenuItemForElement<GenericParserElement>("Generic Parser", gizaMenu);
         }
 
 
