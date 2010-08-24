@@ -7,6 +7,7 @@ using MetaphysicsIndustries.Acuity;
 using System.Diagnostics;
 using MetaphysicsIndustries.Utilities;
 using System.Drawing;
+using MetaphysicsIndustries.Collections;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -60,6 +61,7 @@ namespace MetaphysicsIndustries.Amethyst
                 y += 20;
                 Terminals.Add(term);
             }
+
             y = Math.Min(Height / 2 - 10 * (Node.OutputConnectionBases.Count - 1), Height / 2);
             foreach (OutputConnectionBase ocb in Node.OutputConnectionBases)
             {
@@ -318,6 +320,124 @@ namespace MetaphysicsIndustries.Amethyst
             }
 
             this.Terminals.Remove(currentTerminal);
+        }
+    }
+
+    public class MappedElement : AmethystElement
+    {
+        public MappedElement(Node node)
+            : base(node)
+        {
+        }
+
+        public static MappedElement[] MapNodes(Node[] nodes)
+        {
+            AmethystPath[] paths;
+            return MapNodes(nodes, out paths);
+        }
+        public static MappedElement[] MapNodes(Node[] nodes, out AmethystPath[] paths)
+        {
+            List<MappedElement> elements = new List<MappedElement>();
+
+            Dictionary<InputConnectionBase, InputTerminal> inputs = new Dictionary<InputConnectionBase, InputTerminal>();
+            Dictionary<OutputConnectionBase, OutputTerminal> outputs = new Dictionary<OutputConnectionBase, OutputTerminal>();
+
+            foreach (Node node in nodes)
+            {
+                MappedElement elem  = new MappedElement(node);
+                elements.Add(elem);
+                foreach (InputTerminal term in Collection.Extract<Terminal, InputTerminal>(elem.Terminals))
+                {
+                    inputs[term.Connection] = term;
+                }
+                foreach (OutputTerminal term in Collection.Extract<Terminal, OutputTerminal>(elem.Terminals))
+                {
+                    outputs[term.Connection] = term;
+                }
+            }
+
+            List<AmethystPath> paths2 = new List<AmethystPath>();
+            foreach (MappedElement elem in elements)
+            {
+                foreach (InputTerminal term in Collection.Extract<Terminal, InputTerminal>(elem.Terminals))
+                {
+                    if (term.Connection.InboundConnection != null && outputs.ContainsKey(term.Connection.InboundConnection))
+                    {
+                        ConnectTerminals(outputs[term.Connection.InboundConnection], term);
+                        paths2.Add(term.Path);
+                    }
+                }
+            }
+
+            paths = paths2.ToArray();
+            return elements.ToArray();
+        }
+
+        private static void ConnectTerminals(OutputTerminal from, InputTerminal to)
+        {
+            AmethystPath path = new AmethystPath();
+            path.FromTerminal = from; 
+            path.ToTerminal = to;
+        }
+
+        protected override void InitTerminals()
+        {
+            List<InputTerminal> primaryInputs = new List<InputTerminal>();
+            List<InputTerminal> secondaryInputs = new List<InputTerminal>();
+            List<OutputTerminal> primaryOutputs = new List<OutputTerminal>();
+            List<OutputTerminal> secondaryOutputs = new List<OutputTerminal>();
+
+            foreach (InputConnectionBase conn in Node.InputConnectionBases)
+            {
+                InputTerminal term = new InputTerminal(conn);
+                //if (conn.IsSecondary)
+                //{
+                //    term.Side = BoxOrientation.Up;
+                //    secondaryInputs.Add(term);
+                //}
+                //else
+                //{
+                    term.Side = BoxOrientation.Left;
+                    primaryInputs.Add(term);
+                //}
+            }
+            foreach (OutputConnectionBase conn in Node.OutputConnectionBases)
+            {
+                OutputTerminal term = new OutputTerminal(conn);
+                //if (conn.IsSecondary)
+                //{
+                //    term.Side = BoxOrientation.Down;
+                //    secondaryOutputs.Add(term);
+                //}
+                //else
+                //{
+                    term.Side = BoxOrientation.Right;
+                    primaryOutputs.Add(term);
+                //}
+            }
+
+            int primaryMax = Math.Max(primaryInputs.Count, primaryOutputs.Count);
+            int secondaryMax = Math.Max(secondaryInputs.Count, secondaryOutputs.Count);
+            float height = 20 * (primaryMax+ 1);
+            float width = 20 * (secondaryMax+ 1);
+
+            int i;
+            for (i = 0; i < primaryInputs.Count; i++)
+            {
+                primaryInputs[i].Position = 20 * (primaryMax - primaryInputs.Count + 1 + i) / 2;
+            }
+            for (i = 0; i < primaryOutputs.Count; i++)
+            {
+                primaryOutputs[i].Position = 20 * (primaryMax - primaryOutputs.Count + 1 + i) / 2;
+            }
+            for (i = 0; i < secondaryInputs.Count; i++)
+            {
+                secondaryInputs[i].Position = 20 * (i + 1);
+            }
+            for (i = 0; i < secondaryOutputs.Count; i++)
+            {
+                secondaryOutputs[i].Position = width - 20 * (i + 1);
+            }
         }
     }
 }
