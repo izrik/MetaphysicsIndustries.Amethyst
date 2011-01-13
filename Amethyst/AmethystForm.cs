@@ -31,6 +31,13 @@ namespace Amethyst
         {
             get { return "Amethyst"; }
         }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            this.Icon = Resource1.amethyst;
+        }
     }
 }
 
