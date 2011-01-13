@@ -234,6 +234,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             AddFilterItems(solusMenu);
             AddNoiseItems(solusMenu);
+            AddDenoisingItems(solusMenu);
             AddEdgeDetectorsItems(solusMenu);
             AddLevelsItems(solusMenu);
             AddMatrixOpsItems(solusMenu);
@@ -250,8 +251,14 @@ namespace MetaphysicsIndustries.Amethyst
 
             solusMenu.DropDownItems.Add(new ToolStripSeparator());
 
-            AddMenuItemForElement<MmseAmethystElement>("MMSE", solusMenu);
             AddMenuItemForElement<MatrixConvolutionElement>("Matrix Convolution", solusMenu);
+        }
+
+        private void AddDenoisingItems(ToolStripMenuItem solusMenu)
+        {
+            ToolStripMenuItem newMenu = CreateMenu("Denoising", solusMenu);
+
+            AddMenuItemForElement<MmseElement2>("MMSE (gaussian)", newMenu);
         }
 
         private void AddNoiseItems(ToolStripMenuItem solusMenu)
@@ -272,6 +279,8 @@ namespace MetaphysicsIndustries.Amethyst
             AddMenuItemForElement<ZetaTrimmedMeanElement>("Zeta-trimmed Mean", newMenu);
             AddMenuItemForElement<MosaicMatrixFilterElement>("Mosaic", newMenu);
 
+            AddMenuItemForElement<DftElement>("DFT", newMenu);
+            AddMenuItemForElement<InverseDftElement>("IDFT", newMenu);
         }
         private void AddEdgeDetectorsItems(ToolStripMenuItem parentMenu)
         {

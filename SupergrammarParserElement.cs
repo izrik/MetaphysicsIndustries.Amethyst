@@ -44,7 +44,8 @@ namespace MetaphysicsIndustries.Amethyst
                 SupergrammarParser parser = new SupergrammarParser();
                 string grammar = (string)inputs[Input];
 
-                outputs[Output] = parser.Getgrammar(grammar);
+                ParseSpan spans = parser.Getgrammar(grammar);
+                outputs[Output] = spans;
             }
         }
     }

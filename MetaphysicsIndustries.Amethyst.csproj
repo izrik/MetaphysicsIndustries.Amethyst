@@ -110,6 +110,7 @@
     <Compile Include="CSharpRendererElement.cs" />
     <Compile Include="DefinitionBuilderElement.cs" />
     <Compile Include="DegreesToRadiansElement.cs" />
+    <Compile Include="DftElement.cs" />
     <Compile Include="DoubleValueDisplayElement.cs" />
     <Compile Include="DoubleLiteralElement.cs" />
     <Compile Include="DualBellMatrixFilterElement.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="MethodInvokeForm.Designer.cs">
       <DependentUpon>MethodInvokeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MmseElement2.cs" />
     <Compile Include="MosaicMatrixFilterElement.cs" />
     <Compile Include="MseMeasureElement.cs" />
     <Compile Include="MultElement.cs" />

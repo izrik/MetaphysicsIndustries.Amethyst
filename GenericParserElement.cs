@@ -43,8 +43,8 @@ namespace MetaphysicsIndustries.Amethyst
                 get { return _definitions; }
             }
 
-            private InputConnection<SimpleDefinitionNode[]> _startName = new InputConnection<SimpleDefinitionNode[]>("Start Name");
-            public InputConnection<SimpleDefinitionNode[]> StartName
+            private InputConnection<string> _startName = new InputConnection<string>("Start Name");
+            public InputConnection<string> StartName
             {
                 get { return _startName; }
             }
@@ -57,13 +57,13 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                SimpleDefinitionNode[] filter = (SimpleDefinitionNode[])inputs[Definitions];
+                SimpleDefinitionNode[] defs = (SimpleDefinitionNode[])inputs[Definitions];
                 string startName = (string)inputs[StartName];
                 string input = (string)inputs[Input];
 
                 GenericParser parser = new GenericParser();
 
-                outputs[Output] = parser.Parse(filter, startName, input);
+                outputs[Output] = parser.Parse(defs, startName, input);
             }
         }
 

@@ -25,7 +25,7 @@ namespace MetaphysicsIndustries.Amethyst
                 {
                     valueCache.Remove(elem);
 
-                    throw ex;
+                    throw new ApplicationException(ex.Message, ex);
                 }
             }
         }
