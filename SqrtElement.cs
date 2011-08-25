@@ -26,14 +26,14 @@ namespace MetaphysicsIndustries.Amethyst
             {
             }
 
-            private OutputConnection<double> _output = new OutputConnection<double>("output");
-            public OutputConnection<double> Output
+            private OutputConnection<float> _output = new OutputConnection<float>("output");
+            public OutputConnection<float> Output
             {
                 get { return _output; }
             }
 
-            private InputConnection<double> _input = new InputConnection<double>("x");
-            public InputConnection<double> Input
+            private InputConnection<float> _input = new InputConnection<float>("x");
+            public InputConnection<float> Input
             {
                 get { return _input; }
             }
@@ -46,9 +46,9 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                double x = (double)inputs[Input];
+                float x = (float)inputs[Input];
 
-                outputs[Output] = (double)Math.Sqrt(x);
+                outputs[Output] = (float)Math.Sqrt(x);
             }
         }
 

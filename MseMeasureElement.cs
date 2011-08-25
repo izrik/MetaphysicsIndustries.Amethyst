@@ -40,8 +40,8 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 get { return _inputB; }
             }
-            private OutputConnection<double> _measureOutput = new OutputConnection<double>("Measure");
-            public OutputConnection<double> MeasureOutput
+            private OutputConnection<float> _measureOutput = new OutputConnection<float>("Measure");
+            public OutputConnection<float> MeasureOutput
             {
                 get { return _measureOutput; }
             }
@@ -51,7 +51,7 @@ namespace MetaphysicsIndustries.Amethyst
                 Matrix inputA = (Matrix)inputs[InputA];
                 Matrix inputB = (Matrix)inputs[InputB];
 
-                double measure = AcuityEngine.MeanSquareError(inputA, inputB);
+                float measure = AcuityEngine.MeanSquareError(inputA, inputB);
 
                 outputs[MeasureOutput] = measure;
             }

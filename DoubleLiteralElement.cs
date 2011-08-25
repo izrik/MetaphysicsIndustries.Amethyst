@@ -7,22 +7,22 @@ using MetaphysicsIndustries.Utilities;
 namespace MetaphysicsIndustries.Amethyst
 {
     [Serializable]
-    public class DoubleLiteralElement : LiteralElement<double>
+    public class DoubleLiteralElement : LiteralElement<float>
     {
         public DoubleLiteralElement()
             : base(new LiteralNode("Double Literal"), new SizeV(80, 40))
         {
         }
 
-        protected override double ConvertString(string value)
+        protected override float ConvertString(string value)
         {
-            return double.Parse(value);
+            return float.Parse(value);
         }
 
         protected override bool IsConvertable(string value)
         {
-            double v;
-            return double.TryParse(value, out v);
+            float v;
+            return float.TryParse(value, out v);
         }
 
         public override string Text

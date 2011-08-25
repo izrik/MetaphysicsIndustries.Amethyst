@@ -40,8 +40,8 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 get { return _inputB; }
             }
-            private OutputConnection<double> _measureOutput = new OutputConnection<double>("Measure");
-            public OutputConnection<double> MeasureOutput
+            private OutputConnection<float> _measureOutput = new OutputConnection<float>("Measure");
+            public OutputConnection<float> MeasureOutput
             {
                 get { return _measureOutput; }
             }
@@ -60,7 +60,7 @@ namespace MetaphysicsIndustries.Amethyst
                 Matrix inputB = (Matrix)inputs[InputB];
 
                 Matrix map = SsimErrorMeasure.GenerateMap(inputA, inputB, 7);
-                double measure = SsimErrorMeasure.CalculateMeasureFromMap(map);
+                float measure = SsimErrorMeasure.CalculateMeasureFromMap(map);
 
                 outputs[MeasureOutput] = measure;
                 outputs[MapOutput] = map;

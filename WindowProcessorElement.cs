@@ -38,28 +38,28 @@ namespace MetaphysicsIndustries.Amethyst
 
             protected abstract void InternalInitConnections();
 
-            private InputConnection<IEnumerable<double>> _windowInput = new InputConnection<IEnumerable<double>>("WindowInput");
-            public InputConnection<IEnumerable<double>> WindowInput
+            private InputConnection<IEnumerable<float>> _windowInput = new InputConnection<IEnumerable<float>>("WindowInput");
+            public InputConnection<IEnumerable<float>> WindowInput
             {
                 get { return _windowInput; }
             }
 
-            private OutputConnection<IEnumerable<double>> _windowOutput = new OutputConnection<IEnumerable<double>>("WindowOutput");
-            public OutputConnection<IEnumerable<double>> WindowOutput
+            private OutputConnection<IEnumerable<float>> _windowOutput = new OutputConnection<IEnumerable<float>>("WindowOutput");
+            public OutputConnection<IEnumerable<float>> WindowOutput
             {
                 get { return _windowOutput; }
             }
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                List<double> window = new List<double>((IEnumerable<double>)inputs[WindowInput]);
+                List<float> window = new List<float>((IEnumerable<float>)inputs[WindowInput]);
 
                 window.Sort();
 
                 outputs[WindowOutput] = InternalExecuteOnOrderedWindow(inputs, outputs, window);
             }
 
-            protected abstract IEnumerable<double> InternalExecuteOnOrderedWindow(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs, List<double> window);
+            protected abstract IEnumerable<float> InternalExecuteOnOrderedWindow(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs, List<float> window);
         }
     }
 }

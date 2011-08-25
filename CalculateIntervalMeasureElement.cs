@@ -37,14 +37,14 @@ namespace MetaphysicsIndustries.Amethyst
                 get { return _input; }
             }
 
-            private OutputConnection<double> _min = new OutputConnection<double>("Min");
-            public OutputConnection<double> Min
+            private OutputConnection<float> _min = new OutputConnection<float>("Min");
+            public OutputConnection<float> Min
             {
                 get { return _min; }
             }
 
-            private OutputConnection<double> _max = new OutputConnection<double>("Max");
-            public OutputConnection<double> Max
+            private OutputConnection<float> _max = new OutputConnection<float>("Max");
+            public OutputConnection<float> Max
             {
                 get { return _max; }
             }
@@ -59,7 +59,7 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 Matrix input = (Matrix)inputs[Input];
 
-                Pair<double> ret = IntervalFitMatrixFilter.CalcInterval(input);
+                Pair<float> ret = IntervalFitMatrixFilter.CalcInterval(input);
 
                 outputs[Min] = ret.First;
                 outputs[Max] = ret.Second;

@@ -38,13 +38,13 @@ namespace MetaphysicsIndustries.Amethyst
             {
             }
 
-            private InputConnection<double> _min = new InputConnection<double>("Min");
-            public InputConnection<double> Min
+            private InputConnection<float> _min = new InputConnection<float>("Min");
+            public InputConnection<float> Min
             {
                 get { return _min; }
             }
-            private InputConnection<double> _max = new InputConnection<double>("Max");
-            public InputConnection<double> Max
+            private InputConnection<float> _max = new InputConnection<float>("Max");
+            public InputConnection<float> Max
             {
                 get { return _max; }
             }
@@ -59,8 +59,8 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                double max = (double)inputs[Max];
-                double min = (double)inputs[Min];
+                float max = (float)inputs[Max];
+                float min = (float)inputs[Min];
                 Filter = new IntervalFitBaseMatrixFilter(min, max);
 
                 //accumulate & fire

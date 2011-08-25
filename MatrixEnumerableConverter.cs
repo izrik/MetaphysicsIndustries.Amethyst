@@ -7,7 +7,7 @@ using MetaphysicsIndustries.Acuity;
 namespace MetaphysicsIndustries.Amethyst
 {
     [Serializable]
-    public class MatrixEnumerableConverter : ConverterElement<Matrix, IEnumerable<double>>
+    public class MatrixEnumerableConverter : ConverterElement<Matrix, IEnumerable<float>>
     {
     }
 }

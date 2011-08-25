@@ -10,10 +10,10 @@ namespace MetaphysicsIndustries.Amethyst
     [Serializable]
     public class PyramidProcessorMatrixFilterElement : MatrixFilterElement
     {
-        //public delegate double Calculation(IEnumerable<double> measures);
+        //public delegate float Calculation(IEnumerable<float> measures);
         public interface ICalculation
         {
-            double Calculate(IEnumerable<double> measures);
+            float Calculate(IEnumerable<float> measures);
         }
 
         public PyramidProcessorMatrixFilterElement(ICalculation estimator, string name)
@@ -50,7 +50,7 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 int row;
                 int col;
-                double[] samples = new double[4];
+                float[] samples = new float[4];
 
                 int columnCount = input.ColumnCount - input.ColumnCount % 2;
                 int rowCount = input.RowCount - input.RowCount % 2;
@@ -85,7 +85,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         public class MeanCalculator : ICalculation
         {
-            public double Calculate(IEnumerable<double> measures)
+            public float Calculate(IEnumerable<float> measures)
             {
                 return AcuityEngine.CalculateMean(measures);
             }
@@ -102,7 +102,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         public class GeometricMeanCalculator : ICalculation
         {
-            public double Calculate(IEnumerable<double> measures)
+            public float Calculate(IEnumerable<float> measures)
             {
                 return AcuityEngine.CalculateGeometricMean(measures);
             }
@@ -121,12 +121,12 @@ namespace MetaphysicsIndustries.Amethyst
 
         public class MaxCalculator : ICalculation
         {
-            //public static double Max(IEnumerable<double> measures)
-            public double Calculate(IEnumerable<double> measures)
+            //public static float Max(IEnumerable<float> measures)
+            public float Calculate(IEnumerable<float> measures)
             {
-                double max = 0;
+                float max = 0;
 
-                foreach (double measure in measures)
+                foreach (float measure in measures)
                 {
                     max = Math.Max(max, measure);
                 }

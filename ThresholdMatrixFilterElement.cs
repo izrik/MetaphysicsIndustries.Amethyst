@@ -41,8 +41,8 @@ namespace MetaphysicsIndustries.Amethyst
             {
             }
 
-            private InputConnection<double> _threshold = new InputConnection<double>("Threshold");
-            public InputConnection<double> Threshold
+            private InputConnection<float> _threshold = new InputConnection<float>("Threshold");
+            public InputConnection<float> Threshold
             {
                 get { return _threshold; }
             }
@@ -56,7 +56,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                double t = (double)inputs[Threshold];
+                float t = (float)inputs[Threshold];
                 Filter = new ThresholdMatrixFilter(t);
 
                 base.Execute(inputs, outputs);

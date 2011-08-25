@@ -80,9 +80,9 @@ namespace MetaphysicsIndustries.Amethyst
                 {
                     for (j = 0; j < h.ColumnCount; j++)
                     {
-                        double rr;
-                        double gg;
-                        double bb;
+                        float rr;
+                        float gg;
+                        float bb;
 
                         AcuityEngine.ConvertHslToRgb(h[i, j], s[i, j], l[i, j], out rr, out gg, out bb);
 

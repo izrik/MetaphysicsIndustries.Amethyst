@@ -30,15 +30,15 @@ namespace MetaphysicsIndustries.Amethyst
     //            InputConnectionBases.Add(ImpulseProbability);
     //        }
 
-    //        private InputConnection<double> _impulseProbability = new InputConnection<double>("Impulse Probability");
-    //        public InputConnection<double> ImpulseProbability
+    //        private InputConnection<float> _impulseProbability = new InputConnection<float>("Impulse Probability");
+    //        public InputConnection<float> ImpulseProbability
     //        {
     //            get { return _impulseProbability; }
     //        }
 
     //        public override MatrixFilter GenerateFilter(Dictionary<InputConnectionBase, object> inputs)
     //        {
-    //            return new ImpulseNoiseMatrixFilter((double)inputs[ImpulseProbability]);
+    //            return new ImpulseNoiseMatrixFilter((float)inputs[ImpulseProbability]);
     //        }
     //    }
 

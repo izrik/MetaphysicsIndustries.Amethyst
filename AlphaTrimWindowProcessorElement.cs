@@ -21,8 +21,8 @@ namespace MetaphysicsIndustries.Amethyst
             {
             }
 
-            private InputConnection<double> _alphaInput = new InputConnection<double>("Alpha");
-            public InputConnection<double> AlphaInput
+            private InputConnection<float> _alphaInput = new InputConnection<float>("Alpha");
+            public InputConnection<float> AlphaInput
             {
                 get { return _alphaInput; }
             }
@@ -32,9 +32,9 @@ namespace MetaphysicsIndustries.Amethyst
                 InputConnectionBases.Add(AlphaInput);
             }
 
-            protected override IEnumerable<double> InternalExecuteOnOrderedWindow(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs, List<double> window)
+            protected override IEnumerable<float> InternalExecuteOnOrderedWindow(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs, List<float> window)
             {
-                double alpha = (double)inputs[AlphaInput];
+                float alpha = (float)inputs[AlphaInput];
                 int alphaCount = (int)Math.Ceiling(window.Count * alpha / 2);
                 if (window.Count > alphaCount)
                 {

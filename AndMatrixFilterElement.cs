@@ -74,7 +74,7 @@ namespace MetaphysicsIndustries.Amethyst
             {
             }
 
-            public static double AndBiModulator(double x, double y)
+            public static float AndBiModulator(float x, float y)
             {
                 return x * y;
             }

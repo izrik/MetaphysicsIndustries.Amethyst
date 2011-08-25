@@ -33,7 +33,7 @@ namespace MetaphysicsIndustries.Amethyst
     //        get { return _input; }
     //    }
 
-    //    private InputConnectionBase _noiseVariance = new InputConnection<double>("NoiseVariance");
+    //    private InputConnectionBase _noiseVariance = new InputConnection<float>("NoiseVariance");
     //    public InputConnectionBase NoiseVariance
     //    {
     //        get { return _noiseVariance; }
@@ -57,19 +57,19 @@ namespace MetaphysicsIndustries.Amethyst
     //        get { return _column; }
     //    }
 
-    //    private InputConnectionBase _signalMeanInput = new InputConnection<double>("SignalMean");
+    //    private InputConnectionBase _signalMeanInput = new InputConnection<float>("SignalMean");
     //    public InputConnectionBase SignalMeanInput
     //    {
     //        get { return _signalMeanInput; }
     //    }
 
-    //    private InputConnectionBase _signalVariance = new InputConnection<double>("SignalVariance");
+    //    private InputConnectionBase _signalVariance = new InputConnection<float>("SignalVariance");
     //    public InputConnectionBase SignalVariance
     //    {
     //        get { return _signalVariance; }
     //    }
 
-    //    private OutputConnectionBase _output = new OutputConnection<double>("Output");
+    //    private OutputConnectionBase _output = new OutputConnection<float>("Output");
     //    public OutputConnectionBase Output
     //    {
     //        get { return _output; }
@@ -79,7 +79,7 @@ namespace MetaphysicsIndustries.Amethyst
     //    {
     //        get { return _window; }
     //    }
-    //    private OutputConnectionBase _signalMeanOutput = new OutputConnection<double>("SignalMean");
+    //    private OutputConnectionBase _signalMeanOutput = new OutputConnection<float>("SignalMean");
     //    public OutputConnectionBase SignalMeanOutput
     //    {
     //        get { return _signalMeanOutput; }

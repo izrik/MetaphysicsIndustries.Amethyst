@@ -34,20 +34,20 @@ namespace MetaphysicsIndustries.Amethyst
             {
             }
 
-            private OutputConnection<double> _output = new OutputConnection<double>("output");
-            public OutputConnection<double> Output
+            private OutputConnection<float> _output = new OutputConnection<float>("output");
+            public OutputConnection<float> Output
             {
                 get { return _output; }
             }
 
-            private InputConnection<double> _inputA = new InputConnection<double>("a");
-            public InputConnection<double> InputA
+            private InputConnection<float> _inputA = new InputConnection<float>("a");
+            public InputConnection<float> InputA
             {
                 get { return _inputA; }
             }
 
-            private InputConnection<double> _inputB = new InputConnection<double>("b");
-            public InputConnection<double> InputB
+            private InputConnection<float> _inputB = new InputConnection<float>("b");
+            public InputConnection<float> InputB
             {
                 get { return _inputB; }
             }
@@ -61,8 +61,8 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                double a = (double)inputs[InputA];
-                double b = (double)inputs[InputB];
+                float a = (float)inputs[InputA];
+                float b = (float)inputs[InputB];
 
                 outputs[Output] = a * b;
             }

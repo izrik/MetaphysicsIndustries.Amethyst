@@ -81,7 +81,7 @@ namespace MetaphysicsIndustries.Amethyst
                 {
                     for (j = 0; j < r.ColumnCount; j++)
                     {
-                        Triple<double> hsl = AcuityEngine.ConvertRgbToHsl(new Triple<double>(r[i, j], g[i, j], b[i, j]));
+                        Triple<float> hsl = AcuityEngine.ConvertRgbToHsl(new Triple<float>(r[i, j], g[i, j], b[i, j]));
                         h[i, j] = hsl.First;
                         s[i, j] = hsl.Second;
                         l[i, j] = hsl.Third;

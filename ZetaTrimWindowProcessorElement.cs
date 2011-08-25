@@ -23,8 +23,8 @@ namespace MetaphysicsIndustries.Amethyst
             {
             }
 
-            private InputConnection<double> _zetaInput = new InputConnection<double>("Zeta");
-            public InputConnection<double> ZetaInput
+            private InputConnection<float> _zetaInput = new InputConnection<float>("Zeta");
+            public InputConnection<float> ZetaInput
             {
                 get { return _zetaInput; }
             }
@@ -36,18 +36,18 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                List<double> window = new List<double>((IEnumerable<double>)inputs[WindowInput]);
+                List<float> window = new List<float>((IEnumerable<float>)inputs[WindowInput]);
 
-                double zeta = Math.Abs((double)inputs[ZetaInput]);
-                double signalMean = SolusEngine.CalculateMean(window);
-                double signalVariance = SolusEngine.CalculateVariance(window, signalMean);
-                double signalStdev = Math.Sqrt(signalVariance);
-                List<double> validMeasures = new List<double>(window.Count);
+                float zeta = Math.Abs((float)inputs[ZetaInput]);
+                float signalMean = SolusEngine.CalculateMean(window);
+                float signalVariance = SolusEngine.CalculateVariance(window, signalMean);
+                float signalStdev = (float)Math.Sqrt(signalVariance);
+                List<float> validMeasures = new List<float>(window.Count);
 
                 //cull all measures which fall outside the zeta-trim range
-                foreach (double value in window)
+                foreach (float value in window)
                 {
-                    double z = CalculateZ(signalMean, signalStdev, value);
+                    float z = CalculateZ(signalMean, signalStdev, value);
                     if (Math.Abs(z) <= zeta)
                     {
                         validMeasures.Add(value);
@@ -58,12 +58,12 @@ namespace MetaphysicsIndustries.Amethyst
             }
 
             //move this to SolusEngine
-            protected double CalculateZ(double mean, double stdev, double x)
+            protected float CalculateZ(float mean, float stdev, float x)
             {
                 return (x - mean) / stdev;
             }
 
-            protected override IEnumerable<double> InternalExecuteOnOrderedWindow(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs, List<double> window)
+            protected override IEnumerable<float> InternalExecuteOnOrderedWindow(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs, List<float> window)
             {
                 return null;
             }

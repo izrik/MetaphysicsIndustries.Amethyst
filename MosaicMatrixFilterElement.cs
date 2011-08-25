@@ -40,7 +40,7 @@ namespace MetaphysicsIndustries.Amethyst
                 int ci;
                 int cj;
 
-                double[] values = new double[_cellSize*_cellSize];
+                float[] values = new float[_cellSize*_cellSize];
                 for (i = 0; i < nx; i++)
                 {
                     for (j = 0; j < ny; j++)
@@ -57,7 +57,7 @@ namespace MetaphysicsIndustries.Amethyst
                                 k++;
                             }
                         }
-                        double sum = 0;
+                        float sum = 0;
                         for (int vi = 0; vi < k; vi++)
                         {
                             sum += values[vi];

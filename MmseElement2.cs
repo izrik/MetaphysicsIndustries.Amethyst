@@ -28,8 +28,8 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 get { return _inputImage; }
             }
-            private InputConnection<double> _noiseVariance = new InputConnection<double>("Noise Variance");
-            public InputConnection<double> NoiseVariance
+            private InputConnection<float> _noiseVariance = new InputConnection<float>("Noise Variance");
+            public InputConnection<float> NoiseVariance
             {
                 get { return _noiseVariance; }
             }
@@ -55,7 +55,7 @@ namespace MetaphysicsIndustries.Amethyst
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
                 Matrix input = (Matrix)inputs[InputImage];
-                double variance = (double)inputs[NoiseVariance];
+                float variance = (float)inputs[NoiseVariance];
                 int windowSize = (int)inputs[WindowSize];
 
                 MinimalMeanSquareErrorMatrixFilter filter = new MinimalMeanSquareErrorMatrixFilter(windowSize, variance);

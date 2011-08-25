@@ -19,13 +19,13 @@ namespace MetaphysicsIndustries.Amethyst
             OutputConnectionBases.Add(Output);
         }
 
-        private InputConnectionBase _input = new InputConnection<double>("Input");
+        private InputConnectionBase _input = new InputConnection<float>("Input");
         public InputConnectionBase Input
         {
             get { return _input; }
         }
 
-        private OutputConnectionBase _output = new OutputConnection<double>("Output");
+        private OutputConnectionBase _output = new OutputConnection<float>("Output");
         public OutputConnectionBase Output
         {
             get { return _output; }

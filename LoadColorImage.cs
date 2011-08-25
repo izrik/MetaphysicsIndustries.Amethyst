@@ -89,9 +89,9 @@ namespace MetaphysicsIndustries.Amethyst
                         int rr = ((int)(image[i, j]) & 0xFF0000) >> 16;
                         int gg = ((int)(image[i, j]) & 0xFF00) >> 8;
                         int bb = ((int)(image[i, j]) & 0xFF);
-                        r[i, j] = rr / 255.0;
-                        g[i, j] = gg / 255.0;
-                        b[i, j] = bb / 255.0;
+                        r[i, j] = rr / 255.0f;
+                        g[i, j] = gg / 255.0f;
+                        b[i, j] = bb / 255.0f;
                     }
                 }
 

@@ -25,8 +25,8 @@ namespace MetaphysicsIndustries.Amethyst
 
             private static HistogramMatrixFilter _filter = new HistogramMatrixFilter();
 
-            private InputConnection<IEnumerable<double>> _input = new InputConnection<IEnumerable<double>>("Input");
-            public InputConnection<IEnumerable<double>> Input
+            private InputConnection<IEnumerable<float>> _input = new InputConnection<IEnumerable<float>>("Input");
+            public InputConnection<IEnumerable<float>> Input
             {
                 get { return _input; }
             }
@@ -44,7 +44,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                List<double> input = new List<double>((IEnumerable<double>)inputs[Input]);
+                List<float> input = new List<float>((IEnumerable<float>)inputs[Input]);
 
                 Matrix output = _filter.Apply(new Matrix(1, input.Count, input.ToArray()));
 
