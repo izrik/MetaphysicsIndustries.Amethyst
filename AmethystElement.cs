@@ -138,10 +138,8 @@ namespace MetaphysicsIndustries.Amethyst
 
         public override string Text
         {
-            get
-            {
-                return Node.Name;
-            }
+            get { return Node.Name; }
+            set { }
         }
 
         private AmethystElementTerminalParentChildrenCollection _terminals;

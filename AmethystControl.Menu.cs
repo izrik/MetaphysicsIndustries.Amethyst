@@ -426,7 +426,7 @@ namespace MetaphysicsIndustries.Amethyst
 
         //}
 
-        protected new void AddMenuItemForElement<T>(ToolStripItem item, ToolStripMenuItem menu)
+        protected void AddMenuItemForAmethystElement<T>(ToolStripItem item, ToolStripMenuItem menu)
             where T : AmethystElement, new()
         {
             base.AddMenuItemForElement<T>(item, menu);
@@ -440,7 +440,7 @@ namespace MetaphysicsIndustries.Amethyst
             return item;
         }
 
-        protected new void AddElement_Click<T>(object sender, EventArgs e)
+        protected void AddAmethystElement_Click<T>(object sender, EventArgs e)
             where T : AmethystElement, new()
         {
             base.AddElement_Click<T>(sender, e);
