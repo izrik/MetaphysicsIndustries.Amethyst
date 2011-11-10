@@ -50,27 +50,15 @@
     <Compile Include="AlphaTrimmedMeanElement.cs" />
     <Compile Include="AlphaTrimWindowProcessorElement.cs" />
     <Compile Include="AluElement.cs" />
-    <Compile Include="AmethystControl.Menu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AmethystControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="AmethystControl.Menu.cs" />
+    <Compile Include="AmethystControl.cs" />
     <Compile Include="AmethystControl.Designer.cs">
       <DependentUpon>AmethystControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="AmethystControl.Entities.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AmethystControl.Execute.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AmethystControl.Input.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AmethystControl.Render.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="AmethystControl.Entities.cs" />
+    <Compile Include="AmethystControl.Execute.cs" />
+    <Compile Include="AmethystControl.Input.cs" />
+    <Compile Include="AmethystControl.Render.cs" />
     <Compile Include="AmethystElement.cs" />
     <Compile Include="AmethystElementEventHandler.cs" />
     <Compile Include="AmethystElementTerminalParentChildrenCollection.cs" />
