@@ -49,8 +49,8 @@ namespace MetaphysicsIndustries.Amethyst
                 get { return _startName; }
             }
 
-            private OutputConnection<ParseSpan> _output = new OutputConnection<ParseSpan>("Output");
-            public OutputConnection<ParseSpan> Output
+            private OutputConnection<Span> _output = new OutputConnection<Span>("Output");
+            public OutputConnection<Span> Output
             {
                 get { return _output; }
             }
@@ -61,9 +61,9 @@ namespace MetaphysicsIndustries.Amethyst
                 string startName = (string)inputs[StartName];
                 string input = (string)inputs[Input];
 
-                GenericParser parser = new GenericParser();
+                GenericSpanner parser = new GenericSpanner();
 
-                outputs[Output] = parser.Parse(defs, startName, input);
+                outputs[Output] = parser.Process(defs, startName, input);
             }
         }
 

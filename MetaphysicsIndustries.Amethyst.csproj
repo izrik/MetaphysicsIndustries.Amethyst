@@ -115,9 +115,12 @@
     <Compile Include="DoubleLiteralElement.cs" />
     <Compile Include="DualBellMatrixFilterElement.cs" />
     <Compile Include="ExecutionEngine.cs" />
+    <Compile Include="ExecutionState.cs" />
     <Compile Include="ExpandEdgeMatrixFilterElement.cs" />
     <Compile Include="FeedbackElement.cs" />
     <Compile Include="FlattenerFilterElement.cs" />
+    <Compile Include="FloatLiteralElement.cs" />
+    <Compile Include="FloatValueDisplayElement.cs" />
     <Compile Include="GaussianBlurFilterElement.cs" />
     <Compile Include="GaussianNoiseMatrixFilterElement.cs" />
     <Compile Include="GenericParserElement.cs" />

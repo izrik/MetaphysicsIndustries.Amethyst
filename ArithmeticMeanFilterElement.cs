@@ -38,7 +38,7 @@ namespace MetaphysicsIndustries.Amethyst
         public class ArithmeticMeanFilterNode : MatrixFilterNode
         {
             public ArithmeticMeanFilterNode()
-                : base("Alpha Trimmed Mean")
+                : base("Arithmetic Mean")
             {
             }
 

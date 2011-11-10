@@ -213,6 +213,7 @@ namespace MetaphysicsIndustries.Amethyst
             ToolStripMenuItem newMenu = CreateMenu("Display", parentMenu);
             AddMenuItemForElement<StringValueDisplayElement>("String", newMenu);
             AddMenuItemForElement<IntegerValueDisplayElement>("Integer", newMenu);
+            AddMenuItemForElement<FloatValueDisplayElement>("Float", newMenu);
             AddMenuItemForElement<DoubleValueDisplayElement>("Double", newMenu);
         }
         private void AddLiteralItems(ToolStripMenuItem parentMenu)
@@ -220,6 +221,7 @@ namespace MetaphysicsIndustries.Amethyst
             ToolStripMenuItem newMenu = CreateMenu("Literal", parentMenu);
             AddMenuItemForElement<StringLiteralElement>("String", newMenu);
             AddMenuItemForElement<IntegerLiteralElement>("Integer", newMenu);
+            AddMenuItemForElement<FloatLiteralElement>("Float", newMenu);
             AddMenuItemForElement<DoubleLiteralElement>("Double", newMenu);
         }
 
@@ -385,12 +387,20 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 AmethystElement[] elements = Entities.Extract<AmethystElement>();
 
-                _executionEngine.Execute(elements, _valueCache);
+                //_executionEngine.Execute(elements, _valueCache);
+                //
+                //StringBuilder sb = new StringBuilder();
+                //foreach (AmethystElement elem in elements)
+                //{
+                //    sb.AppendLine(elem.Text);
+                //}
+                //MessageBox.Show(this, "Success: \r\n" + sb.ToString());
 
+                string[] results = _asyncExecutionEngine.Iterate(elements, _valueCache);
                 StringBuilder sb = new StringBuilder();
-                foreach (AmethystElement elem in elements)
+                foreach (string r in results)
                 {
-                    sb.AppendLine(elem.Text);
+                    sb.AppendLine(r);
                 }
                 MessageBox.Show(this, "Success: \r\n" + sb.ToString());
             }

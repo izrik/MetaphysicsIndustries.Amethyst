@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MetaphysicsIndustries.Crystalline;
+using MetaphysicsIndustries.Epiphany;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -17,8 +18,9 @@ namespace MetaphysicsIndustries.Amethyst
 
             //_terminalConnectionEngine = new AmethystTerminalConnectionEngine(this);
 
-            _valueCache.TerminalRemoved += new EventHandler<TerminalEventArgs>(valueCache_TerminalRemoved);
-            _executionEngine.ElementExecuted += new EventHandler<AmethystElementEventArgs>(executionEngine_ElementExecuted);
+            _valueCache.TerminalRemoved += valueCache_TerminalRemoved;
+            _executionEngine.ElementExecuted += executionEngine_ElementExecuted;
+            _asyncExecutionEngine.ElementExecuted += executionEngine_ElementExecuted;
         }
 
         AmethystTerminalConnectionEngine _terminalConnectionEngine;
@@ -43,11 +45,19 @@ namespace MetaphysicsIndustries.Amethyst
             //MakeConnection((OutputTerminal)li.TerminalsByConnection[li.Node.Output], (InputTerminal)id.TerminalsByConnection[id.Node.Input]);
         }
 
-        public void RemoveFromValueCache(Terminal terminal)
+        public void RemoveFromValueCache(OutputTerminal terminal)
         {
             if (terminal == null) { throw new ArgumentNullException("terminal"); }
 
             _valueCache.Remove(terminal);
+        }
+
+        protected void RemoveFromValueCache(InputTerminal terminal)
+        {
+            foreach (OutputConnectionBase con in terminal.Connection.Dependants)
+            {
+                RemoveFromValueCache((OutputTerminal)(terminal.ParentAmethystElement.TerminalsByConnection[con]));
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using MetaphysicsIndustries.Utilities;
@@ -6,10 +6,10 @@ using MetaphysicsIndustries.Utilities;
 namespace MetaphysicsIndustries.Amethyst
 {
     [Serializable]
-    public class DoubleValueDisplayElement : ValueDisplayElement<float>
+    public class FloatValueDisplayElement : ValueDisplayElement<float>
     {
-        public DoubleValueDisplayElement()
-            : base(new ValueDisplayNode("Double Value"), new SizeV(80, 40))
+        public FloatValueDisplayElement()
+            : base(new ValueDisplayNode("Float Value"), new SizeV(80, 40))
         {
         }
 

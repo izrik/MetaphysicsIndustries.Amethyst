@@ -6,15 +6,15 @@ namespace MetaphysicsIndustries.Amethyst
 {
     public class TerminalEventArgs : EventArgs
     {
-        public TerminalEventArgs(Terminal terminal)
+        public TerminalEventArgs(OutputTerminal terminal)
         {
             if (terminal == null) { throw new ArgumentNullException("terminal"); }
 
             _terminal = terminal;
         }
 
-        private Terminal _terminal;
-        public Terminal Terminal
+        private OutputTerminal _terminal;
+        public OutputTerminal Terminal
         {
             get { return _terminal; }
         }

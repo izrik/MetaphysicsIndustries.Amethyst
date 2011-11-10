@@ -18,9 +18,9 @@ namespace MetaphysicsIndustries.Amethyst
         {
             try
             {
-                AsynchronousExecutionEngine engine = new AsynchronousExecutionEngine();
+                //AsynchronousExecutionEngine engine = new AsynchronousExecutionEngine();
 
-                engine.Execute(Entities.Extract<AmethystElement>(), _valueCache);
+                //engine.Execute(Entities.Extract<AmethystElement>(), _valueCache);
             }
             catch (Exception ex)
             {
@@ -31,7 +31,7 @@ namespace MetaphysicsIndustries.Amethyst
         private ValueCache _valueCache = new ValueCache();
 
         ExecutionEngine _executionEngine = new ExecutionEngine();
-
+        AsynchronousExecutionEngine _asyncExecutionEngine = new AsynchronousExecutionEngine();
 
         //protected void UpdateTerminalStatesForElement(AmethystElement element)
         //{
@@ -57,7 +57,15 @@ namespace MetaphysicsIndustries.Amethyst
         void valueCache_TerminalRemoved(object sender, TerminalEventArgs e)
         {
             InvalidateRectFromTerminal(e.Terminal);
+
+            //is execution is synchronous
+
+            foreach (AmethystPath apath in e.Terminal.AmethystPaths)
+            {
+                RemoveFromValueCache(apath.ToTerminal);
+            }
         }
+
 
         void executionEngine_ElementExecuted(object sender, AmethystElementEventArgs e)
         {

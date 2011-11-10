@@ -49,11 +49,11 @@ namespace MetaphysicsIndustries.Amethyst
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                ParserBuilder builder = new ParserBuilder();
+                SpannerBuilder builder = new SpannerBuilder();
                 SimpleDefinitionNode[] defs = (SimpleDefinitionNode[])inputs[Input];
                 string className = (string)inputs[ClassName];
 
-                className = ParserServices.CleanTag(className);
+                className = SpannerServices.CleanTag(className);
                 if (string.IsNullOrEmpty(className))
                 {
                     className = "SomethingParser";

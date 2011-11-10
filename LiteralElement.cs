@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using MetaphysicsIndustries.Epiphany;
 using System.Runtime.Serialization;
 using MetaphysicsIndustries.Utilities;
+using MetaphysicsIndustries.Collections;
 
 namespace MetaphysicsIndustries.Amethyst
 {
@@ -147,12 +148,9 @@ namespace MetaphysicsIndustries.Amethyst
         {
             if (ParentAmethystControl != null)
             {
-                foreach (Terminal terminal in Terminals)
+                foreach (OutputTerminal terminal in Collection.Extract<Terminal, OutputTerminal>(Terminals))
                 {
-                    if (terminal is OutputTerminal)
-                    {
-                        ParentAmethystControl.RemoveFromValueCache(terminal);
-                    }
+                    ParentAmethystControl.RemoveFromValueCache(terminal);
                 }
             }
         }

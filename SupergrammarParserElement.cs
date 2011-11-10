@@ -33,18 +33,18 @@ namespace MetaphysicsIndustries.Amethyst
                 get { return _input; }
             }
 
-            private OutputConnection<ParseSpan> _output = new OutputConnection<ParseSpan>("Output");
-            public OutputConnection<ParseSpan> Output
+            private OutputConnection<Span> _output = new OutputConnection<Span>("Output");
+            public OutputConnection<Span> Output
             {
                 get { return _output; }
             }
 
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
-                SupergrammarParser parser = new SupergrammarParser();
+                SupergrammarSpanner parser = new SupergrammarSpanner();
                 string grammar = (string)inputs[Input];
 
-                ParseSpan spans = parser.Getgrammar(grammar);
+                Span spans = parser.Getgrammar(grammar);
                 outputs[Output] = spans;
             }
         }

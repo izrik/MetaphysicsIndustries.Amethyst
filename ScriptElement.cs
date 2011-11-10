@@ -46,10 +46,18 @@ namespace MetaphysicsIndustries.Amethyst
                 }
                 foreach (OutputConnectionBase output in outputConnections)
                 {
-                    args.Add(outputs[output]);
+                    if (outputs.ContainsKey(output))
+                    {
+                        args.Add(outputs[output]);
+                    }
+                    else
+                    {
+                        args.Add(null);
+                    }
                 }
                 object[] args2 = args.ToArray();
                 method.Invoke(null, args2);
+
                 int i;
                 for (i = 0; i < outputConnections.Length; i++)
                 {
@@ -123,9 +131,9 @@ namespace MetaphysicsIndustries.Amethyst
 
                 if (clear)
                 {
-                    foreach (Terminal term in Terminals)
+                    foreach (OutputTerminal terminal in Collection.Extract<Terminal, OutputTerminal>(Terminals))
                     {
-                        ParentAmethystControl.RemoveFromValueCache(term);
+                        ParentAmethystControl.RemoveFromValueCache(terminal);
                     }
                 }
             }
@@ -142,8 +150,14 @@ namespace MetaphysicsIndustries.Amethyst
                 {
                     if (input == input2)
                     {
-                        TerminalsByConnection[input].Side = Crystalline.BoxOrientation.Left;
-                        TerminalsByConnection[input].Position = y;
+                        if (TerminalsByConnection.ContainsKey(input))
+                        {
+                            TerminalsByConnection[input].Side = Crystalline.BoxOrientation.Left;
+                            TerminalsByConnection[input].Position = y;
+                        }
+                        else
+                        {
+                        }
 
                         y += 20;
                         done = true;
@@ -153,7 +167,10 @@ namespace MetaphysicsIndustries.Amethyst
                         InputTerminal term = new InputTerminal(input2);
                         term.Side = Crystalline.BoxOrientation.Left;
                         term.Position = y;
-                        this.SwapTerminal(TerminalsByConnection[input], term);
+                        if (TerminalsByConnection.ContainsKey(input))
+                        {
+                            this.SwapTerminal(TerminalsByConnection[input], term);
+                        }
 
                         clear = true;
 
@@ -174,7 +191,11 @@ namespace MetaphysicsIndustries.Amethyst
             }
             foreach (InputConnectionBase input in toRemove)
             {
-                this.Terminals.Remove(TerminalsByConnection[input]);
+                if (TerminalsByConnection.ContainsKey(input))
+                {
+                    this.Terminals.Remove(TerminalsByConnection[input]);
+                }
+                node.InputConnectionBases.Remove(input);
             }
             foreach (InputConnectionBase input in formInputs)
             {
@@ -197,6 +218,18 @@ namespace MetaphysicsIndustries.Amethyst
                     this.Terminals.Add(term);
 
                     y += 20;
+                }
+            }
+
+            InputTerminal[] inputs = Collection.Extract<Terminal, InputTerminal>(Terminals);
+            OutputTerminal[] outputs = Collection.Extract<Terminal, OutputTerminal>(Terminals);
+
+            foreach (InputTerminal i in inputs)
+            {
+                i.Connection.Dependants.Clear();
+                foreach (OutputTerminal o in outputs)
+                {
+                    i.Connection.Dependants.Add(o.Connection);
                 }
             }
         }
@@ -241,9 +274,14 @@ namespace MetaphysicsIndustries.Amethyst
                     toRemove.Add(output);
                 }
             }
-            foreach (OutputConnectionBase input in toRemove)
+            foreach (OutputConnectionBase output in toRemove)
             {
-                this.Terminals.Remove(TerminalsByConnection[input]);
+                if (TerminalsByConnection.ContainsKey(output))
+                {
+                    this.Terminals.Remove(TerminalsByConnection[output]);
+                }
+
+                node.OutputConnectionBases.Remove(output);
             }
             foreach (OutputConnectionBase output in formOutputs)
             {

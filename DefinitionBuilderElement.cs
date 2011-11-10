@@ -27,8 +27,8 @@ namespace MetaphysicsIndustries.Amethyst
                 OutputConnectionBases.Add(Output);
             }
 
-            private InputConnection<ParseSpan> _input = new InputConnection<ParseSpan>("Input");
-            public InputConnection<ParseSpan> Input
+            private InputConnection<Span> _input = new InputConnection<Span>("Input");
+            public InputConnection<Span> Input
             {
                 get { return _input; }
             }
@@ -42,7 +42,7 @@ namespace MetaphysicsIndustries.Amethyst
             public override void Execute(Dictionary<InputConnectionBase, object> inputs, Dictionary<OutputConnectionBase, object> outputs)
             {
                 DefinitionBuilder builder = new DefinitionBuilder();
-                ParseSpan grammar = (ParseSpan)inputs[Input];
+                Span grammar = (Span)inputs[Input];
 
                 outputs[Output] = builder.BuildDefinitions(grammar);
             }

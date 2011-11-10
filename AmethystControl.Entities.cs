@@ -457,7 +457,7 @@ namespace MetaphysicsIndustries.Amethyst
             if (ent is AmethystElement)
             {
                 AmethystElement elem = (AmethystElement)ent;
-                foreach (Terminal terminal in elem.Terminals)
+                foreach (OutputTerminal terminal in Collection.Extract<Terminal, OutputTerminal>(elem.Terminals))
                 {
                     _valueCache.Remove(terminal);
                 }
@@ -476,7 +476,7 @@ namespace MetaphysicsIndustries.Amethyst
             terminalToDisconnect.Path = null;
             DisconnectAndRemoveEntity(path);
 
-            _valueCache.Remove(terminalToDisconnect);
+            RemoveFromValueCache(terminalToDisconnect);
         }
 
         //public void UpdateTerminalState(Terminal terminal)
@@ -583,7 +583,7 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 throw new ArgumentException("The input terminal is not owned by the AmethystControl");
             }
-							
+
             if (to.Path != null)
             {
                 DisconnectInputTerminal(to);
@@ -598,7 +598,7 @@ namespace MetaphysicsIndustries.Amethyst
 
             RoutePath(path);
 
-            _valueCache.Remove(to);
+            RemoveFromValueCache(to);
 
             //UpdateOutputTerminalState(from);
             //UpdateInputTerminalState(to);

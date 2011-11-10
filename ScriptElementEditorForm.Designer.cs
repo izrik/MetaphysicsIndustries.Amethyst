@@ -164,6 +164,7 @@
             // 
             // _addUsingbutton1
             // 
+            this._addUsingbutton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._addUsingbutton1.Location = new System.Drawing.Point(174, 330);
             this._addUsingbutton1.Name = "_addUsingbutton1";
             this._addUsingbutton1.Size = new System.Drawing.Size(75, 23);

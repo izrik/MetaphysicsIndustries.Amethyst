@@ -12,25 +12,25 @@ namespace MetaphysicsIndustries.Amethyst
 
         public void Remove(AmethystElement element)
         {
-            foreach (Terminal term in element.Terminals)
+            foreach (OutputTerminal term in Collection.Extract<Terminal, OutputTerminal>(element.Terminals))
             {
                 Remove(term);
             }
         }
 
-        public void Remove(Terminal terminal)
-        {
-            if (terminal == null) { throw new ArgumentNullException("terminal"); }
+        //public void Remove(Terminal terminal)
+        //{
+        //    if (terminal == null) { throw new ArgumentNullException("terminal"); }
 
-            if (terminal is OutputTerminal)
-            {
-                Remove((OutputTerminal)terminal);
-            }
-            else if (terminal is InputTerminal)
-            {
-                Remove((InputTerminal)terminal);
-            }
-        }
+        //    if (terminal is OutputTerminal)
+        //    {
+        //        Remove((OutputTerminal)terminal);
+        //    }
+        //    else if (terminal is InputTerminal)
+        //    {
+        //        Remove((InputTerminal)terminal);
+        //    }
+        //}
 
         public bool Remove(OutputTerminal terminal)
         {
@@ -40,12 +40,12 @@ namespace MetaphysicsIndustries.Amethyst
             {
                 bool ret = _collection.Remove(terminal);
 
-                foreach (AmethystPath apath in terminal.AmethystPaths)
-                {
-                    Remove(apath.ToTerminal);
-                }
+                OnTerminalRemoved(terminal); 
 
-                OnTerminalRemoved(terminal);
+                //foreach (AmethystPath apath in terminal.AmethystPaths)
+                //{
+                //    Remove(apath.ToTerminal);
+                //}
 
                 return ret;
             }
@@ -54,7 +54,7 @@ namespace MetaphysicsIndustries.Amethyst
         }
 
         public event EventHandler<TerminalEventArgs> TerminalRemoved;
-        public void OnTerminalRemoved(Terminal terminal)
+        public void OnTerminalRemoved(OutputTerminal terminal)
         {
             if (terminal == null) { throw new ArgumentNullException("terminal"); }
 
@@ -64,17 +64,17 @@ namespace MetaphysicsIndustries.Amethyst
             }
         }
 
-        private void Remove(InputTerminal terminal)
-        {
-            if (terminal == null) { throw new ArgumentNullException("terminal"); }
+        //private void Remove(InputTerminal terminal)
+        //{
+        //    if (terminal == null) { throw new ArgumentNullException("terminal"); }
 
-            foreach (OutputConnectionBase con in terminal.Connection.Dependants)
-            {
-                this.Remove(terminal.ParentAmethystElement.TerminalsByConnection[con]);
-            }
+        //    foreach (OutputConnectionBase con in terminal.Connection.Dependants)
+        //    {
+        //        this.Remove(terminal.ParentAmethystElement.TerminalsByConnection[con]);
+        //    }
 
-            OnTerminalRemoved(terminal);
-        }
+        //    OnTerminalRemoved(terminal);
+        //}
 
         public void Add(OutputTerminal key, object value)
         {
@@ -88,14 +88,8 @@ namespace MetaphysicsIndustries.Amethyst
 
         public object this[OutputTerminal key]
         {
-            get
-            {
-                return _collection[key];
-            }
-            set
-            {
-                _collection[key] = value;
-            }
+            get { return _collection[key]; }
+            set { _collection[key] = value; }
         }
 
         public void Clear()
